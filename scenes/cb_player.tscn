@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cpeigalq6ps85"]
+[gd_scene load_steps=6 format=3 uid="uid://cpeigalq6ps85"]
 
 [ext_resource type="Script" path="res://scenes/cb_player.gd" id="1_lypal"]
 [ext_resource type="Texture2D" uid="uid://5oajv10bibjp" path="res://icon.svg" id="1_ydq3e"]
@@ -17,6 +17,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vnlj1"]
 size = Vector2(110, 116)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ajfor"]
+radius = 88.8876
+
 [node name="cbPlayer" type="CharacterBody2D"]
 script = ExtResource("1_lypal")
 
@@ -25,3 +28,10 @@ sprite_frames = SubResource("SpriteFrames_wc84s")
 
 [node name="csPlayer" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_vnlj1")
+
+[node name="playerHurtBox" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="hurtBoxArea" type="CollisionShape2D" parent="playerHurtBox"]
+shape = SubResource("CircleShape2D_ajfor")
+debug_color = Color(0.905882, 0.2, 0.207843, 0.419608)

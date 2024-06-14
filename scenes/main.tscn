@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dsdx64qq5lk44"]
+[gd_scene load_steps=4 format=3 uid="uid://dsdx64qq5lk44"]
 
 [ext_resource type="PackedScene" uid="uid://cpeigalq6ps85" path="res://scenes/cb_player.tscn" id="1_1l487"]
+[ext_resource type="PackedScene" uid="uid://cecu0ryqrwf3q" path="res://scenes/traps/wood_trap.tscn" id="2_kcd3x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rfm27"]
 size = Vector2(883, 19)
@@ -15,3 +16,12 @@ shape = SubResource("RectangleShape2D_rfm27")
 
 [node name="cbPlayer" parent="." instance=ExtResource("1_1l487")]
 position = Vector2(613, 215)
+
+[node name="WoodTrap" parent="." instance=ExtResource("2_kcd3x")]
+position = Vector2(893, 385)
+
+[node name="WoodTrap2" parent="." instance=ExtResource("2_kcd3x")]
+position = Vector2(957, 385)
+
+[node name="WoodTrap3" parent="." instance=ExtResource("2_kcd3x")]
+position = Vector2(1023, 385)
