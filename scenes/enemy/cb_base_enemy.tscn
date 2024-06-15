@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwmswum8ipomh"]
+
+[ext_resource type="Script" path="res://scenes/enemy/cb_base_enemy.gd" id="1_viqn7"]
+[ext_resource type="Texture2D" uid="uid://5oajv10bibjp" path="res://icon.svg" id="1_y2lcq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_61wge"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_y2lcq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="cbBaseEnemy" type="CharacterBody2D"]
+collision_layer = 261
+collision_mask = 5
+script = ExtResource("1_viqn7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 0.0509804, 0, 1)
+sprite_frames = SubResource("SpriteFrames_61wge")

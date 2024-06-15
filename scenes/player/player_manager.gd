@@ -10,7 +10,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("swap"):
 		var swap = cb_player.locked
 		cb_player_2.lock(swap, cam_player.get_path())

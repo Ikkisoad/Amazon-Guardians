@@ -18,7 +18,7 @@ func _ready():
 	#move_and_slide()
 
 func _on_tmr_base_player_resource_timeout():
-	spawnResource()
+	#spawnResource()
 	queue_free()
 
 func startDespawnTimer():

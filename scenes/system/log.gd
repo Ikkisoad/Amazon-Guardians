@@ -30,12 +30,12 @@ func _ready() -> void:
 			add_child(canvas_layer)
 
 
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("toggle_console"):
-		if panel.visible:
-			panel.visible = false
-		else:
-			panel.visible = true
+#func _input(event: InputEvent) -> void:
+	#if event.is_action_pressed("toggle_console"):
+		#if panel.visible:
+			#panel.visible = false
+		#else:
+			#panel.visible = true
 
 
 func print(message) -> void:

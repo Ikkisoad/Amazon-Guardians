@@ -87,6 +87,8 @@ swap={
 2d_physics/layer_1="player"
 2d_physics/layer_2="traps"
 2d_physics/layer_3="tilemap"
+2d_physics/layer_4="PlayerResource"
+2d_physics/layer_9="Enemy"
 
 [rendering]
 

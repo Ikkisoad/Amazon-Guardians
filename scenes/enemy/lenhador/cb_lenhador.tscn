@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://d115vjycip8v6"]
+
+[ext_resource type="PackedScene" uid="uid://dwmswum8ipomh" path="res://scenes/enemy/cb_base_enemy.tscn" id="1_7ana5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_klkth"]
+size = Vector2(96, 128)
+
+[node name="cbBaseEnemy" instance=ExtResource("1_7ana5")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+shape = SubResource("RectangleShape2D_klkth")
