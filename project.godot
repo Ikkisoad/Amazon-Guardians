@@ -17,7 +17,8 @@ config/icon="res://Assets/traps/woodTrap/small_wood_spike_04.png"
 
 [autoload]
 
-Global="*res://scenes/Global.gd"
+Global="*res://scenes/system/Global.gd"
+Log="*res://scenes/system/log.gd"
 
 [display]
 

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dsdx64qq5lk44"]
+[gd_scene load_steps=6 format=3 uid="uid://dsdx64qq5lk44"]
 
 [ext_resource type="PackedScene" uid="uid://cecu0ryqrwf3q" path="res://scenes/traps/wood_trap.tscn" id="2_kcd3x"]
 [ext_resource type="PackedScene" uid="uid://i4ewk0kd4tbe" path="res://scenes/system/debugger.tscn" id="3_oa7ly"]
 [ext_resource type="PackedScene" uid="uid://c4elcp35wq18e" path="res://scenes/tile_map/tile_map.tscn" id="4_m70y3"]
 [ext_resource type="PackedScene" uid="uid://85ho1813kvpx" path="res://scenes/player/player_manager.tscn" id="4_pnr2r"]
+[ext_resource type="PackedScene" uid="uid://b1wnvd43cktpa" path="res://scenes/resources/tree_resource/tree_resource.tscn" id="5_ktgpv"]
 
 [node name="Main" type="Node2D"]
 
@@ -23,3 +24,8 @@ layer_0/tile_data = PackedInt32Array(2097223, 0, 16, 2031687, 196608, 18, 209722
 
 [node name="PlayerManager" parent="." instance=ExtResource("4_pnr2r")]
 position = Vector2(530, 252)
+
+[node name="TreeResource" parent="." instance=ExtResource("5_ktgpv")]
+position = Vector2(128, 399)
+tmrResourceMin = 1
+tmrResourceMax = 2

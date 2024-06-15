@@ -13,7 +13,7 @@ func _ready() -> void:
 
 func _on_area_entered(area: Area2D) -> void:
 	animated_sprite_2d.play()
-	print("Player detected!!")
+	Log.print("Player detected!!")
 	trap_timer.start()
 
 func _on_trap_timer_timeout() -> void:

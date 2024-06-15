@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://bot5k4oc4qdro"]
+
+[ext_resource type="Script" path="res://scenes/player_resource/base_player_resource/base_player_resource.gd" id="1_l6a41"]
+[ext_resource type="Texture2D" uid="uid://dmwh6d4x1bmwy" path="res://Assets/sprites/leaves/tree bushes.png" id="1_myphd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2q21w"]
+atlas = ExtResource("1_myphd")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ybdxa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2q21w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ag4p1"]
+
+[node name="BasePlayerResource" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_l6a41")
+
+[node name="a2dBasePlayerResource" type="Area2D" parent="."]
+
+[node name="asprBasePlayerResource" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ybdxa")
+frame_progress = 0.682155
+
+[node name="tmrBasePlayerResource" type="Timer" parent="."]
+
+[node name="csBasePlayerResource" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ag4p1")
+
+[connection signal="body_entered" from="a2dBasePlayerResource" to="." method="_on_a_2d_base_player_resource_body_entered"]
+[connection signal="timeout" from="tmrBasePlayerResource" to="." method="_on_tmr_base_player_resource_timeout"]
