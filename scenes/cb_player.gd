@@ -12,6 +12,7 @@ var selectedTrapType = Global.TrapType.WOOD
 var facing = 1
 
 func _physics_process(delta):
+	print(tmr_jump_buffer.time_left)
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -21,7 +22,7 @@ func _physics_process(delta):
 		if is_on_floor():
 			jump()
 		else:
-			tmr_jump_buffer.start(0.08)
+			tmr_jump_buffer.start(0.1)
 	elif !tmr_jump_buffer.is_stopped():
 		if is_on_floor(): 
 			jump()
@@ -50,3 +51,7 @@ func spawnHoldTrap():
 		newTrapPos = Vector2(120,0)
 	get_parent().add_child(newTrap)
 	newTrap.global_position = global_position + newTrapPos * facing
+
+#if necessary for debugging, it makes it easier to get inputs while frame advancing
+#func virtualController():
+	
