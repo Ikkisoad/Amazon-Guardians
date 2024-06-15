@@ -21,6 +21,7 @@ size = Vector2(110, 116)
 size = Vector2(128, 128)
 
 [node name="cbPlayer" type="CharacterBody2D"]
+collision_mask = 4
 script = ExtResource("1_lypal")
 
 [node name="asPlayer" type="AnimatedSprite2D" parent="."]
@@ -39,4 +40,4 @@ debug_color = Color(0.334872, 0.590266, 7.70092e-07, 0.419608)
 [node name="tmrJumpBuffer" type="Timer" parent="."]
 one_shot = true
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
+[node name="rtPlayer" type="RemoteTransform2D" parent="."]
