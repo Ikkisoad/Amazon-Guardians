@@ -1,12 +1,14 @@
 extends CharacterBody2D
 
-
+const WOOD_TRAP = preload("res://scenes/traps/wood_trap.tscn")
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+var selectedTrapType = Global.TrapType.WOOD
+var facing = 1
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -24,5 +26,17 @@ func _physics_process(delta):
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+	
+	if Input.is_action_just_pressed("trap"):
+		spawnHoldTrap()
 
 	move_and_slide()
+
+func spawnHoldTrap():
+	var newTrap
+	var newTrapPos
+	if selectedTrapType == Global.TrapType.WOOD:
+		newTrap = WOOD_TRAP.instantiate()
+		newTrapPos = Vector2(120,0)
+	get_parent().add_child(newTrap)
+	newTrap.global_position = global_position + newTrapPos * facing
