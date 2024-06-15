@@ -38,9 +38,9 @@ func _input(event: InputEvent) -> void:
 			panel.visible = true
 
 
-func print(message: String) -> void:
+func print(message) -> void:
 	if debug:
 		if rich_text_label:
-			rich_text_label.append_text(message + "\n")			
+			rich_text_label.append_text(str(message) + "\n")			
 
 	print(message)

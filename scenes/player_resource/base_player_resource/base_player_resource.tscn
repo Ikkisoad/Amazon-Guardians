@@ -20,8 +20,8 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ag4p1"]
 
-[node name="BasePlayerResource" type="CharacterBody2D"]
-collision_layer = 0
+[node name="BasePlayerResource" type="RigidBody2D"]
+collision_layer = 4
 collision_mask = 4
 script = ExtResource("1_l6a41")
 

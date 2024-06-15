@@ -26,5 +26,8 @@ texture = ExtResource("1_8gujh")
 [node name="tmrResource" type="Timer" parent="."]
 one_shot = true
 
+[node name="tmrHealthRegen" type="Timer" parent="."]
+
 [connection signal="body_entered" from="a2dResource" to="." method="_on_body_entered"]
 [connection signal="timeout" from="tmrResource" to="." method="_on_tmr_resource_timeout"]
+[connection signal="timeout" from="tmrHealthRegen" to="." method="_on_tmr_health_regen_timeout"]

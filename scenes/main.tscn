@@ -27,5 +27,6 @@ position = Vector2(530, 252)
 
 [node name="TreeResource" parent="." instance=ExtResource("5_ktgpv")]
 position = Vector2(128, 399)
+health = 50
 tmrResourceMin = 1
 tmrResourceMax = 2

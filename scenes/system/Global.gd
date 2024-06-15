@@ -2,6 +2,7 @@ extends Node
 
 enum TrapType {WOOD}
 enum ResourceType {TREE}
+enum PlayerResourceType {LEAVES}
 
 func _input(event):
 	if event.is_action_pressed("reset"):
