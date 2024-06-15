@@ -22,7 +22,7 @@ func _ready():
 	startPlayerResourceTimer()
 	setPlayerResource()
 
-func _on_body_entered(body):
+func _on_body_entered(_body):
 	#Log.print(str("Body entered: ", body))
 	pass
 
@@ -42,7 +42,7 @@ func startHealthRegenTimer():
 func setPlayerResource():
 	match resourceType:
 		Global.ResourceType.TREE:
-			playerResourceScene = preload("res://scenes/player_resource/leaves/leaves.tscn")
+			playerResourceScene = preload("res://scenes/player_res/leaves/leaves.tscn")
 			playerResource = Global.PlayerResourceType.LEAVES
 
 

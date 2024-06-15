@@ -50,6 +50,7 @@ disabled = true
 debug_color = Color(0.831373, 0, 0.0392157, 0.419608)
 
 [connection signal="area_entered" from="a2EnemyDetector" to="." method="_on_a_2_enemy_detector_area_entered"]
+[connection signal="area_exited" from="a2EnemyDetector" to="." method="_on_a_2_enemy_detector_area_exited"]
 [connection signal="body_entered" from="a2EnemyDetector" to="." method="_on_a_2_enemy_detector_body_entered"]
 [connection signal="timeout" from="tmrAttack" to="." method="_on_tmr_attack_timeout"]
 [connection signal="area_entered" from="a2EnemyAttack" to="." method="_on_a_2_enemy_attack_area_entered"]

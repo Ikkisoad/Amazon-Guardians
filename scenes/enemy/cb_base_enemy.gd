@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 
 @export var SPEED = 150.0
+@export var enemyType = Global.EnemyType.WOODWORKER
 const JUMP_VELOCITY = -400.0
 @onready var tmr_attack = $tmrAttack
 
@@ -12,7 +13,20 @@ var attacking = false
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var cs_attack = $a2EnemyAttack/csAttack
+var resource
 
+func _ready():
+	if facing == -1:
+		scale.x = -1
+	match enemyType:
+		Global.EnemyType.WOODWORKER:
+			resource = "tree"
+		Global.EnemyType.MINER:
+			resource = "cave"
+		Global.EnemyType.HUNTER:
+			resource = "animal"
+		_:
+			resource = "tree"
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -63,4 +77,7 @@ func returnToBase():
 	scale.x = -1
 	attacking = false
 	stop = false
-	
+
+func _on_a_2_enemy_detector_area_exited(area):
+	if area.get_parent().is_in_group("resource"):
+		returnToBase()

@@ -11,7 +11,7 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
-func _on_area_entered(area: Area2D) -> void:
+func _on_area_entered(_area: Area2D) -> void:
 	animated_sprite_2d.play()
 	Log.print("Player detected!!")
 	trap_timer.start()

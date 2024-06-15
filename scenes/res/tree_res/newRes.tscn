@@ -1,11 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://b1wnvd43cktpa"]
+[gd_scene load_steps=3 format=3 uid="uid://blt8jdye4x5nk"]
 
-[ext_resource type="PackedScene" uid="uid://bwsy83o5lf5fh" path="res://scenes/resources/base_resource/base_resource.tscn" id="1_l4j12"]
+[ext_resource type="PackedScene" uid="uid://bwsy83o5lf5fh" path="res://scenes/res/base_res/base_res.tscn" id="1_lehck"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_csptq"]
 size = Vector2(48, 192)
 
-[node name="TreeResource" instance=ExtResource("1_l4j12")]
+[node name="TreeResource" instance=ExtResource("1_lehck")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="a2dResource" index="0"]
 shape = SubResource("RectangleShape2D_csptq")

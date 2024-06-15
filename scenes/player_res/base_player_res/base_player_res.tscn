@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bot5k4oc4qdro"]
 
-[ext_resource type="Script" path="res://scenes/player_resource/base_player_resource/base_player_resource.gd" id="1_l6a41"]
+[ext_resource type="Script" path="res://scenes/player_res/base_player_res/base_player_res.gd" id="1_l6a41"]
 [ext_resource type="Texture2D" uid="uid://dmwh6d4x1bmwy" path="res://Assets/sprites/leaves/tree bushes.png" id="1_myphd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2q21w"]

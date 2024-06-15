@@ -25,14 +25,14 @@ func startDespawnTimer():
 	tmr_base_player_resource.start(randi_range(tmrDespawnMin, tmrDespawnMax))
 
 
-func _on_a_2d_base_player_resource_body_entered(body):
+func _on_a_2d_base_player_resource_body_entered(_body):
 	#Log.print("Body detected")
 	pass
 
 func setResourceScene():
 	match playerResourceType:
 		Global.PlayerResourceType.LEAVES:
-			resourceScene = preload("res://scenes/resources/tree_resource/newResource.tscn")
+			resourceScene = preload("res://scenes/res/tree_res/newRes.tscn")
 
 #TODO pqq isso n ta funcionando?
 func spawnResource():
