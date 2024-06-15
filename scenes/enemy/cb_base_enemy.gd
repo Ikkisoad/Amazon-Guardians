@@ -45,6 +45,8 @@ func startAttackTimer():
 
 func _on_tmr_attack_timeout():
 	if attacking:
+		if !cs_attack.disabled:
+			returnToBase()
 		startAttackTimer()
 		cs_attack.set_deferred("disabled", false)
 
@@ -52,8 +54,13 @@ func _on_a_2_enemy_attack_area_entered(area):
 	cs_attack.set_deferred("disabled", true)
 	if area.get_parent().is_in_group("resource"):
 		if area.get_parent().has_method("getHit"):
-			if area.get_parent().getHit(50):
-				facing = facing * -1
-				scale.x = -1
-				attacking = false
-				stop = false
+			if area.get_parent().getHit(randi_range(10,25)):
+				returnToBase()
+
+func returnToBase():
+	cs_attack.set_deferred("disabled", true)
+	facing = facing * -1
+	scale.x = -1
+	attacking = false
+	stop = false
+	

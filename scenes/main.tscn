@@ -10,13 +10,16 @@
 [node name="Main" type="Node2D"]
 
 [node name="WoodTrap" parent="." instance=ExtResource("2_kcd3x")]
-position = Vector2(893, 385)
+z_index = 1
+position = Vector2(1023, 461)
 
 [node name="WoodTrap2" parent="." instance=ExtResource("2_kcd3x")]
-position = Vector2(957, 385)
+z_index = 1
+position = Vector2(1087, 461)
 
 [node name="WoodTrap3" parent="." instance=ExtResource("2_kcd3x")]
-position = Vector2(1023, 385)
+z_index = 1
+position = Vector2(1153, 461)
 
 [node name="debugger" parent="." instance=ExtResource("3_oa7ly")]
 
@@ -27,10 +30,15 @@ layer_0/tile_data = PackedInt32Array(2097223, 0, 16, 2031687, 196608, 18, 209722
 position = Vector2(530, 252)
 
 [node name="TreeResource" parent="." instance=ExtResource("5_ktgpv")]
-position = Vector2(385, 400)
-health = 50
+position = Vector2(287, 216)
+scale = Vector2(2.92572, 2.92572)
 tmrResourceMin = 1
 tmrResourceMax = 2
 
 [node name="cbBaseEnemy" parent="." instance=ExtResource("6_xoru7")]
 position = Vector2(-78.2588, 363.822)
+
+[node name="cbBaseEnemy2" parent="." instance=ExtResource("6_xoru7")]
+position = Vector2(1692, 428)
+scale = Vector2(-1, 1)
+facing = -1
