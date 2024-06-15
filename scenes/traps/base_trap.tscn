@@ -1,18 +1,18 @@
 [gd_scene load_steps=7 format=3 uid="uid://c50i37hw6jvgy"]
 
 [ext_resource type="Script" path="res://scenes/traps/base_trap.gd" id="1_2y7l8"]
-[ext_resource type="Texture2D" uid="uid://2jjxmgtxyrjb" path="res://OpenGameArtAssets/traps/woodTrap/SmallWoodTrap.png" id="2_hoobj"]
+[ext_resource type="Texture2D" uid="uid://2jjxmgtxyrjb" path="res://Assets/traps/woodTrap/SmallWoodTrap.png" id="2_bnavc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ldx32"]
-atlas = ExtResource("2_hoobj")
+atlas = ExtResource("2_bnavc")
 region = Rect2(72, 0, 72, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h6e6d"]
-atlas = ExtResource("2_hoobj")
+atlas = ExtResource("2_bnavc")
 region = Rect2(144, 0, 72, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nyu2a"]
-atlas = ExtResource("2_hoobj")
+atlas = ExtResource("2_bnavc")
 region = Rect2(216, 0, 72, 133)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_om3gw"]

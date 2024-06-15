@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxhhj77yyyfl3"
-path="res://.godot/imported/Castlevania-esque Background1.png-f31d6fb4ee8c6c533337d405425e411b.ctex"
+uid="uid://8s7lejkpdj6h"
+path="res://.godot/imported/tree.png-111349ad9a595485c731f89a3bd46f49.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://OpenGameArtAssets/Castlevania-esque Background1.png"
-dest_files=["res://.godot/imported/Castlevania-esque Background1.png-f31d6fb4ee8c6c533337d405425e411b.ctex"]
+source_file="res://Assets/sprites/tree/tree.png"
+dest_files=["res://.godot/imported/tree.png-111349ad9a595485c731f89a3bd46f49.ctex"]
 
 [params]
 

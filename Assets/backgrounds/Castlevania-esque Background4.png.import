@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtm4hkyybymkg"
-path="res://.godot/imported/Castlevania-esque Tilemap.png-76444dfbaf6e35625aa1ea1289e89e31.ctex"
+uid="uid://b2ah0rcp85kuv"
+path="res://.godot/imported/Castlevania-esque Background4.png-a710b97088008c5aa8653252e61cc6b0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://OpenGameArtAssets/Castlevania-esque Tilemap.png"
-dest_files=["res://.godot/imported/Castlevania-esque Tilemap.png-76444dfbaf6e35625aa1ea1289e89e31.ctex"]
+source_file="res://Assets/backgrounds/Castlevania-esque Background4.png"
+dest_files=["res://.godot/imported/Castlevania-esque Background4.png-a710b97088008c5aa8653252e61cc6b0.ctex"]
 
 [params]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cpeigalq6ps85"]
 
-[ext_resource type="Script" path="res://scenes/cb_player.gd" id="1_lypal"]
+[ext_resource type="Script" path="res://scenes/player/cb_player.gd" id="1_lypal"]
 [ext_resource type="Texture2D" uid="uid://5oajv10bibjp" path="res://icon.svg" id="1_ydq3e"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wc84s"]
@@ -38,3 +38,5 @@ debug_color = Color(0.334872, 0.590266, 7.70092e-07, 0.419608)
 
 [node name="tmrJumpBuffer" type="Timer" parent="."]
 one_shot = true
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]

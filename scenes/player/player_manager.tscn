@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://85ho1813kvpx"]
+
+[ext_resource type="PackedScene" uid="uid://cpeigalq6ps85" path="res://scenes/player/cb_player.tscn" id="1_n8w7f"]
+
+[node name="PlayerManager" type="Node2D"]
+
+[node name="cbPlayer" parent="." instance=ExtResource("1_n8w7f")]
+
+[node name="cbPlayer2" parent="." instance=ExtResource("1_n8w7f")]
+position = Vector2(154, 3)

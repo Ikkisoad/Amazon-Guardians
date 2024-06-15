@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chm7itqglshma"
-path="res://.godot/imported/Sprite-0006.png-bf24fbc25d6a213da93b6f32726dce58.ctex"
+uid="uid://2jjxmgtxyrjb"
+path="res://.godot/imported/SmallWoodTrap.png-16a1fab6cff3d3496782509a8dabfab4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://OpenGameArtAssets/Sprite-0006.png"
-dest_files=["res://.godot/imported/Sprite-0006.png-bf24fbc25d6a213da93b6f32726dce58.ctex"]
+source_file="res://Assets/traps/woodTrap/SmallWoodTrap.png"
+dest_files=["res://.godot/imported/SmallWoodTrap.png-16a1fab6cff3d3496782509a8dabfab4.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cb3ntaingtaia"
-path="res://.godot/imported/Sprite-0001.png-b64fb60d974a7b40e77aab688d64d3ec.ctex"
+uid="uid://dgyj30mqk8cc1"
+path="res://.godot/imported/small_wood_spike_03.png-b1ca3c78844b1f69b6081532c6e4a234.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://OpenGameArtAssets/Sprite-0001.png"
-dest_files=["res://.godot/imported/Sprite-0001.png-b64fb60d974a7b40e77aab688d64d3ec.ctex"]
+source_file="res://Assets/traps/woodTrap/small_wood_spike_03.png"
+dest_files=["res://.godot/imported/small_wood_spike_03.png-b1ca3c78844b1f69b6081532c6e4a234.ctex"]
 
 [params]
 

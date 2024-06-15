@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxngxvjws45de"
-path="res://.godot/imported/Castlevania-esque Background2.png-6325fbf1f06a4e5f218c2e455d6bd4b0.ctex"
+uid="uid://b33q7yq6goam6"
+path="res://.godot/imported/small_wood_spike_01.png-d6ba9cb849f4dfd7ee4f68acce8723ff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://OpenGameArtAssets/Castlevania-esque Background2.png"
-dest_files=["res://.godot/imported/Castlevania-esque Background2.png-6325fbf1f06a4e5f218c2e455d6bd4b0.ctex"]
+source_file="res://Assets/traps/woodTrap/small_wood_spike_01.png"
+dest_files=["res://.godot/imported/small_wood_spike_01.png-d6ba9cb849f4dfd7ee4f68acce8723ff.ctex"]
 
 [params]
 

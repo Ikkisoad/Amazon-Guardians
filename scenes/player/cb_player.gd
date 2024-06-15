@@ -8,15 +8,24 @@ const JUMP_VELOCITY = -400.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var tmr_jump_buffer = $tmrJumpBuffer
 
+@export var locked = false
+
 var selectedTrapType = Global.TrapType.WOOD
 var facing = 1
 
 func _physics_process(delta):
-	print(tmr_jump_buffer.time_left)
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
+	if !locked: handleInputs()
+
+	move_and_slide()
+
+func jump():
+	velocity.y = JUMP_VELOCITY
+
+func handleInputs():
 	# Handle jump.
 	if Input.is_action_just_pressed("jump"):
 		if is_on_floor():
@@ -37,11 +46,6 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("trap"):
 		spawnHoldTrap()
-
-	move_and_slide()
-
-func jump():
-	velocity.y = JUMP_VELOCITY
 
 func spawnHoldTrap():
 	var newTrap
