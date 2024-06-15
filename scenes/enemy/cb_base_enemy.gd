@@ -3,8 +3,10 @@ extends CharacterBody2D
 
 @export var SPEED = 150.0
 @export var enemyType = Global.EnemyType.WOODWORKER
+@export var health = 1000
 const JUMP_VELOCITY = -400.0
 @onready var tmr_attack = $tmrAttack
+@onready var pb_enemy = $pbEnemy
 
 @export var facing = 1
 var stop = false
@@ -16,6 +18,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var resource
 
 func _ready():
+	updateHUD()
 	if facing == -1:
 		scale.x = -1
 	match enemyType:
@@ -81,3 +84,6 @@ func returnToBase():
 func _on_a_2_enemy_detector_area_exited(area):
 	if area.get_parent().is_in_group("resource"):
 		returnToBase()
+
+func updateHUD():
+	pb_enemy.value = health

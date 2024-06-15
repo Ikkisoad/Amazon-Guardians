@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cpeigalq6ps85"]
+[gd_scene load_steps=11 format=3 uid="uid://cpeigalq6ps85"]
 
 [ext_resource type="Script" path="res://scenes/player/cb_player.gd" id="1_lypal"]
 [ext_resource type="Texture2D" uid="uid://c647i7dr0vao3" path="res://Assets/sprites/player/curupira.png" id="2_r6cea"]
@@ -24,6 +24,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("4_0vgnf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_r6cea")
 }],
 "loop": true,
 "name": &"walk",
@@ -35,6 +38,71 @@ size = Vector2(72, 170)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w17ue"]
 size = Vector2(121, 254)
+
+[sub_resource type="Animation" id="Animation_sr7d6"]
+resource_name = "idle"
+length = 0.250002
+loop_mode = 1
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"walk"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_385es"]
+resource_name = "walking"
+length = 0.80001
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"walk"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bgr75"]
+_data = {
+"idle": SubResource("Animation_sr7d6"),
+"walking": SubResource("Animation_385es")
+}
 
 [node name="cbPlayer" type="CharacterBody2D"]
 collision_mask = 4
@@ -61,3 +129,8 @@ debug_color = Color(0.334872, 0.590266, 7.70092e-07, 0.419608)
 one_shot = true
 
 [node name="rtPlayer" type="RemoteTransform2D" parent="."]
+
+[node name="apPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_bgr75")
+}

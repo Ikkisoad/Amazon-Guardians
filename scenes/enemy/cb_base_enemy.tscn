@@ -49,6 +49,15 @@ shape = SubResource("RectangleShape2D_tt8uu")
 disabled = true
 debug_color = Color(0.831373, 0, 0.0392157, 0.419608)
 
+[node name="pbEnemy" type="ProgressBar" parent="."]
+offset_left = -68.0
+offset_top = -90.0
+offset_right = 72.0
+offset_bottom = -86.0
+max_value = 1000.0
+value = 500.0
+show_percentage = false
+
 [connection signal="area_entered" from="a2EnemyDetector" to="." method="_on_a_2_enemy_detector_area_entered"]
 [connection signal="area_exited" from="a2EnemyDetector" to="." method="_on_a_2_enemy_detector_area_exited"]
 [connection signal="body_entered" from="a2EnemyDetector" to="." method="_on_a_2_enemy_detector_body_entered"]

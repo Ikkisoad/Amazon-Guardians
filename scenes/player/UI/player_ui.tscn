@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://vp83c8184gjs"]
+
+[node name="PlayerUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="clPlayerUI" type="CanvasLayer" parent="."]
+
+[node name="pbPlayerUI" type="ProgressBar" parent="clPlayerUI"]
+custom_minimum_size = Vector2(50, 50)
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 780.0
+offset_bottom = 88.0
+max_value = 1000.0
+value = 500.0
+show_percentage = false
+
+[node name="pbPlayerUI2" type="ProgressBar" parent="clPlayerUI"]
+offset_left = 1152.0
+offset_top = 32.0
+offset_right = 1900.0
+offset_bottom = 88.0
+max_value = 1000.0
+value = 500.0
+fill_mode = 1
+show_percentage = false

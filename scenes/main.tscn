@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dsdx64qq5lk44"]
+[gd_scene load_steps=8 format=3 uid="uid://dsdx64qq5lk44"]
 
 [ext_resource type="PackedScene" uid="uid://cecu0ryqrwf3q" path="res://scenes/traps/wood_trap.tscn" id="2_kcd3x"]
 [ext_resource type="PackedScene" uid="uid://i4ewk0kd4tbe" path="res://scenes/system/debugger.tscn" id="3_oa7ly"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://85ho1813kvpx" path="res://scenes/player/player_manager.tscn" id="4_pnr2r"]
 [ext_resource type="PackedScene" uid="uid://b1wnvd43cktpa" path="res://scenes/res/tree_res/tree_res.tscn" id="5_ktgpv"]
 [ext_resource type="PackedScene" uid="uid://d115vjycip8v6" path="res://scenes/enemy/woodworker/cb_woodworker.tscn" id="6_xoru7"]
+[ext_resource type="PackedScene" uid="uid://be782rih0dbuy" path="res://scenes/enemy/spawner/enemy_spawner_base.tscn" id="7_huaeu"]
 
 [node name="Main" type="Node2D"]
 
@@ -41,3 +42,10 @@ position = Vector2(-78.2588, 363.822)
 [node name="cbBaseEnemy2" parent="." instance=ExtResource("6_xoru7")]
 position = Vector2(1153, 300)
 facing = -1
+
+[node name="EnemySpawnerBase2" parent="." instance=ExtResource("7_huaeu")]
+position = Vector2(1775.28, 433.831)
+facing = -1
+
+[node name="EnemySpawnerBase" parent="." instance=ExtResource("7_huaeu")]
+position = Vector2(-309, 440)
