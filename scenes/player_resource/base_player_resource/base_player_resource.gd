@@ -1,8 +1,8 @@
 extends RigidBody2D
 @onready var tmr_base_player_resource = $tmrBasePlayerResource
 
-@export var tmrDespawnMin = 50
-@export var tmrDespawnMax = 150
+@export var tmrDespawnMin = 1
+@export var tmrDespawnMax = 2
 var playerResourceType = Global.PlayerResourceType.LEAVES
 
 var resourceScene
@@ -32,12 +32,12 @@ func _on_a_2d_base_player_resource_body_entered(body):
 func setResourceScene():
 	match playerResourceType:
 		Global.PlayerResourceType.LEAVES:
-			resourceScene = preload("res://scenes/resources/tree_resource/tree_resource.tscn")
+			resourceScene = preload("res://scenes/resources/tree_resource/newResource.tscn")
 
 #TODO pqq isso n ta funcionando?
 func spawnResource():
 	var newResource = resourceScene.instantiate()
 	#get_parent().add_sibling(newResource)
 	add_child(newResource)
-	#newResource.global_position = global_position
+	newResource.global_position = global_position
 	

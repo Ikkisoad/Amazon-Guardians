@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://blt8jdye4x5nk"]
+
+[ext_resource type="PackedScene" uid="uid://bwsy83o5lf5fh" path="res://scenes/resources/base_resource/base_resource.tscn" id="1_2eexr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_csptq"]
+size = Vector2(48, 192)
+
+[node name="TreeResource" instance=ExtResource("1_2eexr")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="a2dResource" index="0"]
+shape = SubResource("RectangleShape2D_csptq")
+debug_color = Color(1.2514e-06, 0.650141, 0.110105, 0.42)
