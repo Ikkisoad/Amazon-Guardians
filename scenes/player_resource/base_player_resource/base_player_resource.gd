@@ -1,8 +1,8 @@
 extends RigidBody2D
 @onready var tmr_base_player_resource = $tmrBasePlayerResource
 
-@export var tmrDespawnMin = 1
-@export var tmrDespawnMax = 2
+@export var tmrDespawnMin = 50
+@export var tmrDespawnMax = 150
 var playerResourceType = Global.PlayerResourceType.LEAVES
 
 var resourceScene

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dwmswum8ipomh"]
+[gd_scene load_steps=6 format=3 uid="uid://dwmswum8ipomh"]
 
 [ext_resource type="Script" path="res://scenes/enemy/cb_base_enemy.gd" id="1_viqn7"]
 [ext_resource type="Texture2D" uid="uid://5oajv10bibjp" path="res://icon.svg" id="1_y2lcq"]
@@ -17,9 +17,12 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nyuvh"]
 size = Vector2(74, 134)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tt8uu"]
+size = Vector2(90, 146)
+
 [node name="cbBaseEnemy" type="CharacterBody2D"]
-collision_layer = 261
-collision_mask = 517
+collision_layer = 256
+collision_mask = 516
 script = ExtResource("1_viqn7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -33,5 +36,20 @@ collision_mask = 513
 position = Vector2(91, 3)
 shape = SubResource("RectangleShape2D_nyuvh")
 
+[node name="tmrAttack" type="Timer" parent="."]
+one_shot = true
+
+[node name="a2EnemyAttack" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 512
+
+[node name="csAttack" type="CollisionShape2D" parent="a2EnemyAttack"]
+position = Vector2(115, -15)
+shape = SubResource("RectangleShape2D_tt8uu")
+disabled = true
+debug_color = Color(0.831373, 0, 0.0392157, 0.419608)
+
 [connection signal="area_entered" from="a2EnemyDetector" to="." method="_on_a_2_enemy_detector_area_entered"]
 [connection signal="body_entered" from="a2EnemyDetector" to="." method="_on_a_2_enemy_detector_body_entered"]
+[connection signal="timeout" from="tmrAttack" to="." method="_on_tmr_attack_timeout"]
+[connection signal="area_entered" from="a2EnemyAttack" to="." method="_on_a_2_enemy_attack_area_entered"]

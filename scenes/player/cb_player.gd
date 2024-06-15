@@ -43,12 +43,18 @@ func handleInputs():
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("left", "right")
 	if direction:
+		if facing != direction:
+			flip(direction)
 		velocity.x = direction * SPEED
 		animated_sprite_2d.play("walk")
 	else:
 		walkStop()
 	if Input.is_action_just_pressed("trap"):
 		spawnHoldTrap()
+
+func flip(dir):
+	scale.x = -1
+	facing = dir
 
 func spawnHoldTrap():
 	var newTrap

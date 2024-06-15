@@ -33,3 +33,4 @@ tmrResourceMin = 1
 tmrResourceMax = 2
 
 [node name="cbBaseEnemy" parent="." instance=ExtResource("6_xoru7")]
+position = Vector2(-78.2588, 363.822)

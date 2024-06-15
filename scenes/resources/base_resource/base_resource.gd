@@ -30,8 +30,8 @@ func _on_body_entered(body):
 func _on_tmr_resource_timeout():
 	var newResource = playerResourceScene.instantiate()
 	newResource.playerResourceType = playerResource
-	add_child(newResource)
-	newResource.global_position.x += randi_range(-15, 15)
+	add_sibling(newResource)
+	newResource.global_position = global_position + Vector2(randi_range(-15, 15),0)
 	startPlayerResourceTimer()
 
 func startPlayerResourceTimer():
@@ -53,3 +53,10 @@ func _on_tmr_health_regen_timeout():
 
 func updateHUD():
 	pb_resource.value = health
+
+func getHit(damage):
+	health -= damage
+	updateHUD()
+	if health <= 0:
+		queue_free()
+		return true
