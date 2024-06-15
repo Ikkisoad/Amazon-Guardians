@@ -4,12 +4,13 @@
 [ext_resource type="Script" path="res://scenes/resources/base_resource/base_resource.gd" id="1_e2i2j"]
 [ext_resource type="Theme" uid="uid://btq0bfqwg7hqv" path="res://scenes/resources/base_resource/resource.tres" id="3_243ih"]
 
-[node name="BaseResource" type="Node2D"]
+[node name="BaseResource" type="Node2D" groups=["resource"]]
 z_index = -5
 script = ExtResource("1_e2i2j")
 
 [node name="a2dResource" type="Area2D" parent="."]
 z_index = -5
+collision_layer = 513
 
 [node name="pbResource" type="ProgressBar" parent="."]
 offset_left = -78.0

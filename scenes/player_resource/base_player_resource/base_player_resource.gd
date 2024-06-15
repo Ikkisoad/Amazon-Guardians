@@ -26,7 +26,8 @@ func startDespawnTimer():
 
 
 func _on_a_2d_base_player_resource_body_entered(body):
-	Log.print("Body detected")
+	#Log.print("Body detected")
+	pass
 
 func setResourceScene():
 	match playerResourceType:

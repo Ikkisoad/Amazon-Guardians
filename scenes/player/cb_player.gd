@@ -1,14 +1,15 @@
 extends CharacterBody2D
 
 const WOOD_TRAP = preload("res://scenes/traps/wood_trap.tscn")
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const SPEED = 650.0
+const JUMP_VELOCITY = -800.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var tmr_jump_buffer = $tmrJumpBuffer
 @onready var rt_player = $rtPlayer
 @export var locked = false
+@onready var animated_sprite_2d = $AnimatedSprite2D
 
 var selectedTrapType = Global.TrapType.WOOD
 var facing = 1
@@ -21,7 +22,7 @@ func _physics_process(delta):
 	if !locked: 
 		handleInputs()
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		walkStop()
 	move_and_slide()
 
 func jump():
@@ -43,9 +44,9 @@ func handleInputs():
 	var direction = Input.get_axis("left", "right")
 	if direction:
 		velocity.x = direction * SPEED
+		animated_sprite_2d.play("walk")
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-	
+		walkStop()
 	if Input.is_action_just_pressed("trap"):
 		spawnHoldTrap()
 
@@ -57,6 +58,10 @@ func spawnHoldTrap():
 		newTrapPos = Vector2(120,0)
 	get_parent().add_child(newTrap)
 	newTrap.global_position = global_position + newTrapPos * facing
+
+func walkStop():
+	velocity.x = move_toward(velocity.x, 0, SPEED)
+	animated_sprite_2d.play("default")
 
 #if necessary for debugging, it makes it easier to get inputs while frame advancing
 #func virtualController():

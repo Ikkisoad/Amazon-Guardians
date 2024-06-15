@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c4elcp35wq18e" path="res://scenes/tile_map/tile_map.tscn" id="4_m70y3"]
 [ext_resource type="PackedScene" uid="uid://85ho1813kvpx" path="res://scenes/player/player_manager.tscn" id="4_pnr2r"]
 [ext_resource type="PackedScene" uid="uid://b1wnvd43cktpa" path="res://scenes/resources/tree_resource/tree_resource.tscn" id="5_ktgpv"]
-[ext_resource type="PackedScene" uid="uid://d115vjycip8v6" path="res://scenes/enemy/lenhador/cb_lenhador.tscn" id="6_ub7wf"]
+[ext_resource type="PackedScene" uid="uid://d115vjycip8v6" path="res://scenes/enemy/lenhador/cb_lenhador.tscn" id="6_xoru7"]
 
 [node name="Main" type="Node2D"]
 
@@ -32,4 +32,4 @@ health = 50
 tmrResourceMin = 1
 tmrResourceMax = 2
 
-[node name="cbBaseEnemy" parent="." instance=ExtResource("6_ub7wf")]
+[node name="cbBaseEnemy" parent="." instance=ExtResource("6_xoru7")]

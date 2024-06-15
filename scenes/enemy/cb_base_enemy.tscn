@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dwmswum8ipomh"]
+[gd_scene load_steps=5 format=3 uid="uid://dwmswum8ipomh"]
 
 [ext_resource type="Script" path="res://scenes/enemy/cb_base_enemy.gd" id="1_viqn7"]
 [ext_resource type="Texture2D" uid="uid://5oajv10bibjp" path="res://icon.svg" id="1_y2lcq"]
@@ -14,11 +14,24 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nyuvh"]
+size = Vector2(74, 134)
+
 [node name="cbBaseEnemy" type="CharacterBody2D"]
 collision_layer = 261
-collision_mask = 5
+collision_mask = 517
 script = ExtResource("1_viqn7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 modulate = Color(1, 0.0509804, 0, 1)
 sprite_frames = SubResource("SpriteFrames_61wge")
+
+[node name="a2EnemyDetector" type="Area2D" parent="."]
+collision_mask = 513
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="a2EnemyDetector"]
+position = Vector2(91, 3)
+shape = SubResource("RectangleShape2D_nyuvh")
+
+[connection signal="area_entered" from="a2EnemyDetector" to="." method="_on_a_2_enemy_detector_area_entered"]
+[connection signal="body_entered" from="a2EnemyDetector" to="." method="_on_a_2_enemy_detector_body_entered"]

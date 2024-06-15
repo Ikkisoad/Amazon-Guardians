@@ -23,7 +23,8 @@ func _ready():
 	setPlayerResource()
 
 func _on_body_entered(body):
-	Log.print(str("Body entered: ", body))
+	#Log.print(str("Body entered: ", body))
+	pass
 
 
 func _on_tmr_resource_timeout():

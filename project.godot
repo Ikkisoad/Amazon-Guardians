@@ -22,6 +22,8 @@ Log="*res://scenes/system/log.gd"
 
 [display]
 
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
 
 [input]
@@ -89,6 +91,11 @@ swap={
 2d_physics/layer_3="tilemap"
 2d_physics/layer_4="PlayerResource"
 2d_physics/layer_9="Enemy"
+2d_physics/layer_10="resources"
+
+[physics]
+
+2d/default_gravity=1600.0
 
 [rendering]
 

@@ -1,39 +1,59 @@
-[gd_scene load_steps=6 format=3 uid="uid://cpeigalq6ps85"]
+[gd_scene load_steps=8 format=3 uid="uid://cpeigalq6ps85"]
 
 [ext_resource type="Script" path="res://scenes/player/cb_player.gd" id="1_lypal"]
-[ext_resource type="Texture2D" uid="uid://5oajv10bibjp" path="res://icon.svg" id="1_ydq3e"]
+[ext_resource type="Texture2D" uid="uid://c647i7dr0vao3" path="res://Assets/sprites/player/curupira.png" id="2_r6cea"]
+[ext_resource type="Texture2D" uid="uid://c8a78v8klku4v" path="res://Assets/sprites/player/curupira_1.png" id="3_uw5fj"]
+[ext_resource type="Texture2D" uid="uid://b7kssncjyvb37" path="res://Assets/sprites/player/curupira_2.png" id="4_0vgnf"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_wc84s"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_kdctq"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_ydq3e")
+"texture": ExtResource("2_r6cea")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_uw5fj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_r6cea")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0vgnf")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vnlj1"]
-size = Vector2(110, 116)
+size = Vector2(72, 170)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w17ue"]
-size = Vector2(128, 128)
+size = Vector2(121, 254)
 
 [node name="cbPlayer" type="CharacterBody2D"]
 collision_mask = 4
 script = ExtResource("1_lypal")
 
-[node name="asPlayer" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_wc84s")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(20, -202)
+sprite_frames = SubResource("SpriteFrames_kdctq")
+animation = &"walk"
 
 [node name="csPlayer" type="CollisionShape2D" parent="."]
+position = Vector2(-4, -91)
 shape = SubResource("RectangleShape2D_vnlj1")
 
 [node name="playerHurtBox" type="Area2D" parent="."]
 collision_mask = 2
 
 [node name="hurtBoxArea" type="CollisionShape2D" parent="playerHurtBox"]
+position = Vector2(3.5, -129)
 shape = SubResource("RectangleShape2D_w17ue")
 debug_color = Color(0.334872, 0.590266, 7.70092e-07, 0.419608)
 
