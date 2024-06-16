@@ -81,3 +81,6 @@ func lock(value, cameraPath):
 		cameraPath = ""
 	setRemoteTransformPath(cameraPath)
 	locked = value
+
+func collect(resType = Global.PlayerResourceType.LEAVES, amount = 1):
+	get_parent().collectResource(resType, amount)

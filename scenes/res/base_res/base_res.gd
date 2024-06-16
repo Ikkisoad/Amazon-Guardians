@@ -58,5 +58,6 @@ func getHit(damage):
 	health -= damage
 	updateHUD()
 	if health <= 0:
+		get_parent().removeResource(resourceType)
 		queue_free()
 		return true

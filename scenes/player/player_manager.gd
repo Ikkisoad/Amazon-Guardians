@@ -5,11 +5,15 @@ extends Node2D
 @onready var cam_player = $camPlayer
 @onready var player_ui = $PlayerUI
 
+@export var leafAmount = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	cb_player.setRemoteTransformPath(cam_player.get_path())
-	player_ui.updateHUD(cb_player.health, cb_player_2.health)
+	updateHUD()
 
+func updateHUD():
+	player_ui.updateHUD(cb_player.health, cb_player_2.health, leafAmount)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -17,3 +21,10 @@ func _process(_delta):
 		var swap = cb_player.locked
 		cb_player_2.lock(swap, cam_player.get_path())
 		cb_player.lock(!swap, cam_player.get_path())
+
+func collectResource(resType = Global.PlayerResourceType.LEAVES, amount = 1):
+	match resType:
+		Global.PlayerResourceType.LEAVES:
+			leafAmount += amount
+			Log.print(str("Leaf collected ", amount))
+	updateHUD()

@@ -32,3 +32,7 @@ func countResource(group):
 func countResources():
 	treeCount = countResource("tree")
 	
+func removeResource(resType):
+	match resType:
+		Global.ResourceType.TREE:
+			treeCount -= 1

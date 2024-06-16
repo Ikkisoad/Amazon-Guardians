@@ -1,6 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://vp83c8184gjs"]
+[gd_scene load_steps=5 format=3 uid="uid://vp83c8184gjs"]
 
 [ext_resource type="Script" path="res://scenes/player/UI/player_ui.gd" id="1_oonwr"]
+[ext_resource type="Texture2D" uid="uid://dmwh6d4x1bmwy" path="res://Assets/sprites/leaves/tree bushes.png" id="2_q25qi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vj2pi"]
+atlas = ExtResource("2_q25qi")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7cfhj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vj2pi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="PlayerUI" type="Control"]
 layout_mode = 3
@@ -33,3 +49,15 @@ offset_bottom = 160.0
 max_value = 1000.0
 value = 500.0
 show_percentage = false
+
+[node name="lblLeafAmount" type="Label" parent="clPlayerUI"]
+offset_left = 1809.0
+offset_top = 40.0
+offset_right = 1849.0
+offset_bottom = 109.0
+theme_override_font_sizes/font_size = 50
+text = "5"
+
+[node name="asprLeaf" type="AnimatedSprite2D" parent="clPlayerUI"]
+position = Vector2(1769, 80)
+sprite_frames = SubResource("SpriteFrames_7cfhj")
