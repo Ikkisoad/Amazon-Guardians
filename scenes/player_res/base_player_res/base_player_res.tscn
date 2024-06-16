@@ -32,6 +32,7 @@ sprite_frames = SubResource("SpriteFrames_ybdxa")
 frame_progress = 0.682155
 
 [node name="tmrBasePlayerResource" type="Timer" parent="."]
+wait_time = 80.0
 
 [node name="csBasePlayerResource" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ag4p1")

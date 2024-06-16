@@ -9,8 +9,8 @@ extends Node2D
 var playerResourceScene
 var playerResource
 
-@export var tmrResourceMin = 100
-@export var tmrResourceMax = 500
+@export var tmrResourceMin = 25
+@export var tmrResourceMax = 100
 @export var tmrMinHealthRegen = 5
 @export var tmrMaxHealthRegen = 10
 @export var minHealthRegen = 1

@@ -30,6 +30,7 @@ modulate = Color(1, 0.0509804, 0, 1)
 sprite_frames = SubResource("SpriteFrames_61wge")
 
 [node name="a2EnemyDetector" type="Area2D" parent="."]
+collision_layer = 0
 collision_mask = 513
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="a2EnemyDetector"]

@@ -33,6 +33,7 @@ animations = [{
 }]
 
 [node name="BaseTrap" type="Area2D"]
+collision_mask = 257
 script = ExtResource("1_2y7l8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -44,4 +45,5 @@ wait_time = 5.0
 one_shot = true
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="TrapTimer" to="." method="_on_trap_timer_timeout"]

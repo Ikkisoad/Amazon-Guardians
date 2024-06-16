@@ -14,12 +14,19 @@ func _ready() -> void:
 
 
 func _on_area_entered(area: Area2D) -> void:
-	if trap_timer.is_stopped() && area.get_parent().is_in_group("enemy"):
-		animated_sprite_2d.play()
-		if area.get_parent().has_method("getHit"):
-			area.get_parent().getHit(damage)
-		trap_timer.start()
-
+	hitBodyArea(area)
 func _on_trap_timer_timeout() -> void:
 	#reset the frame back to 0
 	animated_sprite_2d.frame = DEFAULT_FRAME
+
+
+func _on_body_entered(body):
+	hitBodyArea(body)
+
+func hitBodyArea(area):
+	if trap_timer.is_stopped() && area.is_in_group("enemy"):
+		animated_sprite_2d.play()
+		if area.has_method("getHit"):
+			area.getHit(damage)
+		trap_timer.start()
+	

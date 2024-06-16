@@ -26,11 +26,10 @@ value = 500.0
 show_percentage = false
 
 [node name="pbPlayerUI2" type="ProgressBar" parent="clPlayerUI"]
-offset_left = 1152.0
-offset_top = 32.0
-offset_right = 1900.0
-offset_bottom = 88.0
+offset_left = 32.0
+offset_top = 104.0
+offset_right = 780.0
+offset_bottom = 160.0
 max_value = 1000.0
 value = 500.0
-fill_mode = 1
 show_percentage = false

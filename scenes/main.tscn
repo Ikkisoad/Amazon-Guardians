@@ -12,20 +12,14 @@
 [node name="WoodTrap" parent="." instance=ExtResource("2_kcd3x")]
 z_index = 1
 position = Vector2(1023, 461)
-damage = 500
-trapType = 0
 
 [node name="WoodTrap2" parent="." instance=ExtResource("2_kcd3x")]
 z_index = 1
 position = Vector2(1087, 461)
-damage = 500
-trapType = 0
 
 [node name="WoodTrap3" parent="." instance=ExtResource("2_kcd3x")]
 z_index = 1
 position = Vector2(1153, 461)
-damage = 500
-trapType = 0
 
 [node name="debugger" parent="." instance=ExtResource("3_oa7ly")]
 

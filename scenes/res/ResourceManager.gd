@@ -15,9 +15,11 @@ func _ready():
 
 func spawnTree(globalPos):
 	if treeCount > maxTrees: return
+	var facing = randi_range(0,1)
+	if facing == 0: facing = -1
 	var newTree = treeRes.instantiate()
 	add_child(newTree)
-	newTree.global_position = Vector2(globalPos.x + randi_range(minNewXPos, maxNewXPos), treeYPos)
+	newTree.global_position = Vector2(globalPos.x + randi_range(minNewXPos, maxNewXPos) * facing, treeYPos)
 	treeCount += 1
 
 func countResource(group):
