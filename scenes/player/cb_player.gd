@@ -11,6 +11,8 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @export var locked = false
 @export var health = 1000
 
+@export var woodTrapCost = 3
+
 @onready var animated_sprite_2d = $AnimatedSprite2D
 
 var selectedTrapType = Global.TrapType.WOOD
@@ -52,20 +54,28 @@ func handleInputs():
 	else:
 		walkStop()
 	if Input.is_action_just_pressed("trap"):
-		spawnHoldTrap()
+		spawnTrap()
 
 func flip(dir):
 	scale.x = -1
 	facing = dir
 
+func spawnTrap():
+	match get_parent().trapTypeSelected:
+		Global.TrapType.WOOD:
+			spawnHoldTrap()
+
 func spawnHoldTrap():
-	var newTrap
-	var newTrapPos
-	if selectedTrapType == Global.TrapType.WOOD:
-		newTrap = WOOD_TRAP.instantiate()
-		newTrapPos = 120#Vector2(120,0)
-	get_parent().add_child(newTrap)
-	newTrap.global_position.x = global_position.x + newTrapPos * facing
+	if woodTrapCost <= get_parent().leafAmount:
+		var newTrap
+		var newTrapPos
+		if selectedTrapType == Global.TrapType.WOOD:
+			newTrap = WOOD_TRAP.instantiate()
+			newTrapPos = 120#Vector2(120,0)
+		get_parent().add_child(newTrap)
+		newTrap.global_position.x = global_position.x + newTrapPos * facing
+		get_parent().leafAmount -= woodTrapCost
+		get_parent().updateHUD()
 
 func walkStop():
 	velocity.x = move_toward(velocity.x, 0, SPEED)

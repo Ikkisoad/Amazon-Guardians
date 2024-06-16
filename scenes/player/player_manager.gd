@@ -6,6 +6,7 @@ extends Node2D
 @onready var player_ui = $PlayerUI
 
 @export var leafAmount = 0
+var trapTypeSelected = Global.TrapType.WOOD
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
