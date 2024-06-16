@@ -63,9 +63,9 @@ func spawnHoldTrap():
 	var newTrapPos
 	if selectedTrapType == Global.TrapType.WOOD:
 		newTrap = WOOD_TRAP.instantiate()
-		newTrapPos = Vector2(120,0)
+		newTrapPos = 120#Vector2(120,0)
 	get_parent().add_child(newTrap)
-	newTrap.global_position = global_position + newTrapPos * facing
+	newTrap.global_position.x = global_position.x + newTrapPos * facing
 
 func walkStop():
 	velocity.x = move_toward(velocity.x, 0, SPEED)

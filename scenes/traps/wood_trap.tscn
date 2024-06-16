@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://cecu0ryqrwf3q"]
+[gd_scene load_steps=4 format=3 uid="uid://cecu0ryqrwf3q"]
 
 [ext_resource type="PackedScene" uid="uid://c50i37hw6jvgy" path="res://scenes/traps/base_trap.tscn" id="1_20hyk"]
+[ext_resource type="Script" path="res://scenes/traps/wood_trap.gd" id="2_6jrh1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wv8ma"]
 size = Vector2(66, 61)
 
 [node name="WoodTrap" instance=ExtResource("1_20hyk")]
 collision_layer = 2
+script = ExtResource("2_6jrh1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
 position = Vector2(0, 32.5)

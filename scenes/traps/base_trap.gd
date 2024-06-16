@@ -1,9 +1,10 @@
 extends Area2D
-
+class_name BaseTrap
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var trap_timer: Timer = $TrapTimer
 @export var damage = 500
+@export var trapType = Global.TrapType.WOOD
 
 const DEFAULT_FRAME = 0
 
