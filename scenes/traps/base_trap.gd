@@ -13,7 +13,7 @@ func _ready() -> void:
 
 
 func _on_area_entered(area: Area2D) -> void:
-	if trap_timer.is_stopped():
+	if trap_timer.is_stopped() && area.get_parent().is_in_group("enemy"):
 		animated_sprite_2d.play()
 		if area.get_parent().has_method("getHit"):
 			area.get_parent().getHit(damage)
