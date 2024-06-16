@@ -5,8 +5,10 @@ extends Node2D
 @onready var cam_player = $camPlayer
 @onready var player_ui = $PlayerUI
 
+@export var resourceManager:Node2D
 @export var leafAmount = 0
 var trapTypeSelected = Global.TrapType.WOOD
+var resourceTypeSelected = Global.ResourceType.TREE
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -29,3 +31,8 @@ func collectResource(resType = Global.PlayerResourceType.LEAVES, amount = 1):
 			leafAmount += amount
 			Log.print(str("Leaf collected ", amount))
 	updateHUD()
+
+func spawnResource(globalPos):
+	match resourceTypeSelected:
+		Global.ResourceType.TREE:
+			resourceManager.spawnTree(globalPos)

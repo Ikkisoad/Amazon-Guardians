@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://vp83c8184gjs"]
+[gd_scene load_steps=7 format=3 uid="uid://vp83c8184gjs"]
 
 [ext_resource type="Script" path="res://scenes/player/UI/player_ui.gd" id="1_oonwr"]
 [ext_resource type="Texture2D" uid="uid://dmwh6d4x1bmwy" path="res://Assets/sprites/leaves/tree bushes.png" id="2_q25qi"]
+[ext_resource type="Texture2D" uid="uid://8s7lejkpdj6h" path="res://Assets/sprites/tree/tree.png" id="3_gooqp"]
+[ext_resource type="Texture2D" uid="uid://crloerh1g55ly" path="res://Assets/traps/woodTrap/small_wood_spike_04.png" id="4_3klkd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vj2pi"]
 atlas = ExtResource("2_q25qi")
@@ -61,3 +63,13 @@ text = "5"
 [node name="asprLeaf" type="AnimatedSprite2D" parent="clPlayerUI"]
 position = Vector2(1769, 80)
 sprite_frames = SubResource("SpriteFrames_7cfhj")
+
+[node name="sprRes" type="Sprite2D" parent="clPlayerUI"]
+position = Vector2(1696, 1013)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_gooqp")
+
+[node name="sprTrap" type="Sprite2D" parent="clPlayerUI"]
+position = Vector2(1824, 1032)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_3klkd")

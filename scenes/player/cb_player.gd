@@ -55,10 +55,15 @@ func handleInputs():
 		walkStop()
 	if Input.is_action_just_pressed("trap"):
 		spawnTrap()
+	if Input.is_action_just_pressed("setResource"):
+		spawnResource()
 
 func flip(dir):
 	scale.x = -1
 	facing = dir
+
+func spawnResource():
+	get_parent().spawnResource(global_position)
 
 func spawnTrap():
 	match get_parent().trapTypeSelected:
