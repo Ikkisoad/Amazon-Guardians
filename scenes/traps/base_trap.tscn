@@ -37,12 +37,21 @@ collision_mask = 257
 script = ExtResource("1_2y7l8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_om3gw")
 animation = &"woodTrap"
 
 [node name="TrapTimer" type="Timer" parent="."]
 wait_time = 5.0
 one_shot = true
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -32.0
+offset_top = 72.0
+offset_right = 32.0
+offset_bottom = 80.0
+value = 50.0
+show_percentage = false
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
