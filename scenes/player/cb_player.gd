@@ -9,6 +9,8 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var tmr_jump_buffer = $tmrJumpBuffer
 @onready var rt_player = $rtPlayer
 @export var locked = false
+@export var health = 1000
+
 @onready var animated_sprite_2d = $AnimatedSprite2D
 
 var selectedTrapType = Global.TrapType.WOOD

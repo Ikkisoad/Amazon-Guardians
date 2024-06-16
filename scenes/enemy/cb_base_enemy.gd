@@ -87,3 +87,9 @@ func _on_a_2_enemy_detector_area_exited(area):
 
 func updateHUD():
 	pb_enemy.value = health
+
+func getHit(dmg):
+	health -= dmg
+	updateHUD()
+	if health <= 0:
+		queue_free()

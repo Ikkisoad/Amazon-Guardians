@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://vp83c8184gjs"]
+[gd_scene load_steps=2 format=3 uid="uid://vp83c8184gjs"]
+
+[ext_resource type="Script" path="res://scenes/player/UI/player_ui.gd" id="1_oonwr"]
 
 [node name="PlayerUI" type="Control"]
 layout_mode = 3
@@ -9,6 +11,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
+script = ExtResource("1_oonwr")
 
 [node name="clPlayerUI" type="CanvasLayer" parent="."]
 

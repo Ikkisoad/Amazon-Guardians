@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://85ho1813kvpx"]
+[gd_scene load_steps=4 format=3 uid="uid://85ho1813kvpx"]
 
 [ext_resource type="Script" path="res://scenes/player/player_manager.gd" id="1_gs8ye"]
 [ext_resource type="PackedScene" uid="uid://cpeigalq6ps85" path="res://scenes/player/cb_player.tscn" id="1_n8w7f"]
+[ext_resource type="PackedScene" uid="uid://vp83c8184gjs" path="res://scenes/player/UI/player_ui.tscn" id="3_mvbqc"]
 
 [node name="PlayerManager" type="Node2D"]
 script = ExtResource("1_gs8ye")
@@ -14,3 +15,5 @@ locked = true
 
 [node name="camPlayer" type="Camera2D" parent="."]
 limit_bottom = 655
+
+[node name="PlayerUI" parent="." instance=ExtResource("3_mvbqc")]
