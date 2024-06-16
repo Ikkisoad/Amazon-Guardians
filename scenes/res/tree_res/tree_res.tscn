@@ -6,6 +6,7 @@
 size = Vector2(48, 192)
 
 [node name="TreeResource" groups=["tree"] instance=ExtResource("1_l4j12")]
+scale = Vector2(5, 5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="a2dResource" index="0"]
 shape = SubResource("RectangleShape2D_csptq")
