@@ -44,6 +44,9 @@ func setPlayerResource():
 		Global.ResourceType.TREE:
 			playerResourceScene = preload("res://scenes/player_res/leaves/leaves.tscn")
 			playerResource = Global.PlayerResourceType.LEAVES
+		Global.ResourceType.CAVE:
+			playerResourceScene = preload("res://scenes/player_res/stones/stone.tscn")
+			playerResource = Global.PlayerResourceType.STONES
 
 
 func _on_tmr_health_regen_timeout():

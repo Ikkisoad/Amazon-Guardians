@@ -3,8 +3,8 @@ extends RigidBody2D
 
 @export var tmrDespawnMin = 60
 @export var tmrDespawnMax = 110
-@export var amount = 5
-var playerResourceType = Global.PlayerResourceType.LEAVES
+@export var amount = 2
+@export var playerResourceType = Global.PlayerResourceType.LEAVES
 
 var resourceScene
 #var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")

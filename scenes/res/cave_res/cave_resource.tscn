@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://chlxpj454s7h5"]
+
+[ext_resource type="PackedScene" uid="uid://bwsy83o5lf5fh" path="res://scenes/res/base_res/base_res.tscn" id="1_bhh3j"]
+
+[node name="CaveResource" instance=ExtResource("1_bhh3j")]
+scale = Vector2(2.5, 2.5)
+resourceType = 1
+
+[node name="Sprite2D" parent="." index="2"]
+modulate = Color(0.286275, 0.572549, 0.894118, 1)

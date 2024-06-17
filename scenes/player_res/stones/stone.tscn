@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgjbffg7ily8f"]
+
+[ext_resource type="PackedScene" uid="uid://bot5k4oc4qdro" path="res://scenes/player_res/base_player_res/base_player_res.tscn" id="1_mljv1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w1yyp"]
+size = Vector2(32, 32)
+
+[node name="Stone" instance=ExtResource("1_mljv1")]
+playerResourceType = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="a2dBasePlayerResource" index="0"]
+shape = SubResource("RectangleShape2D_w1yyp")
+debug_color = Color(3.7542e-06, 0.645137, 0.26653, 0.42)
+
+[node name="asprBasePlayerResource" parent="." index="1"]
+modulate = Color(1, 0.239216, 1, 1)

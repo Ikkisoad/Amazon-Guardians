@@ -7,6 +7,7 @@ extends Node2D
 
 @export var resourceManager:Node2D
 @export var leafAmount = 0
+@export var stoneAmount = 0
 var trapTypeSelected = Global.TrapType.WOOD
 var resourceTypeSelected = Global.ResourceType.TREE
 
@@ -16,7 +17,7 @@ func _ready():
 	updateHUD()
 
 func updateHUD():
-	player_ui.updateHUD(cb_player.health, cb_player_2.health, leafAmount)
+	player_ui.updateHUD(cb_player.health, cb_player_2.health, leafAmount, stoneAmount)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -30,9 +31,19 @@ func collectResource(resType = Global.PlayerResourceType.LEAVES, amount = 1):
 		Global.PlayerResourceType.LEAVES:
 			leafAmount += amount
 			Log.print(str("Leaf collected ", amount))
+		Global.PlayerResourceType.STONES:
+			stoneAmount += amount
+			Log.print(str("Stone collected ", amount))
 	updateHUD()
 
 func spawnResource(globalPos):
 	match resourceTypeSelected:
 		Global.ResourceType.TREE:
 			resourceManager.spawnTree(globalPos)
+
+func changeSelectedResource():
+	if resourceTypeSelected == Global.ResourceType.TREE:
+		resourceTypeSelected = Global.ResourceType.CAVE
+	else:
+		resourceTypeSelected = Global.ResourceType.TREE
+	player_ui.changeSelectedResource(resourceTypeSelected)

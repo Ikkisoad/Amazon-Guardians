@@ -57,6 +57,8 @@ func handleInputs():
 		spawnTrap()
 	if Input.is_action_just_pressed("setResource"):
 		spawnResource()
+	if Input.is_action_just_pressed("changeSelectedResource"):
+		get_parent().changeSelectedResource()
 
 func flip(dir):
 	scale.x = -1
