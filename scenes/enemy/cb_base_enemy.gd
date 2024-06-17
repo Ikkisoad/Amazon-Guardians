@@ -17,6 +17,8 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var cs_attack = $a2EnemyAttack/csAttack
 var resource
 
+
+
 func _ready():
 	updateHUD()
 	if facing == -1:
@@ -49,7 +51,7 @@ func _on_a_2_enemy_detector_body_entered(body):
 		stop = true
 
 func _on_a_2_enemy_detector_area_entered(area):
-	if area.get_parent().is_in_group("resource"):
+	if area.get_parent().is_in_group("resource") || area.get_parent().is_in_group("player"):
 		stop = true
 		startAttacking()
 
@@ -72,8 +74,11 @@ func _on_a_2_enemy_attack_area_entered(area):
 	if area.get_parent().is_in_group("resource"):
 		if area.get_parent().has_method("getHit"):
 			if area.get_parent().getHit(randi_range(10,25)):
-				returnToBase()
-
+				returnToBase()		
+	
+	if area.get_parent().is_in_group("player"):
+		AttackPlayer(800)#fictional number
+		
 func returnToBase():
 	cs_attack.set_deferred("disabled", true)
 	facing = facing * -1
@@ -93,3 +98,7 @@ func getHit(dmg):
 	updateHUD()
 	if health <= 0:
 		queue_free()
+
+func AttackPlayer(damageAmount : int) -> void:
+	attacking = true
+	Global.onPlayerAttack.emit(damageAmount)

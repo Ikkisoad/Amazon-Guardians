@@ -104,7 +104,7 @@ _data = {
 "walking": SubResource("Animation_385es")
 }
 
-[node name="cbPlayer" type="CharacterBody2D"]
+[node name="cbPlayer" type="CharacterBody2D" groups=["player"]]
 collision_mask = 4
 script = ExtResource("1_lypal")
 

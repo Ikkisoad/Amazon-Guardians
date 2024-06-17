@@ -18,6 +18,9 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var selectedTrapType = Global.TrapType.WOOD
 var facing = 1
 
+func _ready() -> void:
+	Global.onPlayerAttack.connect(OnDamaged)
+
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
@@ -28,6 +31,7 @@ func _physics_process(delta):
 	else:
 		walkStop()
 	move_and_slide()
+	
 
 func jump():
 	velocity.y = JUMP_VELOCITY
@@ -101,3 +105,10 @@ func lock(value, cameraPath):
 
 func collect(resType = Global.PlayerResourceType.LEAVES, amount = 1):
 	get_parent().collectResource(resType, amount)
+
+func OnDamaged(damageTaken : int) -> void:
+	if health > 0:
+		health -= damageTaken
+	else:
+		hide()
+		queue_free()
