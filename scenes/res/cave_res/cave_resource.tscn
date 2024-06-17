@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bwsy83o5lf5fh" path="res://scenes/res/base_res/base_res.tscn" id="1_bhh3j"]
 
-[node name="CaveResource" instance=ExtResource("1_bhh3j")]
+[node name="CaveResource" groups=["cave"] instance=ExtResource("1_bhh3j")]
 scale = Vector2(2.5, 2.5)
 resourceType = 1
 

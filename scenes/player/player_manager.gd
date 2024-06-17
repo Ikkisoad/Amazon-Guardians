@@ -40,6 +40,8 @@ func spawnResource(globalPos):
 	match resourceTypeSelected:
 		Global.ResourceType.TREE:
 			resourceManager.spawnTree(globalPos)
+		Global.ResourceType.CAVE:
+			resourceManager.spawnCave(globalPos)
 
 func changeSelectedResource():
 	if resourceTypeSelected == Global.ResourceType.TREE:
