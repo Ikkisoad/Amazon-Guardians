@@ -14,15 +14,14 @@ const DEFAULT_FRAME = 0
 func _ready() -> void:
 	updateHUD()
 
-
 func _on_area_entered(area: Area2D) -> void:
 	hitBodyArea(area)
+
 func _on_trap_timer_timeout() -> void:
 	#reset the frame back to 0
 	animated_sprite_2d.frame = DEFAULT_FRAME
 	if health <= 0:
 		queue_free()
-
 
 func _on_body_entered(body):
 	hitBodyArea(body)

@@ -125,4 +125,5 @@ func CheckPlayerStatus() -> void:
 		hide()
 		queue_free()
 		#stop running the process funcion/physics engine
+		#this is useless right? Considering it was just freed from the tree... I guess you are trying to prevent it from processing in this exact frame it was freed on
 		set_process(false)

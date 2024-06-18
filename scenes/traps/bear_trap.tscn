@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctqh8ri55sf5c"]
+
+[ext_resource type="PackedScene" uid="uid://c50i37hw6jvgy" path="res://scenes/traps/base_trap.tscn" id="1_adgh5"]
+[ext_resource type="Script" path="res://scenes/traps/bear_trap.gd" id="2_gbo6p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_viysy"]
+size = Vector2(80, 24)
+
+[node name="BearTrap" instance=ExtResource("1_adgh5")]
+script = ExtResource("2_gbo6p")
+damage = 500000
+trapType = 1
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+modulate = Color(0.0907169, 0.584208, 0.829538, 1)
+frame = 2
+frame_progress = 0.205871
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
+position = Vector2(0, 52)
+shape = SubResource("RectangleShape2D_viysy")
+debug_color = Color(0.872755, 0, 0.263276, 0.42)

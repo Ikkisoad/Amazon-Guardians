@@ -1,6 +1,5 @@
 [gd_scene load_steps=10 format=3 uid="uid://dsdx64qq5lk44"]
 
-[ext_resource type="PackedScene" uid="uid://cecu0ryqrwf3q" path="res://scenes/traps/wood_trap.tscn" id="2_kcd3x"]
 [ext_resource type="PackedScene" uid="uid://i4ewk0kd4tbe" path="res://scenes/system/debugger.tscn" id="3_oa7ly"]
 [ext_resource type="PackedScene" uid="uid://c4elcp35wq18e" path="res://scenes/tile_map/tile_map.tscn" id="4_m70y3"]
 [ext_resource type="PackedScene" uid="uid://85ho1813kvpx" path="res://scenes/player/player_manager.tscn" id="4_pnr2r"]
@@ -9,20 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://be782rih0dbuy" path="res://scenes/enemy/spawner/enemy_spawner_base.tscn" id="7_huaeu"]
 [ext_resource type="Texture2D" uid="uid://b2ah0rcp85kuv" path="res://Assets/backgrounds/Castlevania-esque Background4.png" id="8_2ivo4"]
 [ext_resource type="PackedScene" uid="uid://ctis270b7aaso" path="res://scenes/one_way_platform/base_one_way_platform.tscn" id="9_5xqfn"]
+[ext_resource type="PackedScene" uid="uid://ctqh8ri55sf5c" path="res://scenes/traps/bear_trap.tscn" id="10_8t0w1"]
 
 [node name="Main" type="Node2D"]
-
-[node name="WoodTrap" parent="." instance=ExtResource("2_kcd3x")]
-z_index = 1
-position = Vector2(1023, 461)
-
-[node name="WoodTrap2" parent="." instance=ExtResource("2_kcd3x")]
-z_index = 1
-position = Vector2(1087, 461)
-
-[node name="WoodTrap3" parent="." instance=ExtResource("2_kcd3x")]
-z_index = 1
-position = Vector2(1153, 461)
 
 [node name="debugger" parent="." instance=ExtResource("3_oa7ly")]
 
@@ -34,11 +22,11 @@ position = Vector2(530, 252)
 resourceManager = NodePath("../ResourceManager")
 
 [node name="EnemySpawnerBase2" parent="." instance=ExtResource("7_huaeu")]
-position = Vector2(1684, 461)
+position = Vector2(2739, 440)
 facing = -1
 
 [node name="EnemySpawnerBase" parent="." instance=ExtResource("7_huaeu")]
-position = Vector2(-720, 440)
+position = Vector2(-1732, 440)
 
 [node name="ResourceManager" parent="." instance=ExtResource("6_xunr0")]
 treeYPos = 32
@@ -106,5 +94,8 @@ position = Vector2(0, 1041)
 
 [node name="baseOneWayPlatform8" parent="baseOneWayPlatform" instance=ExtResource("9_5xqfn")]
 position = Vector2(0, 1199)
+
+[node name="BearTrap" parent="." instance=ExtResource("10_8t0w1")]
+position = Vector2(2240, 440)
 
 [editable path="ResourceManager"]
