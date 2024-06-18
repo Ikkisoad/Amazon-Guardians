@@ -1,7 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://vp83c8184gjs"]
+[gd_scene load_steps=14 format=3 uid="uid://vp83c8184gjs"]
 
 [ext_resource type="Script" path="res://scenes/player/UI/player_ui.gd" id="1_oonwr"]
+[ext_resource type="StyleBox" uid="uid://dmnpqeyemqipp" path="res://scenes/player/UI/playerHealthFill.tres" id="2_65e3d"]
 [ext_resource type="Texture2D" uid="uid://dmwh6d4x1bmwy" path="res://Assets/sprites/leaves/tree bushes.png" id="2_q25qi"]
+[ext_resource type="StyleBox" uid="uid://c3idycnfcja4x" path="res://scenes/player/UI/PlayerHealthActualFill.tres" id="3_8rk0r"]
 [ext_resource type="Texture2D" uid="uid://8s7lejkpdj6h" path="res://Assets/sprites/tree/tree.png" id="3_gooqp"]
 [ext_resource type="Texture2D" uid="uid://crloerh1g55ly" path="res://Assets/traps/woodTrap/small_wood_spike_04.png" id="4_3klkd"]
 [ext_resource type="Texture2D" uid="uid://bj3sds4vuxkfl" path="res://Assets/sprites/cave/cave.png" id="5_iicrm"]
@@ -78,20 +80,23 @@ script = ExtResource("1_oonwr")
 [node name="clPlayerUI" type="CanvasLayer" parent="."]
 
 [node name="pbPlayerUI" type="ProgressBar" parent="clPlayerUI"]
-custom_minimum_size = Vector2(50, 50)
-offset_left = 32.0
-offset_top = 32.0
-offset_right = 780.0
-offset_bottom = 88.0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 772.0
+offset_bottom = 48.0
+theme_override_styles/background = ExtResource("2_65e3d")
+theme_override_styles/fill = ExtResource("3_8rk0r")
 max_value = 1000.0
 value = 500.0
 show_percentage = false
 
 [node name="pbPlayerUI2" type="ProgressBar" parent="clPlayerUI"]
-offset_left = 32.0
-offset_top = 104.0
-offset_right = 780.0
-offset_bottom = 160.0
+offset_left = 24.0
+offset_top = 56.0
+offset_right = 772.0
+offset_bottom = 80.0
+theme_override_styles/background = ExtResource("2_65e3d")
+theme_override_styles/fill = ExtResource("3_8rk0r")
 max_value = 1000.0
 value = 500.0
 show_percentage = false
