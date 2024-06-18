@@ -14,6 +14,7 @@ var resourceTypeSelected = Global.ResourceType.TREE
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	cb_player.setRemoteTransformPath(cam_player.get_path())
+	Global.onPlayerAttack.connect(OnPlayerHit)
 	updateHUD()
 
 func updateHUD():
@@ -49,3 +50,6 @@ func changeSelectedResource():
 	else:
 		resourceTypeSelected = Global.ResourceType.TREE
 	player_ui.changeSelectedResource(resourceTypeSelected)
+
+func OnPlayerHit(damageTaken : int):
+	updateHUD()

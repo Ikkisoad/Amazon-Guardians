@@ -22,6 +22,11 @@ var isDead = false
 func _ready() -> void:
 	Global.onPlayerAttack.connect(OnDamaged)
 
+func _process(delta: float) -> void:
+	#just to explain here i'm using only using _process to check UI stuffs and player stats
+	#, so it does not get mixed with the physics
+	CheckPlayerStatus()
+
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
@@ -111,8 +116,11 @@ func OnDamaged(damageTaken : int) -> void:
 	if health > 0:
 		health -= damageTaken
 		isDead = false
-	else:
+
+func CheckPlayerStatus() -> void:
+	if health < 0:
 		isDead = true
 		hide()
 		queue_free()
-
+		#stop running the process funcion/physics engine
+		set_process(false)
