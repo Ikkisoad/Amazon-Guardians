@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctis270b7aaso"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uc0uv"]
+size = Vector2(288, 16)
+
+[node name="baseOneWayPlatform" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 0
+motion_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -144.0
+offset_right = 144.0
+offset_bottom = 24.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_uc0uv")
+one_way_collision = true

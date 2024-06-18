@@ -69,6 +69,8 @@ func handleInputs():
 		spawnResource()
 	if Input.is_action_just_pressed("changeSelectedResource"):
 		get_parent().changeSelectedResource()
+	if is_on_floor() && Input.get_axis("down", "up") == -1:
+		global_position.y += 1
 
 func flip(dir):
 	scale.x = -1

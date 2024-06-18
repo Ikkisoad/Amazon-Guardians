@@ -30,8 +30,9 @@ func startDespawnTimer():
 
 
 func _on_a_2d_base_player_resource_body_entered(body):
-	body.collect(playerResourceType, amount)
-	queue_free()
+	if body.has_method("collect"):
+		body.collect(playerResourceType, amount)
+		queue_free()
 
 #func setResourceScene():
 	#match playerResourceType:
