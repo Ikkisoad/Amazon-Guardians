@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b6wq88nnrif8p"
-path="res://.godot/imported/croc_attack.png-489e72cbfebe3a84d35fe2422843e662.ctex"
+path="res://.godot/imported/croc_attack.png-ba161cbcb5a8bebd79e2535269ea18c8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/crocodile_trap/croc_attack.png"
-dest_files=["res://.godot/imported/croc_attack.png-489e72cbfebe3a84d35fe2422843e662.ctex"]
+source_file="res://Assets/traps/crocodile_trap/croc_attack.png"
+dest_files=["res://.godot/imported/croc_attack.png-ba161cbcb5a8bebd79e2535269ea18c8.ctex"]
 
 [params]
 

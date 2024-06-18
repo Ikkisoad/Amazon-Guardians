@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scenes/traps/bear_trap.gd" id="2_gbo6p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_viysy"]
-size = Vector2(80, 24)
+size = Vector2(80, 80)
 
 [node name="BearTrap" instance=ExtResource("1_adgh5")]
 script = ExtResource("2_gbo6p")
@@ -17,6 +17,6 @@ frame = 2
 frame_progress = 0.205871
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
-position = Vector2(0, 52)
+position = Vector2(0, 24)
 shape = SubResource("RectangleShape2D_viysy")
 debug_color = Color(0.872755, 0, 0.263276, 0.42)

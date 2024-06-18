@@ -51,5 +51,12 @@ func changeSelectedResource():
 		resourceTypeSelected = Global.ResourceType.TREE
 	player_ui.changeSelectedResource(resourceTypeSelected)
 
+func changeSelectedTrap():
+	if trapTypeSelected == Global.TrapType.WOOD:
+		trapTypeSelected = Global.TrapType.BEAR
+	else:
+		trapTypeSelected = Global.TrapType.WOOD
+	player_ui.changeSelectedTrap(trapTypeSelected)
+
 func OnPlayerHit(damageTaken : int):
 	updateHUD()

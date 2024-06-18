@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dsdx64qq5lk44"]
+[gd_scene load_steps=11 format=3 uid="uid://dsdx64qq5lk44"]
 
 [ext_resource type="PackedScene" uid="uid://i4ewk0kd4tbe" path="res://scenes/system/debugger.tscn" id="3_oa7ly"]
 [ext_resource type="PackedScene" uid="uid://c4elcp35wq18e" path="res://scenes/tile_map/tile_map.tscn" id="4_m70y3"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b2ah0rcp85kuv" path="res://Assets/backgrounds/Castlevania-esque Background4.png" id="8_2ivo4"]
 [ext_resource type="PackedScene" uid="uid://ctis270b7aaso" path="res://scenes/one_way_platform/base_one_way_platform.tscn" id="9_5xqfn"]
 [ext_resource type="PackedScene" uid="uid://ctqh8ri55sf5c" path="res://scenes/traps/bear_trap.tscn" id="10_8t0w1"]
+[ext_resource type="Texture2D" uid="uid://cxhhj77yyyfl3" path="res://Assets/backgrounds/Castlevania-esque Background1.png" id="10_tnriy"]
 
 [node name="Main" type="Node2D"]
 
@@ -20,6 +21,8 @@ layer_0/tile_data = PackedInt32Array(2097223, 0, 16, 2031687, 196608, 18, 209722
 [node name="PlayerManager" parent="." node_paths=PackedStringArray("resourceManager") instance=ExtResource("4_pnr2r")]
 position = Vector2(530, 252)
 resourceManager = NodePath("../ResourceManager")
+leafAmount = 500
+stoneAmount = 500
 
 [node name="EnemySpawnerBase2" parent="." instance=ExtResource("7_huaeu")]
 position = Vector2(2739, 440)
@@ -97,5 +100,16 @@ position = Vector2(0, 1199)
 
 [node name="BearTrap" parent="." instance=ExtResource("10_8t0w1")]
 position = Vector2(2240, 440)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(640, 640)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(507, -25)
+texture = ExtResource("10_tnriy")
+centered = false
 
 [editable path="ResourceManager"]

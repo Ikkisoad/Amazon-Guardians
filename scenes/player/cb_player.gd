@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 const WOOD_TRAP = preload("res://scenes/traps/wood_trap.tscn")
+const BEAR_TRAP = preload("res://scenes/traps/bear_trap.tscn")
 const SPEED = 650.0
 const JUMP_VELOCITY = -800.0
 
@@ -12,6 +13,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @export var health = 1000
 
 @export var woodTrapCost = 3
+@export var bearTrapCost = 25
 
 @onready var animated_sprite_2d = $AnimatedSprite2D
 
@@ -63,14 +65,17 @@ func handleInputs():
 		animated_sprite_2d.play("walk")
 	else:
 		walkStop()
-	if Input.is_action_just_pressed("trap"):
-		spawnTrap()
-	if Input.is_action_just_pressed("setResource"):
-		spawnResource()
+	if is_on_floor():
+		if Input.is_action_just_pressed("trap"):
+			spawnTrap()
+		if Input.is_action_just_pressed("setResource"):
+			spawnResource()
+		if Input.get_axis("down", "up") == -1:
+			global_position.y += 1
 	if Input.is_action_just_pressed("changeSelectedResource"):
 		get_parent().changeSelectedResource()
-	if is_on_floor() && Input.get_axis("down", "up") == -1:
-		global_position.y += 1
+	if Input.is_action_just_pressed("changeSelectedTrap"):
+		get_parent().changeSelectedTrap()
 
 func flip(dir):
 	scale.x = -1
@@ -83,17 +88,29 @@ func spawnTrap():
 	match get_parent().trapTypeSelected:
 		Global.TrapType.WOOD:
 			spawnHoldTrap()
+		Global.TrapType.BEAR:
+			spawnBearTrap()
 
 func spawnHoldTrap():
 	if woodTrapCost <= get_parent().leafAmount:
 		var newTrap
 		var newTrapPos
-		if selectedTrapType == Global.TrapType.WOOD:
-			newTrap = WOOD_TRAP.instantiate()
-			newTrapPos = 120#Vector2(120,0)
+		newTrap = WOOD_TRAP.instantiate()
+		newTrapPos = Vector2(120 * facing, -25)
 		get_parent().add_child(newTrap)
-		newTrap.global_position.x = global_position.x + newTrapPos * facing
+		newTrap.global_position = global_position + newTrapPos
 		get_parent().leafAmount -= woodTrapCost
+		get_parent().updateHUD()
+
+func spawnBearTrap():
+	if bearTrapCost <= get_parent().stoneAmount:
+		var newTrap
+		var newTrapPos
+		newTrap = BEAR_TRAP.instantiate()
+		newTrapPos = Vector2(120 * facing, -25)
+		get_parent().add_child(newTrap)
+		newTrap.global_position = global_position + newTrapPos
+		get_parent().stoneAmount -= bearTrapCost
 		get_parent().updateHUD()
 
 func walkStop():
