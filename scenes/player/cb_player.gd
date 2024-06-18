@@ -17,6 +17,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var selectedTrapType = Global.TrapType.WOOD
 var facing = 1
+var isDead = false
 
 func _ready() -> void:
 	Global.onPlayerAttack.connect(OnDamaged)
@@ -109,6 +110,9 @@ func collect(resType = Global.PlayerResourceType.LEAVES, amount = 1):
 func OnDamaged(damageTaken : int) -> void:
 	if health > 0:
 		health -= damageTaken
+		isDead = false
 	else:
+		isDead = true
 		hide()
 		queue_free()
+

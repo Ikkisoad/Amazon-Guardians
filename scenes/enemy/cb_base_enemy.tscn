@@ -42,7 +42,7 @@ one_shot = true
 
 [node name="a2EnemyAttack" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 512
+collision_mask = 513
 
 [node name="csAttack" type="CollisionShape2D" parent="a2EnemyAttack"]
 position = Vector2(115, -15)

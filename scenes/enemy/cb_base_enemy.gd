@@ -18,7 +18,6 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var resource
 
 
-
 func _ready():
 	updateHUD()
 	if facing == -1:
@@ -43,6 +42,7 @@ func _physics_process(delta):
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		
 	move_and_slide()
 
 func _on_a_2_enemy_detector_body_entered(body):
@@ -54,6 +54,7 @@ func _on_a_2_enemy_detector_area_entered(area):
 	if area.get_parent().is_in_group("resource") || area.get_parent().is_in_group("player"):
 		stop = true
 		startAttacking()
+
 
 func startAttacking():
 	attacking = true
@@ -77,8 +78,10 @@ func _on_a_2_enemy_attack_area_entered(area):
 				returnToBase()		
 	
 	if area.get_parent().is_in_group("player"):
-		AttackPlayer(800)#fictional number
-		
+		if area.get_parent().has_method("OnDamaged"):
+			AttackPlayer(800)#fictional number
+			
+	
 func returnToBase():
 	cs_attack.set_deferred("disabled", true)
 	facing = facing * -1
