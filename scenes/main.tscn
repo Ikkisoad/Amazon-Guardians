@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dsdx64qq5lk44"]
+[gd_scene load_steps=12 format=3 uid="uid://dsdx64qq5lk44"]
 
 [ext_resource type="PackedScene" uid="uid://i4ewk0kd4tbe" path="res://scenes/system/debugger.tscn" id="3_oa7ly"]
 [ext_resource type="PackedScene" uid="uid://c4elcp35wq18e" path="res://scenes/tile_map/tile_map.tscn" id="4_m70y3"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ctis270b7aaso" path="res://scenes/one_way_platform/base_one_way_platform.tscn" id="9_5xqfn"]
 [ext_resource type="PackedScene" uid="uid://ctqh8ri55sf5c" path="res://scenes/traps/bear_trap.tscn" id="10_8t0w1"]
 [ext_resource type="Texture2D" uid="uid://cxhhj77yyyfl3" path="res://Assets/backgrounds/Castlevania-esque Background1.png" id="10_tnriy"]
+[ext_resource type="PackedScene" uid="uid://46s5j1mfb0d3" path="res://scenes/spawnBlocker/res_spawn_blocked_area.tscn" id="11_s4uhx"]
 
 [node name="Main" type="Node2D"]
 
@@ -110,5 +111,9 @@ motion_mirroring = Vector2(640, 640)
 position = Vector2(507, -25)
 texture = ExtResource("10_tnriy")
 centered = false
+
+[node name="resSpawnBlockedArea" parent="." instance=ExtResource("11_s4uhx")]
+position = Vector2(318, 181)
+scale = Vector2(45.5779, 179.67)
 
 [editable path="ResourceManager"]

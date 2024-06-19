@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://46s5j1mfb0d3"]
+
+[ext_resource type="Script" path="res://scenes/spawnBlocker/res_spawn_blocked_area.gd" id="1_758ck"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x2j2y"]
+
+[node name="resSpawnBlockedArea" type="Area2D"]
+script = ExtResource("1_758ck")
+
+[node name="csSpawnLocker" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_x2j2y")
+debug_color = Color(0.565789, 0.191958, 0.473064, 0.42)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

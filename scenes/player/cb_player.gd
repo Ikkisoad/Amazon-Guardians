@@ -20,6 +20,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var selectedTrapType = Global.TrapType.WOOD
 var facing = 1
 var isDead = false
+var spawnLocked = false
 
 func _ready() -> void:
 	Global.onPlayerAttack.connect(OnDamaged)
@@ -66,10 +67,11 @@ func handleInputs():
 	else:
 		walkStop()
 	if is_on_floor():
-		if Input.is_action_just_pressed("trap"):
-			spawnTrap()
-		if Input.is_action_just_pressed("setResource"):
-			spawnResource()
+		if !spawnLocked:
+			if Input.is_action_just_pressed("trap"):
+				spawnTrap()
+			if Input.is_action_just_pressed("setResource"):
+				spawnResource()
 		if Input.get_axis("down", "up") == -1:
 			global_position.y += 1
 	if Input.is_action_just_pressed("changeSelectedResource"):
