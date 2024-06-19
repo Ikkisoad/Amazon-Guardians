@@ -8,7 +8,8 @@ extends Node2D
 var treeCount = 0
 var caveCount = 0
 
-@export var treeYPos = 0
+var treeYPos = -500
+var caveYPos = -250
 
 var treeRes = preload("res://scenes/res/tree_res/tree_res.tscn")
 var caveRes = preload("res://scenes/res/cave_res/cave_resource.tscn")
@@ -16,22 +17,22 @@ var caveRes = preload("res://scenes/res/cave_res/cave_resource.tscn")
 func _ready():
 	countResources()
 
-func spawnTree(globalPos):
+func spawnTree(globalPos, facing = 1):
 	if treeCount > maxTrees: return
-	var facing = randi_range(0,1)
-	if facing == 0: facing = -1
 	var newTree = treeRes.instantiate()
 	add_child(newTree)
-	newTree.global_position = Vector2(globalPos.x + randi_range(minNewXPos, maxNewXPos) * facing, treeYPos)
+	var newResPos = Vector2(120 * facing, 15)
+	newTree.global_position = globalPos + newResPos
+	newTree.global_position.y += treeYPos
 	treeCount += 1
 
-func spawnCave(globalPos):
+func spawnCave(globalPos, facing = 1):
 	if caveCount > maxCaves: return
-	var facing = randi_range(0,1)
-	if facing == 0: facing = -1
 	var newCave = caveRes.instantiate()
 	add_child(newCave)
-	newCave.global_position = Vector2(globalPos.x + randi_range(minNewXPos, maxNewXPos) * facing, treeYPos)
+	var newResPos = Vector2(120 * facing, 15)
+	newCave.global_position = globalPos + newResPos
+	newCave.global_position.y += caveYPos
 	caveCount += 1
 
 func countResource(group):

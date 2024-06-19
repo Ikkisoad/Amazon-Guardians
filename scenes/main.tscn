@@ -32,7 +32,6 @@ facing = -1
 position = Vector2(-1732, 440)
 
 [node name="ResourceManager" parent="." instance=ExtResource("6_xunr0")]
-treeYPos = 32
 
 [node name="TreeResource" parent="ResourceManager" index="0"]
 position = Vector2(-36, 32)

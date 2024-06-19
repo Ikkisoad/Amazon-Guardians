@@ -37,12 +37,12 @@ func collectResource(resType = Global.PlayerResourceType.LEAVES, amount = 1):
 			Log.print(str("Stone collected ", amount))
 	updateHUD()
 
-func spawnResource(globalPos):
+func spawnResource(globalPos, facing):
 	match resourceTypeSelected:
 		Global.ResourceType.TREE:
-			resourceManager.spawnTree(globalPos)
+			resourceManager.spawnTree(globalPos, facing)
 		Global.ResourceType.CAVE:
-			resourceManager.spawnCave(globalPos)
+			resourceManager.spawnCave(globalPos, facing)
 
 func changeSelectedResource():
 	if resourceTypeSelected == Global.ResourceType.TREE:

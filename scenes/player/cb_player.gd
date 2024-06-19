@@ -82,7 +82,7 @@ func flip(dir):
 	facing = dir
 
 func spawnResource():
-	get_parent().spawnResource(global_position)
+	get_parent().spawnResource(global_position, facing)
 
 func spawnTrap():
 	match get_parent().trapTypeSelected:

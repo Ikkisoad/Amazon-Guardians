@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://chyjcacpj1ope"]
+[gd_scene load_steps=4 format=3 uid="uid://chyjcacpj1ope"]
 
 [ext_resource type="Script" path="res://scenes/main_menu/main_menu.gd" id="1_yk4tx"]
+[ext_resource type="Texture2D" uid="uid://ielxwdiar774" path="res://Assets/sprites/caipora/caipora_perfil.png" id="2_3kckt"]
+[ext_resource type="Texture2D" uid="uid://w2aqdj4p7r40" path="res://Assets/sprites/curupira/curupira_perfil.png" id="3_foa15"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -10,6 +12,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yk4tx")
+
+[node name="trCaipora" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = 1120.0
+offset_top = 248.0
+offset_right = 1812.0
+offset_bottom = 1162.0
+texture = ExtResource("2_3kckt")
+
+[node name="trCurupira" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = 16.0
+offset_top = 256.0
+offset_right = 708.0
+offset_bottom = 1170.0
+texture = ExtResource("3_foa15")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
@@ -36,5 +54,9 @@ text = "About"
 [node name="btnOptions" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 text = "Options"
+
+[node name="btnCredits" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Credits"
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/btnPlay" to="." method="_on_btn_play_pressed"]
