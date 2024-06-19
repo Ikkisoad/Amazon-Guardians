@@ -1,0 +1,61 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkxeifth4khqa"]
+
+[ext_resource type="Script" path="res://scenes/system/tutorial.gd" id="1_7bw86"]
+[ext_resource type="Texture2D" uid="uid://ielxwdiar774" path="res://Assets/sprites/caipora/caipora_perfil.png" id="1_k4c26"]
+[ext_resource type="Texture2D" uid="uid://w2aqdj4p7r40" path="res://Assets/sprites/curupira/curupira_perfil.png" id="2_ey30c"]
+
+[node name="Tutorial" type="Node"]
+process_mode = 3
+script = ExtResource("1_7bw86")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
+z_index = 1
+layout_mode = 0
+offset_left = 235.0
+offset_top = 793.0
+offset_right = 275.0
+offset_bottom = 833.0
+scale = Vector2(37.5077, 5.71855)
+color = Color(0, 0, 0, 1)
+
+[node name="sprCaipora" type="Sprite2D" parent="CanvasLayer/Control"]
+position = Vector2(1429, 427)
+texture = ExtResource("1_k4c26")
+
+[node name="sprCurupira" type="Sprite2D" parent="CanvasLayer/Control"]
+position = Vector2(431, 421)
+texture = ExtResource("2_ey30c")
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -345.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control/CenterContainer"]
+z_index = 2
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 50
+text = "These outsiders are attacking our florest, we must do something fast"
+fit_content = true
+scroll_active = false
+autowrap_mode = 1
+
+[node name="tmrTest" type="Timer" parent="."]
+
+[connection signal="timeout" from="tmrTest" to="." method="_on_tmr_test_timeout"]
