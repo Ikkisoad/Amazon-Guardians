@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=3 uid="uid://0jgcwr8uxedu"]
+
+[ext_resource type="Script" path="res://scenes/HUDs_Menus/game_over_panel.gd" id="1_vq1t1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lfgfa"]
+font_size = 72
+
+[sub_resource type="LabelSettings" id="LabelSettings_8uj3t"]
+font_size = 72
+font_color = Color(1, 0.2, 0.278431, 1)
+
+[node name="GameOverPanel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vq1t1")
+
+[node name="GMOverBG" type="ColorRect" parent="."]
+layout_mode = 2
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(1, 0.478431, 0.419608, 0.156863)
+
+[node name="MC" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 72
+theme_override_constants/margin_bottom = 72
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MC"]
+layout_mode = 2
+theme_override_constants/separation = 250
+
+[node name="MenuTitle" type="Label" parent="MC/VBoxContainer"]
+layout_mode = 2
+text = "Game Over"
+label_settings = SubResource("LabelSettings_lfgfa")
+horizontal_alignment = 1
+
+[node name="InfoText" type="Label" parent="MC/VBoxContainer"]
+layout_mode = 2
+text = "The forest was destroyed"
+label_settings = SubResource("LabelSettings_8uj3t")
+horizontal_alignment = 1
+
+[node name="MenuButton" type="Button" parent="MC/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 48
+text = "Back To Menu"
+
+[connection signal="pressed" from="MC/VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]

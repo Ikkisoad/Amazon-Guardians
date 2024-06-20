@@ -22,8 +22,6 @@ var facing = 1
 var isDead = false
 var spawnLocked = false
 
-func _ready() -> void:
-	Global.onPlayerAttack.connect(OnDamaged)
 
 func _process(delta: float) -> void:
 	#just to explain here i'm using only using _process to check UI stuffs and player stats
@@ -133,16 +131,21 @@ func lock(value, cameraPath):
 func collect(resType = Global.PlayerResourceType.LEAVES, amount = 1):
 	get_parent().collectResource(resType, amount)
 
-func OnDamaged(damageTaken : int) -> void:
+func DamagePlayer(damageTaken : int) -> void:
 	if health > 0:
 		health -= damageTaken
 		isDead = false
+		
+	Global.onPlayerHit.emit()
 
 func CheckPlayerStatus() -> void:
 	if health < 0:
 		isDead = true
 		hide()
 		queue_free()
-		#stop running the process funcion/physics engine
-		#this is useless right? Considering it was just freed from the tree... I guess you are trying to prevent it from processing in this exact frame it was freed on
-		set_process(false)
+		GameOverSequence()
+
+#we can set everything that happens here as soon as the player lose, like text, pauses and menus
+func GameOverSequence() -> void:
+	get_tree().change_scene_to_packed(Global.MENU_SCENE)
+	#Global.OnGameOver.emit(global_position)

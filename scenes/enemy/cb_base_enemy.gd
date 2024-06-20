@@ -15,6 +15,7 @@ var attacking = false
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var cs_attack = $a2EnemyAttack/csAttack
+
 var resource
 
 
@@ -31,6 +32,7 @@ func _ready():
 			resource = "animal"
 		_:
 			resource = "tree"
+			
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -78,8 +80,8 @@ func _on_a_2_enemy_attack_area_entered(area):
 				returnToBase()		
 	
 	if area.get_parent().is_in_group("player"):
-		if area.get_parent().has_method("OnDamaged"):
-			AttackPlayer(800)#fictional number
+		if area.get_parent().has_method("DamagePlayer"):
+			area.get_parent().DamagePlayer(600)
 			
 	
 func returnToBase():
@@ -102,6 +104,3 @@ func getHit(dmg):
 	if health <= 0:
 		queue_free()
 
-func AttackPlayer(damageAmount : int) -> void:
-	attacking = true
-	Global.onPlayerAttack.emit(damageAmount)
