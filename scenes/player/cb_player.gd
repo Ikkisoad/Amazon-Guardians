@@ -29,18 +29,6 @@ func _process(delta: float) -> void:
 	#, so it does not get mixed with the physics
 	CheckPlayerStatus()
 
-func _physics_process(delta):
-	# Add the gravity.
-	if not is_on_floor():
-		velocity.y += gravity * delta
-
-	if !locked: 
-		handleInputs()
-	else:
-		walkStop()
-	move_and_slide()
-	
-
 func jump():
 	velocity.y = JUMP_VELOCITY
 
@@ -66,17 +54,8 @@ func handleInputs():
 	else:
 		walkStop()
 	if is_on_floor():
-		if !spawnLocked:
-			if Input.is_action_just_pressed("trap"):
-				spawnTrap()
-			if Input.is_action_just_pressed("setResource"):
-				spawnResource()
 		if Input.get_axis("down", "up") == -1:
 			global_position.y += 1
-	if Input.is_action_just_pressed("changeSelectedResource"):
-		get_parent().changeSelectedResource()
-	if Input.is_action_just_pressed("changeSelectedTrap"):
-		get_parent().changeSelectedTrap()
 
 func flip(dir):
 	scale.x = -1
