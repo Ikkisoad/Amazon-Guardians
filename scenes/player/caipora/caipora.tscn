@@ -1,0 +1,69 @@
+[gd_scene load_steps=10 format=3 uid="uid://ca63a1n16gadx"]
+
+[ext_resource type="PackedScene" uid="uid://cpeigalq6ps85" path="res://scenes/player/cb_player.tscn" id="1_xho2i"]
+[ext_resource type="Texture2D" uid="uid://bpi26hkhwv68d" path="res://Assets/sprites/caipora/caipora_ataque_1.png" id="2_3vvau"]
+[ext_resource type="Texture2D" uid="uid://bo48wgb00veil" path="res://Assets/sprites/caipora/caipora_parada.png" id="2_dvrh7"]
+[ext_resource type="Texture2D" uid="uid://de67nf7ril80f" path="res://Assets/sprites/caipora/caipora_ataque_2.png" id="3_tvaw6"]
+[ext_resource type="Texture2D" uid="uid://c3cqg1iabxji7" path="res://Assets/sprites/curupira/curupira_trap_1.png" id="3_vr1os"]
+[ext_resource type="Texture2D" uid="uid://dohp1do3kyneb" path="res://Assets/sprites/curupira/curupira_trap_2.png" id="4_varto"]
+[ext_resource type="Texture2D" uid="uid://di1opgs801j7f" path="res://Assets/sprites/caipora/caipora_walk_1.png" id="5_y3yko"]
+[ext_resource type="Texture2D" uid="uid://4m30nj24dnrp" path="res://Assets/sprites/caipora/caipora_walk_2.png" id="6_jxube"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s1wmr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3vvau")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_tvaw6")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dvrh7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_vr1os")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_varto")
+}],
+"loop": true,
+"name": &"settingTrap",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_y3yko")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dvrh7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jxube")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dvrh7")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="caipora" instance=ExtResource("1_xho2i")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="0"]
+position = Vector2(20, -202)
+sprite_frames = SubResource("SpriteFrames_s1wmr")
+animation = &"attack"
+frame = 1
+frame_progress = 0.032036

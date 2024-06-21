@@ -1,50 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://cpeigalq6ps85"]
+[gd_scene load_steps=7 format=3 uid="uid://cpeigalq6ps85"]
 
 [ext_resource type="Script" path="res://scenes/player/cb_player.gd" id="1_lypal"]
-[ext_resource type="Texture2D" uid="uid://c647i7dr0vao3" path="res://Assets/sprites/player/curupira.png" id="2_r6cea"]
-[ext_resource type="Texture2D" uid="uid://c3cqg1iabxji7" path="res://Assets/sprites/curupira/curupira_trap_1.png" id="3_cfis6"]
-[ext_resource type="Texture2D" uid="uid://c8a78v8klku4v" path="res://Assets/sprites/player/curupira_1.png" id="3_uw5fj"]
-[ext_resource type="Texture2D" uid="uid://b7kssncjyvb37" path="res://Assets/sprites/player/curupira_2.png" id="4_0vgnf"]
-[ext_resource type="Texture2D" uid="uid://dohp1do3kyneb" path="res://Assets/sprites/curupira/curupira_trap_2.png" id="4_cwuta"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_kdctq"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_r6cea")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_cfis6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_cwuta")
-}],
-"loop": true,
-"name": &"settingTrap",
-"speed": 2.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_uw5fj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_r6cea")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_0vgnf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_r6cea")
-}],
-"loop": true,
-"name": &"walk",
-"speed": 5.0
-}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vnlj1"]
 size = Vector2(72, 170)
@@ -120,12 +76,6 @@ _data = {
 [node name="cbPlayer" type="CharacterBody2D" groups=["player"]]
 collision_mask = 4
 script = ExtResource("1_lypal")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(20, -202)
-sprite_frames = SubResource("SpriteFrames_kdctq")
-animation = &"settingTrap"
-frame_progress = 0.93126
 
 [node name="csPlayer" type="CollisionShape2D" parent="."]
 position = Vector2(-4, -91)

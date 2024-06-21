@@ -8,6 +8,7 @@ size = Vector2(80, 128)
 [node name="cbBaseEnemy" instance=ExtResource("1_7ana5")]
 
 [node name="AnimatedSprite2D" parent="." index="0"]
+modulate = Color(1, 1, 1, 1)
 animation = &"lenhadorStopped"
 
 [node name="csEnemyCollision" type="CollisionShape2D" parent="." index="4"]

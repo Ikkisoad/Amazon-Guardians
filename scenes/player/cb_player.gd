@@ -1,8 +1,9 @@
 extends CharacterBody2D
+class_name PlayerClass
 
 const WOOD_TRAP = preload("res://scenes/traps/wood_trap.tscn")
 const BEAR_TRAP = preload("res://scenes/traps/bear_trap.tscn")
-const SPEED = 650.0
+@export var SPEED = 650.0
 const JUMP_VELOCITY = -800.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.

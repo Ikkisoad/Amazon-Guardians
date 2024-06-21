@@ -1,9 +1,9 @@
 extends Node2D
 
-@onready var cb_player = $cbPlayer
-@onready var cb_player_2 = $cbPlayer2
 @onready var cam_player = $camPlayer
 @onready var player_ui = $PlayerUI
+@onready var cb_player_2 = $caipora
+@onready var cb_player = $curupira
 
 @export var resourceManager:Node2D
 @export var leafAmount = 0

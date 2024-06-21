@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://cxee1h5i6n5hc"]
+
+[ext_resource type="PackedScene" uid="uid://cpeigalq6ps85" path="res://scenes/player/cb_player.tscn" id="1_mvbpx"]
+[ext_resource type="Texture2D" uid="uid://c647i7dr0vao3" path="res://Assets/sprites/player/curupira.png" id="2_15wn8"]
+[ext_resource type="Texture2D" uid="uid://c3cqg1iabxji7" path="res://Assets/sprites/curupira/curupira_trap_1.png" id="3_uoh0c"]
+[ext_resource type="Texture2D" uid="uid://dohp1do3kyneb" path="res://Assets/sprites/curupira/curupira_trap_2.png" id="4_kchlw"]
+[ext_resource type="Texture2D" uid="uid://c8a78v8klku4v" path="res://Assets/sprites/player/curupira_1.png" id="5_1svxl"]
+[ext_resource type="Texture2D" uid="uid://b7kssncjyvb37" path="res://Assets/sprites/player/curupira_2.png" id="6_k287o"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_htfjk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_15wn8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_uoh0c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kchlw")
+}],
+"loop": true,
+"name": &"settingTrap",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_1svxl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_15wn8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_k287o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_15wn8")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="curupira" instance=ExtResource("1_mvbpx")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="0"]
+position = Vector2(20, -202)
+sprite_frames = SubResource("SpriteFrames_htfjk")
+animation = &"settingTrap"
