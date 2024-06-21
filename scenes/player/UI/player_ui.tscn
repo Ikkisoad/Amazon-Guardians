@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://vp83c8184gjs"]
+[gd_scene load_steps=15 format=3 uid="uid://vp83c8184gjs"]
 
 [ext_resource type="Script" path="res://scenes/player/UI/player_ui.gd" id="1_oonwr"]
 [ext_resource type="StyleBox" uid="uid://dmnpqeyemqipp" path="res://scenes/player/UI/playerHealthFill.tres" id="2_65e3d"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://crloerh1g55ly" path="res://Assets/traps/woodTrap/small_wood_spike_04.png" id="4_3klkd"]
 [ext_resource type="Texture2D" uid="uid://bj3sds4vuxkfl" path="res://Assets/sprites/cave/cave.png" id="5_iicrm"]
 [ext_resource type="Texture2D" uid="uid://b33q7yq6goam6" path="res://Assets/traps/woodTrap/small_wood_spike_01.png" id="6_71pdq"]
+[ext_resource type="Texture2D" uid="uid://fx5anea55wjv" path="res://Assets/backgrounds/battleback1.png" id="9_xpaq7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vj2pi"]
 atlas = ExtResource("2_q25qi")
@@ -148,3 +149,13 @@ animation = &"tree"
 position = Vector2(1872, 1008)
 sprite_frames = SubResource("SpriteFrames_4mtr0")
 animation = &"bear"
+
+[node name="background" type="CanvasLayer" parent="clPlayerUI"]
+layer = -100
+
+[node name="Sprite2D" type="Sprite2D" parent="clPlayerUI/background"]
+z_index = -15
+position = Vector2(-35.2, -76)
+scale = Vector2(2, 2)
+texture = ExtResource("9_xpaq7")
+centered = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ca63a1n16gadx"]
+[gd_scene load_steps=12 format=3 uid="uid://ca63a1n16gadx"]
 
 [ext_resource type="PackedScene" uid="uid://cpeigalq6ps85" path="res://scenes/player/cb_player.tscn" id="1_xho2i"]
 [ext_resource type="Texture2D" uid="uid://bpi26hkhwv68d" path="res://Assets/sprites/caipora/caipora_ataque_1.png" id="2_3vvau"]
@@ -16,12 +16,12 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("2_3vvau")
 }, {
-"duration": 1.0,
+"duration": 2.0,
 "texture": ExtResource("3_tvaw6")
 }],
 "loop": true,
 "name": &"attack",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -60,6 +60,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bdee1"]
+size = Vector2(354, 297)
+
 [node name="caipora" instance=ExtResource("1_xho2i")]
 script = ExtResource("2_30r4i")
 
@@ -68,4 +71,20 @@ position = Vector2(20, -202)
 sprite_frames = SubResource("SpriteFrames_s1wmr")
 animation = &"attack"
 frame = 1
-frame_progress = 0.032036
+frame_progress = 0.884657
+
+[node name="attackHitbox" type="Area2D" parent="." index="6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attackHitbox" index="0"]
+position = Vector2(144, -131.5)
+shape = SubResource("RectangleShape2D_bdee1")
+disabled = true
+debug_color = Color(0.99393, 0, 0.230103, 0.42)
+
+[node name="tmrAttacking" type="Timer" parent="." index="7"]
+one_shot = true
+
+[node name="tmrDashCooldown" type="Timer" parent="." index="8"]
+one_shot = true
+
+[connection signal="timeout" from="tmrAttacking" to="." method="_on_tmr_attacking_timeout"]
