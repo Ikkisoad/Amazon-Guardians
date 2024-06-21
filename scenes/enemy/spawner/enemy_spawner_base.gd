@@ -11,15 +11,22 @@ extends Node2D
 var enemyScene
 var spawnedCount = 0
 
+#var woodWorkerScene = preload("res://scenes/enemy/woodworker/cb_woodworker.tscn")
+#var minerScene = preload("res://scenes/enemy/Miner/cb_miner_enemy.tscn")
+#var enemyTypes: Array = [woodWorkerScene, minerScene]
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	setEnemySpawnType()
 	startSpawnTimer()
 
 func setEnemySpawnType():
+	#enemyScene = enemyTypes[randi_range(0, enemyTypes.size())]
 	match enemyType:
 		Global.EnemyType.WOODWORKER:
 			enemyScene = preload("res://scenes/enemy/woodworker/cb_woodworker.tscn")
+		Global.EnemyType.MINER:
+			enemyScene = preload("res://scenes/enemy/Miner/cb_miner_enemy.tscn")
 
 func startSpawnTimer():
 	tmr_spawn.start(randi_range(minSpawnRate, maxSpawnRate))

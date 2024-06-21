@@ -1,12 +1,16 @@
 extends CharacterBody2D
 
+enum animStates {STOP, WALK, ATTACK}
 
 @export var SPEED = 150.0
-@export var enemyType = Global.EnemyType.WOODWORKER
+@export var enemyType = Global.EnemyType.MINER
 @export var health = 1000
 const JUMP_VELOCITY = -400.0
 @onready var tmr_attack = $tmrAttack
 @onready var pb_enemy = $pbEnemy
+@onready var cb_base_enemy: CharacterBody2D = $"."
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+
 
 @export var facing = 1
 var stop = false
@@ -15,7 +19,6 @@ var attacking = false
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var cs_attack = $a2EnemyAttack/csAttack
-
 var resource
 
 
@@ -42,6 +45,7 @@ func _physics_process(delta):
 	var direction = facing
 	if direction && !stop:
 		velocity.x = direction * SPEED
+		PlayAnimationBasedOnEnemyType(enemyType, animStates.WALK)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
@@ -55,6 +59,7 @@ func _on_a_2_enemy_detector_body_entered(body):
 func _on_a_2_enemy_detector_area_entered(area):
 	if area.get_parent().is_in_group("resource") || area.get_parent().is_in_group("player"):
 		stop = true
+		PlayAnimationBasedOnEnemyType(enemyType, animStates.STOP)
 		startAttacking()
 
 
@@ -71,6 +76,7 @@ func _on_tmr_attack_timeout():
 			returnToBase()
 		startAttackTimer()
 		cs_attack.set_deferred("disabled", false)
+		PlayAnimationBasedOnEnemyType(enemyType, animStates.ATTACK)
 
 func _on_a_2_enemy_attack_area_entered(area):
 	cs_attack.set_deferred("disabled", true)
@@ -104,3 +110,20 @@ func getHit(dmg):
 	if health <= 0:
 		queue_free()
 
+func PlayAnimationBasedOnEnemyType(enemyType : Global.EnemyType, enemyState : animStates) -> void:
+	if enemyType == Global.EnemyType.WOODWORKER:
+		match enemyState:
+			animStates.STOP:
+				animated_sprite_2d.play("lenhadorStopped")
+			animStates.WALK:
+				animated_sprite_2d.play("lenhadorWalk")
+			animStates.ATTACK:
+				animated_sprite_2d.play("lenhadorAttack")
+	if enemyType == Global.EnemyType.MINER:
+		match enemyState:
+			animStates.STOP:
+				animated_sprite_2d.play("mineiroStopped")
+			animStates.WALK:
+				animated_sprite_2d.play("mineiroWalk")
+			animStates.ATTACK:
+				animated_sprite_2d.play("mineiroAttack")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dsdx64qq5lk44"]
+[gd_scene load_steps=14 format=3 uid="uid://dsdx64qq5lk44"]
 
 [ext_resource type="PackedScene" uid="uid://i4ewk0kd4tbe" path="res://scenes/system/debugger.tscn" id="3_oa7ly"]
 [ext_resource type="PackedScene" uid="uid://c4elcp35wq18e" path="res://scenes/tile_map/tile_map.tscn" id="4_m70y3"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cxhhj77yyyfl3" path="res://Assets/backgrounds/Castlevania-esque Background1.png" id="10_tnriy"]
 [ext_resource type="PackedScene" uid="uid://46s5j1mfb0d3" path="res://scenes/spawnBlocker/res_spawn_blocked_area.tscn" id="11_s4uhx"]
 [ext_resource type="PackedScene" uid="uid://dkxeifth4khqa" path="res://scenes/system/tutorial.tscn" id="12_s1nbr"]
+[ext_resource type="PackedScene" uid="uid://0jgcwr8uxedu" path="res://scenes/HUDs_Menus/game_over_panel.tscn" id="13_2nyps"]
 
 [node name="Main" type="Node2D"]
 
@@ -28,10 +29,15 @@ stoneAmount = 500
 
 [node name="EnemySpawnerBase2" parent="." instance=ExtResource("7_huaeu")]
 position = Vector2(2739, 440)
+enemyType = 1
+maxSpawnRate = 2
+spawnLimit = 3
 facing = -1
 
 [node name="EnemySpawnerBase" parent="." instance=ExtResource("7_huaeu")]
 position = Vector2(-1732, 440)
+maxSpawnRate = 2
+spawnLimit = 3
 
 [node name="ResourceManager" parent="." instance=ExtResource("6_xunr0")]
 
@@ -118,5 +124,11 @@ position = Vector2(318, 181)
 scale = Vector2(45.5779, 179.67)
 
 [node name="Tutorial" parent="." instance=ExtResource("12_s1nbr")]
+
+[node name="HUDCanvas" type="CanvasLayer" parent="."]
+process_mode = 2
+
+[node name="GameOverPanel" parent="HUDCanvas" instance=ExtResource("13_2nyps")]
+visible = false
 
 [editable path="ResourceManager"]

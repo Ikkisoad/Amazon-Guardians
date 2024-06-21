@@ -1,17 +1,76 @@
-[gd_scene load_steps=6 format=3 uid="uid://dwmswum8ipomh"]
+[gd_scene load_steps=13 format=3 uid="uid://dwmswum8ipomh"]
 
 [ext_resource type="Script" path="res://scenes/enemy/cb_base_enemy.gd" id="1_viqn7"]
 [ext_resource type="Texture2D" uid="uid://dhfiyf45bkr71" path="res://Assets/sprites/miner/mineiro_ataque_2.png" id="2_0xeef"]
+[ext_resource type="Texture2D" uid="uid://bhg507jxqon75" path="res://Assets/sprites/woodworker/lenhador_ataque.png" id="2_qvrsj"]
+[ext_resource type="Texture2D" uid="uid://cwtq2xe2pa7te" path="res://Assets/sprites/woodworker/lenhador_parado.png" id="3_frh1s"]
+[ext_resource type="Texture2D" uid="uid://cuyuely1u5ekx" path="res://Assets/sprites/woodworker/lenhador_walk_1.png" id="4_otgse"]
+[ext_resource type="Texture2D" uid="uid://blakh00fdq5li" path="res://Assets/sprites/woodworker/lenhador_walk_2.png" id="5_jrqef"]
+[ext_resource type="Texture2D" uid="uid://bq0k7eelu83po" path="res://Assets/sprites/miner/mineiro_ataque_1.png" id="6_yqd65"]
+[ext_resource type="Texture2D" uid="uid://cq6waxrao6gcf" path="res://Assets/sprites/miner/mineiro_walk_1.png" id="8_sar3a"]
+[ext_resource type="Texture2D" uid="uid://bsm5x14yrw1iv" path="res://Assets/sprites/miner/mineiro_walk_2.png" id="9_q17qn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_61wge"]
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("2_qvrsj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_frh1s")
+}],
+"loop": true,
+"name": &"lenhadorAttack",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_frh1s")
+}],
+"loop": true,
+"name": &"lenhadorStopped",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_otgse")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_jrqef")
+}],
+"loop": true,
+"name": &"lenhadorWalk",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_yqd65")
+}, {
+"duration": 1.0,
 "texture": ExtResource("2_0xeef")
 }],
 "loop": true,
-"name": &"default",
+"name": &"mineiroAttack",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_0xeef")
+}],
+"loop": true,
+"name": &"mineiroStopped",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_sar3a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_q17qn")
+}],
+"loop": true,
+"name": &"mineiroWalk",
+"speed": 2.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nyuvh"]
@@ -24,11 +83,13 @@ size = Vector2(90, 146)
 collision_layer = 256
 collision_mask = 516
 script = ExtResource("1_viqn7")
+enemyType = 0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 modulate = Color(1, 0.0509804, 0, 1)
 position = Vector2(48, -90)
 sprite_frames = SubResource("SpriteFrames_61wge")
+animation = &"lenhadorAttack"
 
 [node name="a2EnemyDetector" type="Area2D" parent="."]
 collision_layer = 0

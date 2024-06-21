@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0a4p0055slag"]
+
+[ext_resource type="PackedScene" uid="uid://dwmswum8ipomh" path="res://scenes/enemy/cb_base_enemy.tscn" id="1_d78bw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i8a07"]
+size = Vector2(69, 134)
+
+[node name="cbMinerEnemy" instance=ExtResource("1_d78bw")]
+enemyType = 1
+
+[node name="csEnemyCollision" type="CollisionShape2D" parent="." index="5"]
+position = Vector2(7.5, 4)
+shape = SubResource("RectangleShape2D_i8a07")

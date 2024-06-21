@@ -147,5 +147,4 @@ func CheckPlayerStatus() -> void:
 
 #we can set everything that happens here as soon as the player lose, like text, pauses and menus
 func GameOverSequence() -> void:
-	get_tree().change_scene_to_packed(Global.MENU_SCENE)
-	#Global.OnGameOver.emit(global_position)
+	Global.OnGameOver.emit()
