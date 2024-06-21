@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://chyjcacpj1ope"]
+[gd_scene load_steps=5 format=3 uid="uid://chyjcacpj1ope"]
 
 [ext_resource type="Script" path="res://scenes/main_menu/main_menu.gd" id="1_yk4tx"]
 [ext_resource type="Texture2D" uid="uid://ielxwdiar774" path="res://Assets/sprites/caipora/caipora_perfil.png" id="2_3kckt"]
 [ext_resource type="Texture2D" uid="uid://w2aqdj4p7r40" path="res://Assets/sprites/curupira/curupira_perfil.png" id="3_foa15"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_e3qqc"]
+font_size = 96
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -58,5 +61,18 @@ text = "Options"
 [node name="btnCredits" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 text = "Credits"
+
+[node name="GameTitle" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -73.5
+offset_right = 73.5
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Amazon Guardians"
+label_settings = SubResource("LabelSettings_e3qqc")
+horizontal_alignment = 1
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/btnPlay" to="." method="_on_btn_play_pressed"]
