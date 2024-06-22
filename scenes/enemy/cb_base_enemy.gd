@@ -47,6 +47,7 @@ func _physics_process(delta):
 
 	var direction = facing
 	if direction && !stop:
+		cs_attack.set_deferred("disabled", true)
 		if !as_step.playing: as_step.play()
 		velocity.x = direction * SPEED
 		PlayAnimationBasedOnEnemyType(enemyType, animStates.WALK)
@@ -118,6 +119,7 @@ func getHit(dmg):
 	#Log.print(health)
 	updateHUD()
 	if health <= 0:
+		Global.OnEnemyKilled.emit()
 		queue_free()
 
 func PlayAnimationBasedOnEnemyType(enemyType : Global.EnemyType, enemyState : animStates) -> void:

@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jcjt0"]
 size = Vector2(112, 112)
 
-[node name="EnemySpawnerBase" type="Node2D"]
+[node name="EnemySpawnerBase" type="Node2D" groups=["spawner"]]
 script = ExtResource("1_6w0rl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -14,7 +14,8 @@ modulate = Color(1, 1, 0.0431373, 1)
 texture = ExtResource("1_x3b1j")
 
 [node name="Area2D" type="Area2D" parent="."]
-collision_mask = 257
+collision_layer = 0
+collision_mask = 256
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_jcjt0")

@@ -2,8 +2,8 @@ extends Node2D
 
 @export var health = 500000
 @export var enemyType = Global.EnemyType.WOODWORKER
-@export var minSpawnRate = 1
-@export var maxSpawnRate = 5
+@export var minSpawnRate = 25
+@export var maxSpawnRate = 50
 @onready var tmr_spawn = $tmrSpawn
 @export var spawnLimit = 5
 @export var facing = 1
@@ -17,6 +17,10 @@ var spawnedCount = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	spawnLimit = spawnLimit * Global.gameClears
+	minSpawnRate = minSpawnRate / Global.gameClears
+	maxSpawnRate = maxSpawnRate / Global.gameClears
+	
 	setEnemySpawnType()
 	startSpawnTimer()
 
@@ -39,6 +43,7 @@ func _on_tmr_spawn_timeout():
 	if facing == -1:
 		newEnemy.facing = -1
 	add_sibling(newEnemy)
+	#add_child(newEnemy)
 	if spawnedCount < spawnLimit: startSpawnTimer()
 
 

@@ -10,9 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://chlxpj454s7h5" path="res://scenes/res/cave_res/cave_resource.tscn" id="7_8hwdb"]
 [ext_resource type="PackedScene" uid="uid://be782rih0dbuy" path="res://scenes/enemy/spawner/enemy_spawner_base.tscn" id="7_huaeu"]
 [ext_resource type="PackedScene" uid="uid://b1wnvd43cktpa" path="res://scenes/res/tree_res/tree_res.tscn" id="8_60w7q"]
+[ext_resource type="PackedScene" uid="uid://2hjqd71syyeq" path="res://scenes/HUDs_Menus/hud_canvas.tscn" id="12_aqsby"]
 [ext_resource type="PackedScene" uid="uid://dkxeifth4khqa" path="res://scenes/system/tutorial.tscn" id="12_s1nbr"]
 [ext_resource type="AudioStream" uid="uid://bb2pdajsr44e3" path="res://Assets/SFX/music/The Outer Forest.mp3" id="12_xpdwc"]
-[ext_resource type="PackedScene" uid="uid://0jgcwr8uxedu" path="res://scenes/HUDs_Menus/game_over_panel.tscn" id="13_2nyps"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l0gdl"]
 size = Vector2(15, 1627)
@@ -34,7 +34,7 @@ leafAmount = 25
 stoneAmount = 10
 
 [node name="caipora" parent="PlayerManager" index="2"]
-position = Vector2(761, 900)
+position = Vector2(-13939, 926)
 facing = -1
 
 [node name="curupira" parent="PlayerManager" index="3"]
@@ -58,8 +58,7 @@ facing = -1
 
 [node name="EnemySpawnerBase" parent="." instance=ExtResource("7_huaeu")]
 position = Vector2(-13600, 1099)
-minSpawnRate = 25
-maxSpawnRate = 55
+maxSpawnRate = 2
 spawnLimit = 3
 
 [node name="cbBaseEnemy" parent="EnemySpawnerBase" instance=ExtResource("6_ggxjf")]
@@ -117,11 +116,7 @@ tmrResourceMax = 10
 
 [node name="Tutorial" parent="." instance=ExtResource("12_s1nbr")]
 
-[node name="HUDCanvas" type="CanvasLayer" parent="."]
-process_mode = 2
-
-[node name="GameOverPanel" parent="HUDCanvas" instance=ExtResource("13_2nyps")]
-visible = false
+[node name="HUDCanvas" parent="." instance=ExtResource("12_aqsby")]
 
 [node name="backgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_xpdwc")

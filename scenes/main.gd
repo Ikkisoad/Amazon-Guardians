@@ -4,8 +4,12 @@ extends Node2D
 @export var playerMangader:Node2D
 @onready var background_music = $backgroundMusic
 
+var killsRequired = 0
+
 func _ready():
 	playerMangader.setCameraLimits(returnCameraLimits())
+	Global.connect("OnEnemyKilled", enemyKilled)
+	setKillGoal()
 
 func returnCameraLimits():
 	#return
@@ -20,6 +24,18 @@ func returnCameraLimits():
 	#playerCamera.limit_top = map_limits.position.y * map_cellsize.y + globalPosition.y
 	#playerCamera.limit_bottom = map_limits.end.y * map_cellsize.y + globalPosition.y
 
+func enemyKilled():
+	killsRequired -= 1
+	if killsRequired <= 0:
+		nextStageSequence()
+
+func nextStageSequence():
+	Global.OnStageWin.emit()
 
 func _on_background_music_finished():
 	background_music.play()
+
+func setKillGoal():
+	for c in get_children():
+		if c.is_in_group("spawner"):
+			killsRequired += c.spawnLimit
