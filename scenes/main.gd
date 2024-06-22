@@ -39,3 +39,4 @@ func setKillGoal():
 	for c in get_children():
 		if c.is_in_group("spawner"):
 			killsRequired += c.spawnLimit
+	killsRequired -= Global.gameClears

@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://djcimufjwilwc"]
+
+[ext_resource type="Script" path="res://scenes/About/about_scene.gd" id="1_7dsgm"]
+[ext_resource type="Texture2D" uid="uid://fx5anea55wjv" path="res://Assets/backgrounds/battleback1.png" id="2_dtrn5"]
+
+[node name="credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7dsgm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -50
+position = Vector2(952, 568)
+scale = Vector2(1.98378, 1.98378)
+texture = ExtResource("2_dtrn5")
+
+[node name="btnPlay" type="Button" parent="."]
+layout_mode = 2
+offset_left = 1720.0
+offset_top = 992.0
+offset_right = 1790.0
+offset_bottom = 1023.0
+text = "Main Menu"
+
+[connection signal="pressed" from="btnPlay" to="." method="_on_btn_play_pressed"]

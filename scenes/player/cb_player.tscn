@@ -106,4 +106,7 @@ stream = ExtResource("2_f3hju")
 [node name="tmrHeal" type="Timer" parent="."]
 one_shot = true
 
+[node name="tmrTeleport" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="timeout" from="tmrHeal" to="." method="_on_tmr_heal_timeout"]

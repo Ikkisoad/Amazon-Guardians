@@ -15,6 +15,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @export var health = 1000
 @export var maxHealth = 1000
 @onready var as_place_trap = $asPlaceTrap
+@onready var tmr_teleport = $tmrTeleport
 
 @export var woodTrapCost = 3
 @export var bearTrapCost = 25
@@ -62,7 +63,8 @@ func handleInputs():
 		var yDirection = Input.get_axis("down", "up")
 		if yDirection == -1:
 			global_position.y += 1
-		elif yDirection == 1:
+		elif yDirection == 1 && tmr_teleport.is_stopped():
+			tmr_teleport.start(1)
 			get_parent().caveTeleport(self)
 
 func flip(dir):

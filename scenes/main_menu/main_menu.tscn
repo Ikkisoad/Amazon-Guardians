@@ -125,3 +125,5 @@ theme_override_font_sizes/font_size = 500
 text = "X"
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/btnPlay" to="." method="_on_btn_play_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/btnAbout" to="." method="_on_btn_about_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/btnCredits" to="." method="_on_btn_credits_pressed"]
