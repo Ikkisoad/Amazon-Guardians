@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ca63a1n16gadx"]
+[gd_scene load_steps=13 format=3 uid="uid://ca63a1n16gadx"]
 
 [ext_resource type="PackedScene" uid="uid://cpeigalq6ps85" path="res://scenes/player/cb_player.tscn" id="1_xho2i"]
 [ext_resource type="Texture2D" uid="uid://bpi26hkhwv68d" path="res://Assets/sprites/caipora/caipora_ataque_1.png" id="2_3vvau"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dohp1do3kyneb" path="res://Assets/sprites/curupira/curupira_trap_2.png" id="4_varto"]
 [ext_resource type="Texture2D" uid="uid://di1opgs801j7f" path="res://Assets/sprites/caipora/caipora_walk_1.png" id="5_y3yko"]
 [ext_resource type="Texture2D" uid="uid://4m30nj24dnrp" path="res://Assets/sprites/caipora/caipora_walk_2.png" id="6_jxube"]
+[ext_resource type="AudioStream" uid="uid://cxs1s05soeys7" path="res://Assets/SFX/hits/Hits/Hit.wav" id="10_bq4oe"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s1wmr"]
 animations = [{
@@ -89,6 +90,9 @@ one_shot = true
 
 [node name="tmrDashCooldown" type="Timer" parent="." index="8"]
 one_shot = true
+
+[node name="asAttack" type="AudioStreamPlayer2D" parent="." index="9"]
+stream = ExtResource("10_bq4oe")
 
 [connection signal="body_entered" from="attackHitbox" to="." method="_on_attack_hitbox_body_entered"]
 [connection signal="timeout" from="tmrAttacking" to="." method="_on_tmr_attacking_timeout"]

@@ -82,17 +82,6 @@ script = ExtResource("1_oonwr")
 
 [node name="pbPlayerUI" type="ProgressBar" parent="clPlayerUI"]
 offset_left = 24.0
-offset_top = 24.0
-offset_right = 772.0
-offset_bottom = 48.0
-theme_override_styles/background = ExtResource("2_65e3d")
-theme_override_styles/fill = ExtResource("3_8rk0r")
-max_value = 1000.0
-value = 500.0
-show_percentage = false
-
-[node name="pbPlayerUI2" type="ProgressBar" parent="clPlayerUI"]
-offset_left = 24.0
 offset_top = 56.0
 offset_right = 772.0
 offset_bottom = 80.0
@@ -101,6 +90,37 @@ theme_override_styles/fill = ExtResource("3_8rk0r")
 max_value = 1000.0
 value = 500.0
 show_percentage = false
+
+[node name="lblCurupira" type="Label" parent="clPlayerUI/pbPlayerUI"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = -32.0
+offset_right = 230.0
+offset_bottom = 37.0
+scale = Vector2(0.555422, 0.555422)
+theme_override_font_sizes/font_size = 50
+text = "Curupira"
+
+[node name="pbPlayerUI2" type="ProgressBar" parent="clPlayerUI"]
+offset_left = 24.0
+offset_top = 120.0
+offset_right = 772.0
+offset_bottom = 144.0
+theme_override_styles/background = ExtResource("2_65e3d")
+theme_override_styles/fill = ExtResource("3_8rk0r")
+max_value = 1000.0
+value = 500.0
+show_percentage = false
+
+[node name="lblCaipora" type="Label" parent="clPlayerUI/pbPlayerUI2"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = -32.0
+offset_right = 230.0
+offset_bottom = 37.0
+scale = Vector2(0.555422, 0.555422)
+theme_override_font_sizes/font_size = 50
+text = "Caipora"
 
 [node name="lblLeafAmount" type="Label" parent="clPlayerUI"]
 offset_left = 1809.0

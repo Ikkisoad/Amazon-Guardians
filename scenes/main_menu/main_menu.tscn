@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://chyjcacpj1ope"]
+[gd_scene load_steps=8 format=3 uid="uid://chyjcacpj1ope"]
 
 [ext_resource type="Script" path="res://scenes/main_menu/main_menu.gd" id="1_yk4tx"]
 [ext_resource type="Texture2D" uid="uid://ielxwdiar774" path="res://Assets/sprites/caipora/caipora_perfil.png" id="2_3kckt"]
 [ext_resource type="Texture2D" uid="uid://w2aqdj4p7r40" path="res://Assets/sprites/curupira/curupira_perfil.png" id="3_foa15"]
+[ext_resource type="Texture2D" uid="uid://fx5anea55wjv" path="res://Assets/backgrounds/battleback1.png" id="4_htioi"]
+[ext_resource type="Texture2D" uid="uid://dvqql1cp5rdlf" path="res://Assets/JAM Assets/70-Folklore.png" id="5_yjbi2"]
+[ext_resource type="Texture2D" uid="uid://wg5prw2n0gl" path="res://Assets/JAM Assets/70-All-Cards.png" id="6_bf0ll"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_e3qqc"]
 font_size = 96
@@ -74,5 +77,51 @@ grow_horizontal = 2
 text = "Amazon Guardians"
 label_settings = SubResource("LabelSettings_e3qqc")
 horizontal_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -50
+position = Vector2(952, 568)
+scale = Vector2(1.98378, 1.98378)
+texture = ExtResource("4_htioi")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 696.0
+offset_top = 656.0
+offset_right = 3396.0
+offset_bottom = 1426.0
+scale = Vector2(0.189026, 0.189026)
+texture = ExtResource("5_yjbi2")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 696.0
+offset_top = 808.0
+offset_right = 3396.0
+offset_bottom = 2012.0
+scale = Vector2(0.189026, 0.189026)
+texture = ExtResource("6_bf0ll")
+
+[node name="Label" type="Label" parent="TextureRect2"]
+modulate = Color(0.882353, 0, 0, 1)
+layout_mode = 0
+offset_left = 931.09
+offset_top = -380.901
+offset_right = 1242.09
+offset_bottom = 301.099
+scale = Vector2(2.80258, 2.80258)
+theme_override_font_sizes/font_size = 500
+text = "X"
+
+[node name="Label2" type="Label" parent="TextureRect2"]
+modulate = Color(0.882353, 0, 0, 1)
+layout_mode = 0
+offset_left = 1819.86
+offset_top = -380.901
+offset_right = 2130.86
+offset_bottom = 301.099
+scale = Vector2(2.80258, 2.80258)
+theme_override_font_sizes/font_size = 500
+text = "X"
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/btnPlay" to="." method="_on_btn_play_pressed"]

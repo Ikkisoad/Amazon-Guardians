@@ -92,7 +92,7 @@ func _on_a_2_enemy_attack_area_entered(area):
 	if area.get_parent().is_in_group("resource"):
 		if area.get_parent().has_method("getHit"):
 			if area.get_parent().getHit(randi_range(10,25)):
-				returnToBase()		
+				returnToBase()
 	
 	if area.get_parent().is_in_group("player"):
 		if area.get_parent().has_method("DamagePlayer"):

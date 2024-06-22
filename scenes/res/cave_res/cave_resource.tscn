@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://chlxpj454s7h5"]
+[gd_scene load_steps=5 format=3 uid="uid://chlxpj454s7h5"]
 
 [ext_resource type="PackedScene" uid="uid://bwsy83o5lf5fh" path="res://scenes/res/base_res/base_res.tscn" id="1_bhh3j"]
 [ext_resource type="Texture2D" uid="uid://c3u2ebfqjbrbn" path="res://Assets/sprites/cave/caverna2.png" id="2_lky5r"]
+[ext_resource type="AudioStream" uid="uid://wuv8o1hu25u7" path="res://Assets/SFX/Falling Rock.wav" id="3_0o4i0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_88ty1"]
 size = Vector2(387.2, 297.6)
@@ -19,3 +20,6 @@ shape = SubResource("RectangleShape2D_88ty1")
 modulate = Color(0.286275, 0.572549, 0.894118, 1)
 z_index = -7
 texture = ExtResource("2_lky5r")
+
+[node name="asDie" parent="." index="5"]
+stream = ExtResource("3_0o4i0")

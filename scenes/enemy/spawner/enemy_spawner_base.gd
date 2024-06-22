@@ -35,7 +35,13 @@ func _on_tmr_spawn_timeout():
 	spawnedCount += 1
 	var newEnemy = enemyScene.instantiate()
 	newEnemy.global_position = global_position
+	newEnemy.global_position.x += 250 * facing
 	if facing == -1:
 		newEnemy.facing = -1
 	add_sibling(newEnemy)
 	if spawnedCount < spawnLimit: startSpawnTimer()
+
+
+func _on_area_2d_body_entered(body):
+	if body.is_in_group("enemy"):
+		body.returnToBase()

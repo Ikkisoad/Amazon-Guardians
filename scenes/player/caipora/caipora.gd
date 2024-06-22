@@ -2,6 +2,7 @@ extends PlayerClass
 @onready var collision_shape_2d = $attackHitbox/CollisionShape2D
 @onready var tmr_attacking = $tmrAttacking
 @onready var tmr_dash_cooldown = $tmrDashCooldown
+@onready var as_attack = $asAttack
 
 @export var damage = 350
 
@@ -34,6 +35,7 @@ func handleAbilities():
 func dashAttack():
 	collision_shape_2d.set_deferred("disabled", false)
 	tmr_attacking.start(0.2)
+	damage = 500
 	velocity.x = 1500 * facing
 	tmr_dash_cooldown.start(2)
 
@@ -46,8 +48,10 @@ func attack():
 
 func _on_tmr_attacking_timeout():
 	collision_shape_2d.set_deferred("disabled", true)
+	damage = 350
 
 
 func _on_attack_hitbox_body_entered(body):
 	if body.is_in_group("enemy"):
 		body.getHit(damage)
+		as_attack.play()

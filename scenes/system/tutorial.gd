@@ -39,9 +39,9 @@ func updateHUD():
 			modulateProfile(spr_curupira, 0.8)
 			modulateProfile(spr_caipora, 1)
 		7:
-			label.text = "With 'Input' I can let them know who they are dealing with"
+			label.text = "With 'X' I can let them know who they are dealing with"
 		8:
-			label.text = "And 'Input' allows me to dash and headbutt them graciously"
+			label.text = "And 'V' allows me to dash and headbutt them graciously"
 		9:
 			label.text = "I can also place structures using 'V'"
 			modulateProfile(spr_curupira, 1)

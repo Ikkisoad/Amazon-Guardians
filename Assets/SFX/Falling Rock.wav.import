@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://wuv8o1hu25u7"
+path="res://.godot/imported/Falling Rock.wav-f08566c9b6a2510f543ac5613b99827d.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/Falling Rock.wav"
+dest_files=["res://.godot/imported/Falling Rock.wav-f08566c9b6a2510f543ac5613b99827d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

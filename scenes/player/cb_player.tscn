@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cpeigalq6ps85"]
+[gd_scene load_steps=8 format=3 uid="uid://cpeigalq6ps85"]
 
 [ext_resource type="Script" path="res://scenes/player/cb_player.gd" id="1_lypal"]
+[ext_resource type="AudioStream" uid="uid://b7mamde87v2kj" path="res://Assets/SFX/wood_and_metal_vol.2/wood10.wav" id="2_f3hju"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vnlj1"]
 size = Vector2(72, 170)
@@ -98,3 +99,11 @@ one_shot = true
 libraries = {
 "": SubResource("AnimationLibrary_bgr75")
 }
+
+[node name="asPlaceTrap" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_f3hju")
+
+[node name="tmrHeal" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="tmrHeal" to="." method="_on_tmr_heal_timeout"]

@@ -5,6 +5,7 @@ const WOOD_TRAP = preload("res://scenes/traps/wood_trap.tscn")
 const BEAR_TRAP = preload("res://scenes/traps/bear_trap.tscn")
 @export var SPEED = 650.0
 const JUMP_VELOCITY = -800.0
+@onready var tmr_heal = $tmrHeal
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -12,6 +13,8 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var rt_player = $rtPlayer
 @export var locked = false
 @export var health = 1000
+@export var maxHealth = 1000
+@onready var as_place_trap = $asPlaceTrap
 
 @export var woodTrapCost = 3
 @export var bearTrapCost = 25
@@ -52,7 +55,7 @@ func handleInputs():
 		if facing != direction:
 			flip(direction)
 		velocity.x = direction * SPEED
-		animated_sprite_2d.play("walk")
+		if is_on_floor(): animated_sprite_2d.play("walk")
 	else:
 		walkStop()
 	if is_on_floor():
@@ -83,6 +86,7 @@ func spawnHoldTrap():
 		newTrap.global_position = global_position + newTrapPos
 		get_parent().leafAmount -= woodTrapCost
 		get_parent().updateHUD()
+		as_place_trap.play()
 
 func spawnBearTrap():
 	if bearTrapCost <= get_parent().stoneAmount:
@@ -94,10 +98,11 @@ func spawnBearTrap():
 		newTrap.global_position = global_position + newTrapPos
 		get_parent().stoneAmount -= bearTrapCost
 		get_parent().updateHUD()
+		as_place_trap.play()
 
 func walkStop():
 	velocity.x = move_toward(velocity.x, 0, SPEED)
-	animated_sprite_2d.play("default")
+	if is_on_floor(): animated_sprite_2d.play("default")
 
 #if necessary for debugging, it makes it easier to get inputs while frame advancing
 #func virtualController():
@@ -116,6 +121,7 @@ func collect(resType = Global.PlayerResourceType.LEAVES, amount = 1):
 func DamagePlayer(damageTaken : int) -> void:
 	if health > 0:
 		health -= damageTaken
+		tmr_heal.start(1)
 		isDead = false
 		
 	Global.onPlayerHit.emit()
@@ -130,3 +136,11 @@ func CheckPlayerStatus() -> void:
 #we can set everything that happens here as soon as the player lose, like text, pauses and menus
 func GameOverSequence() -> void:
 	Global.OnGameOver.emit()
+
+func _on_tmr_heal_timeout():
+	health += 5
+	get_parent().updateHUD()
+	if health >= maxHealth:
+		health = maxHealth
+	else:
+		tmr_heal.start(1)
