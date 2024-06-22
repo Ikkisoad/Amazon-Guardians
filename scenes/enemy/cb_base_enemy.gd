@@ -10,6 +10,9 @@ const JUMP_VELOCITY = -400.0
 @onready var pb_enemy = $pbEnemy
 @onready var cb_base_enemy: CharacterBody2D = $"."
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var as_hit = $asHit
+@onready var as_miner_hit = $asMinerHit
+@onready var as_step = $asStep
 
 
 @export var facing = 1
@@ -44,6 +47,7 @@ func _physics_process(delta):
 
 	var direction = facing
 	if direction && !stop:
+		if !as_step.playing: as_step.play()
 		velocity.x = direction * SPEED
 		PlayAnimationBasedOnEnemyType(enemyType, animStates.WALK)
 	else:
@@ -76,6 +80,11 @@ func _on_tmr_attack_timeout():
 			returnToBase()
 		startAttackTimer()
 		cs_attack.set_deferred("disabled", false)
+		match enemyType:
+			Global.EnemyType.WOODWORKER:
+				as_hit.play()
+			Global.EnemyType.MINER:
+				as_miner_hit.play()
 		PlayAnimationBasedOnEnemyType(enemyType, animStates.ATTACK)
 
 func _on_a_2_enemy_attack_area_entered(area):
@@ -106,6 +115,7 @@ func updateHUD():
 
 func getHit(dmg):
 	health -= dmg
+	#Log.print(health)
 	updateHUD()
 	if health <= 0:
 		queue_free()

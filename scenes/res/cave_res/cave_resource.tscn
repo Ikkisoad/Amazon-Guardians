@@ -1,10 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://chlxpj454s7h5"]
+[gd_scene load_steps=4 format=3 uid="uid://chlxpj454s7h5"]
 
 [ext_resource type="PackedScene" uid="uid://bwsy83o5lf5fh" path="res://scenes/res/base_res/base_res.tscn" id="1_bhh3j"]
+[ext_resource type="Texture2D" uid="uid://c3u2ebfqjbrbn" path="res://Assets/sprites/cave/caverna2.png" id="2_lky5r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_88ty1"]
+size = Vector2(387.2, 297.6)
 
 [node name="CaveResource" groups=["cave"] instance=ExtResource("1_bhh3j")]
 scale = Vector2(2.5, 2.5)
 resourceType = 1
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="a2dResource" index="0"]
+position = Vector2(11.2, 81.6)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_88ty1")
+
 [node name="Sprite2D" parent="." index="2"]
 modulate = Color(0.286275, 0.572549, 0.894118, 1)
+z_index = -7
+texture = ExtResource("2_lky5r")

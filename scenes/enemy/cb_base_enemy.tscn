@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dwmswum8ipomh"]
+[gd_scene load_steps=27 format=3 uid="uid://dwmswum8ipomh"]
 
 [ext_resource type="Script" path="res://scenes/enemy/cb_base_enemy.gd" id="1_viqn7"]
 [ext_resource type="Texture2D" uid="uid://dhfiyf45bkr71" path="res://Assets/sprites/miner/mineiro_ataque_2.png" id="2_0xeef"]
@@ -9,6 +9,18 @@
 [ext_resource type="Texture2D" uid="uid://bq0k7eelu83po" path="res://Assets/sprites/miner/mineiro_ataque_1.png" id="6_yqd65"]
 [ext_resource type="Texture2D" uid="uid://cq6waxrao6gcf" path="res://Assets/sprites/miner/mineiro_walk_1.png" id="8_sar3a"]
 [ext_resource type="Texture2D" uid="uid://bsm5x14yrw1iv" path="res://Assets/sprites/miner/mineiro_walk_2.png" id="9_q17qn"]
+[ext_resource type="AudioStream" uid="uid://qn1811oovp3f" path="res://Assets/SFX/wood_and_metal_vol.2/wood16.wav" id="10_a63ja"]
+[ext_resource type="AudioStream" uid="uid://uajaurovatv" path="res://Assets/SFX/wood_and_metal_vol.2/metal3.wav" id="11_nqdar"]
+[ext_resource type="AudioStream" uid="uid://cwgq5d0bjwse7" path="res://Assets/SFX/wood_and_metal_vol.2/metal4.wav" id="12_1wuqo"]
+[ext_resource type="AudioStream" uid="uid://dvbp3763yuisj" path="res://Assets/SFX/wood_and_metal_vol.2/metal5.wav" id="13_p7dxw"]
+[ext_resource type="AudioStream" uid="uid://bnnt53wefaoln" path="res://Assets/SFX/jute-dh-steps/jute-dh-steps/stepdirt_1.wav" id="14_lxpqi"]
+[ext_resource type="AudioStream" uid="uid://b8hmr86byji2d" path="res://Assets/SFX/jute-dh-steps/jute-dh-steps/stepdirt_2.wav" id="15_6th12"]
+[ext_resource type="AudioStream" uid="uid://dt7ior5trwqy2" path="res://Assets/SFX/jute-dh-steps/jute-dh-steps/stepdirt_3.wav" id="16_rkrn7"]
+[ext_resource type="AudioStream" uid="uid://cmbnj8koope5y" path="res://Assets/SFX/jute-dh-steps/jute-dh-steps/stepdirt_4.wav" id="17_xn55b"]
+[ext_resource type="AudioStream" uid="uid://dhijpgl2ni7qk" path="res://Assets/SFX/jute-dh-steps/jute-dh-steps/stepdirt_5.wav" id="18_kia1y"]
+[ext_resource type="AudioStream" uid="uid://bugcomrcxrdea" path="res://Assets/SFX/jute-dh-steps/jute-dh-steps/stepdirt_6.wav" id="19_j474f"]
+[ext_resource type="AudioStream" uid="uid://e6vca2pwy62v" path="res://Assets/SFX/jute-dh-steps/jute-dh-steps/stepdirt_7.wav" id="20_6yqh8"]
+[ext_resource type="AudioStream" uid="uid://ce8lym15yjom8" path="res://Assets/SFX/jute-dh-steps/jute-dh-steps/stepdirt_8.wav" id="21_ah6yh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_61wge"]
 animations = [{
@@ -79,6 +91,34 @@ size = Vector2(74, 134)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tt8uu"]
 size = Vector2(90, 146)
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ll7qe"]
+streams_count = 3
+stream_0/stream = ExtResource("11_nqdar")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("12_1wuqo")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("13_p7dxw")
+stream_2/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_gff1h"]
+streams_count = 8
+stream_0/stream = ExtResource("14_lxpqi")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("15_6th12")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("16_rkrn7")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("17_xn55b")
+stream_3/weight = 1.0
+stream_4/stream = ExtResource("18_kia1y")
+stream_4/weight = 1.0
+stream_5/stream = ExtResource("19_j474f")
+stream_5/weight = 1.0
+stream_6/stream = ExtResource("20_6yqh8")
+stream_6/weight = 1.0
+stream_7/stream = ExtResource("21_ah6yh")
+stream_7/weight = 1.0
+
 [node name="cbBaseEnemy" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 256
 collision_mask = 516
@@ -120,6 +160,15 @@ offset_bottom = -284.0
 max_value = 1000.0
 value = 500.0
 show_percentage = false
+
+[node name="asHit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_a63ja")
+
+[node name="asMinerHit" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_ll7qe")
+
+[node name="asStep" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_gff1h")
 
 [connection signal="area_entered" from="a2EnemyDetector" to="." method="_on_a_2_enemy_detector_area_entered"]
 [connection signal="area_exited" from="a2EnemyDetector" to="." method="_on_a_2_enemy_detector_area_exited"]

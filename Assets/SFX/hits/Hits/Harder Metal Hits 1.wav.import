@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://nihqwwoj8p80"
+path="res://.godot/imported/Harder Metal Hits 1.wav-28a199c4237bc2f4c49f3765906a9011.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/hits/Hits/Harder Metal Hits 1.wav"
+dest_files=["res://.godot/imported/Harder Metal Hits 1.wav-28a199c4237bc2f4c49f3765906a9011.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

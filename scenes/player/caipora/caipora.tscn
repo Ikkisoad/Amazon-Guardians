@@ -65,6 +65,7 @@ size = Vector2(354, 297)
 
 [node name="caipora" instance=ExtResource("1_xho2i")]
 script = ExtResource("2_30r4i")
+damage = 350
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="0"]
 position = Vector2(20, -202)
@@ -74,6 +75,8 @@ frame = 1
 frame_progress = 0.884657
 
 [node name="attackHitbox" type="Area2D" parent="." index="6"]
+collision_layer = 0
+collision_mask = 256
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="attackHitbox" index="0"]
 position = Vector2(144, -131.5)
@@ -87,4 +90,5 @@ one_shot = true
 [node name="tmrDashCooldown" type="Timer" parent="." index="8"]
 one_shot = true
 
+[connection signal="body_entered" from="attackHitbox" to="." method="_on_attack_hitbox_body_entered"]
 [connection signal="timeout" from="tmrAttacking" to="." method="_on_tmr_attacking_timeout"]

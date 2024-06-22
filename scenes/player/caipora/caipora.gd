@@ -3,6 +3,8 @@ extends PlayerClass
 @onready var tmr_attacking = $tmrAttacking
 @onready var tmr_dash_cooldown = $tmrDashCooldown
 
+@export var damage = 350
+
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
@@ -44,3 +46,8 @@ func attack():
 
 func _on_tmr_attacking_timeout():
 	collision_shape_2d.set_deferred("disabled", true)
+
+
+func _on_attack_hitbox_body_entered(body):
+	if body.is_in_group("enemy"):
+		body.getHit(damage)

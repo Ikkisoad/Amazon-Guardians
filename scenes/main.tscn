@@ -1,15 +1,17 @@
-[gd_scene load_steps=12 format=3 uid="uid://dsdx64qq5lk44"]
+[gd_scene load_steps=14 format=3 uid="uid://dsdx64qq5lk44"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_eylpr"]
 [ext_resource type="PackedScene" uid="uid://i4ewk0kd4tbe" path="res://scenes/system/debugger.tscn" id="3_oa7ly"]
 [ext_resource type="PackedScene" uid="uid://c4elcp35wq18e" path="res://scenes/tile_map/tile_map.tscn" id="4_m70y3"]
 [ext_resource type="PackedScene" uid="uid://85ho1813kvpx" path="res://scenes/player/player_manager.tscn" id="4_pnr2r"]
 [ext_resource type="PackedScene" uid="uid://d115vjycip8v6" path="res://scenes/enemy/woodworker/cb_woodworker.tscn" id="6_ggxjf"]
+[ext_resource type="PackedScene" uid="uid://b0a4p0055slag" path="res://scenes/enemy/Miner/cb_miner_enemy.tscn" id="6_lxt44"]
 [ext_resource type="PackedScene" uid="uid://bvc0gn66b128q" path="res://scenes/res/resource_manager.tscn" id="6_xunr0"]
 [ext_resource type="PackedScene" uid="uid://chlxpj454s7h5" path="res://scenes/res/cave_res/cave_resource.tscn" id="7_8hwdb"]
 [ext_resource type="PackedScene" uid="uid://be782rih0dbuy" path="res://scenes/enemy/spawner/enemy_spawner_base.tscn" id="7_huaeu"]
 [ext_resource type="PackedScene" uid="uid://b1wnvd43cktpa" path="res://scenes/res/tree_res/tree_res.tscn" id="8_60w7q"]
 [ext_resource type="PackedScene" uid="uid://dkxeifth4khqa" path="res://scenes/system/tutorial.tscn" id="12_s1nbr"]
+[ext_resource type="AudioStream" uid="uid://bb2pdajsr44e3" path="res://Assets/SFX/music/The Outer Forest.mp3" id="12_xpdwc"]
 [ext_resource type="PackedScene" uid="uid://0jgcwr8uxedu" path="res://scenes/HUDs_Menus/game_over_panel.tscn" id="13_2nyps"]
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("tilemap", "playerMangader")]
@@ -43,6 +45,10 @@ maxSpawnRate = 66
 spawnLimit = 3
 facing = -1
 
+[node name="cbMinerEnemy" parent="EnemySpawnerBase2" instance=ExtResource("6_lxt44")]
+position = Vector2(-13429, -64)
+facing = -1
+
 [node name="EnemySpawnerBase" parent="." instance=ExtResource("7_huaeu")]
 position = Vector2(-13600, 1099)
 minSpawnRate = 25
@@ -55,7 +61,7 @@ position = Vector2(8268, -40)
 [node name="ResourceManager" parent="." instance=ExtResource("6_xunr0")]
 
 [node name="CaveResource" parent="ResourceManager" instance=ExtResource("7_8hwdb")]
-position = Vector2(2559, 935)
+position = Vector2(2559, 618)
 
 [node name="TreeResource2" parent="ResourceManager" instance=ExtResource("8_60w7q")]
 position = Vector2(-647, 685)
@@ -82,13 +88,13 @@ position = Vector2(-4825, 695)
 position = Vector2(-4270, 695)
 
 [node name="CaveResource2" parent="ResourceManager" instance=ExtResource("7_8hwdb")]
-position = Vector2(2874, 935)
+position = Vector2(-2297, 618)
 
 [node name="CaveResource3" parent="ResourceManager" instance=ExtResource("7_8hwdb")]
-position = Vector2(3771, 935)
+position = Vector2(4713, 618)
 
 [node name="CaveResource4" parent="ResourceManager" instance=ExtResource("7_8hwdb")]
-position = Vector2(4201, 942)
+position = Vector2(6447, 618)
 
 [node name="TreeResource9" parent="ResourceManager" instance=ExtResource("8_60w7q")]
 position = Vector2(24, 695)
@@ -109,6 +115,12 @@ process_mode = 2
 
 [node name="GameOverPanel" parent="HUDCanvas" instance=ExtResource("13_2nyps")]
 visible = false
+
+[node name="backgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_xpdwc")
+autoplay = true
+
+[connection signal="finished" from="backgroundMusic" to="." method="_on_background_music_finished"]
 
 [editable path="PlayerManager"]
 [editable path="ResourceManager"]
