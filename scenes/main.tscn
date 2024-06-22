@@ -120,6 +120,8 @@ tmrResourceMax = 10
 [node name="HUDCanvas" parent="." instance=ExtResource("12_aqsby")]
 
 [node name="backgroundMusic" parent="." instance=ExtResource("13_usctl")]
+process_mode = 3
+bus = &"music"
 
 [node name="stageWalls" parent="." instance=ExtResource("14_4j4nj")]
 

@@ -163,12 +163,15 @@ show_percentage = false
 
 [node name="asHit" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_a63ja")
+bus = &"SFX"
 
 [node name="asMinerHit" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_ll7qe")
+bus = &"SFX"
 
 [node name="asStep" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_gff1h")
+bus = &"SFX"
 
 [connection signal="area_entered" from="a2EnemyDetector" to="." method="_on_a_2_enemy_detector_area_entered"]
 [connection signal="area_exited" from="a2EnemyDetector" to="." method="_on_a_2_enemy_detector_area_exited"]

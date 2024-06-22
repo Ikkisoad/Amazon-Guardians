@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://oe0dqchm5ku2"
+path="res://.godot/imported/Forest Whisper.ogg-5f49f4f3c894c75ecb8cba6c8cde31a4.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/SFX/music/Forest Whisper Theme/Forest Whisper.ogg"
+dest_files=["res://.godot/imported/Forest Whisper.ogg-5f49f4f3c894c75ecb8cba6c8cde31a4.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

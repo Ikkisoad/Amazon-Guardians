@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://chyjcacpj1ope"]
+[gd_scene load_steps=9 format=3 uid="uid://chyjcacpj1ope"]
 
 [ext_resource type="Script" path="res://scenes/main_menu/main_menu.gd" id="1_yk4tx"]
 [ext_resource type="Texture2D" uid="uid://ielxwdiar774" path="res://Assets/sprites/caipora/caipora_perfil.png" id="2_3kckt"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://fx5anea55wjv" path="res://Assets/backgrounds/battleback1.png" id="4_htioi"]
 [ext_resource type="Texture2D" uid="uid://dvqql1cp5rdlf" path="res://Assets/JAM Assets/70-Folklore.png" id="5_yjbi2"]
 [ext_resource type="Texture2D" uid="uid://wg5prw2n0gl" path="res://Assets/JAM Assets/70-All-Cards.png" id="6_bf0ll"]
+[ext_resource type="AudioStream" uid="uid://oe0dqchm5ku2" path="res://Assets/SFX/music/Forest Whisper Theme/Forest Whisper.ogg" id="7_xijk3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_e3qqc"]
 font_size = 96
@@ -123,6 +124,10 @@ offset_bottom = 301.099
 scale = Vector2(2.80258, 2.80258)
 theme_override_font_sizes/font_size = 500
 text = "X"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_xijk3")
+autoplay = true
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/btnPlay" to="." method="_on_btn_play_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/btnAbout" to="." method="_on_btn_about_pressed"]
