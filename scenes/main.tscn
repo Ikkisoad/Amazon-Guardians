@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dsdx64qq5lk44"]
+[gd_scene load_steps=16 format=3 uid="uid://dsdx64qq5lk44"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_eylpr"]
 [ext_resource type="PackedScene" uid="uid://i4ewk0kd4tbe" path="res://scenes/system/debugger.tscn" id="3_oa7ly"]
@@ -12,9 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://b1wnvd43cktpa" path="res://scenes/res/tree_res/tree_res.tscn" id="8_60w7q"]
 [ext_resource type="PackedScene" uid="uid://2hjqd71syyeq" path="res://scenes/HUDs_Menus/hud_canvas.tscn" id="12_aqsby"]
 [ext_resource type="PackedScene" uid="uid://dkxeifth4khqa" path="res://scenes/system/tutorial.tscn" id="12_s1nbr"]
-[ext_resource type="AudioStream" uid="uid://bb2pdajsr44e3" path="res://Assets/SFX/music/The Outer Forest.mp3" id="12_xpdwc"]
+[ext_resource type="PackedScene" uid="uid://cvivabjxm3bps" path="res://scenes/background_music/background_music.tscn" id="13_usctl"]
+[ext_resource type="PackedScene" uid="uid://bfs1n3hut2nj0" path="res://scenes/stage_walls/stage_walls.tscn" id="14_4j4nj"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_l0gdl"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uy1dm"]
 size = Vector2(15, 1627)
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("tilemap", "playerMangader")]
@@ -118,23 +119,17 @@ tmrResourceMax = 10
 
 [node name="HUDCanvas" parent="." instance=ExtResource("12_aqsby")]
 
-[node name="backgroundMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("12_xpdwc")
-autoplay = true
+[node name="backgroundMusic" parent="." instance=ExtResource("13_usctl")]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-collision_layer = 4
-collision_mask = 0
+[node name="stageWalls" parent="." instance=ExtResource("14_4j4nj")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="stageWalls"]
 position = Vector2(-13826, 726)
-shape = SubResource("RectangleShape2D_l0gdl")
+shape = SubResource("RectangleShape2D_uy1dm")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="stageWalls"]
 position = Vector2(21214, 466)
-shape = SubResource("RectangleShape2D_l0gdl")
-
-[connection signal="finished" from="backgroundMusic" to="." method="_on_background_music_finished"]
+shape = SubResource("RectangleShape2D_uy1dm")
 
 [editable path="PlayerManager"]
 [editable path="ResourceManager"]

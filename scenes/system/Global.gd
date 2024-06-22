@@ -23,9 +23,9 @@ func nextStage():
 		0:
 			get_tree().change_scene_to_file("res://scenes/main.tscn")
 		1:
-			get_tree().change_scene_to_file("res://scenes/main.tscn")
+			get_tree().change_scene_to_file("res://scenes/stage_1/stage_1.tscn")
 		2:
-			get_tree().change_scene_to_file("res://scenes/main.tscn")
+			get_tree().change_scene_to_file("res://scenes/stage_2/stage_2.tscn")
 		3:
 			get_tree().change_scene_to_file("res://scenes/main.tscn")
 		4:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://vp83c8184gjs"]
+[gd_scene load_steps=14 format=3 uid="uid://vp83c8184gjs"]
 
 [ext_resource type="Script" path="res://scenes/player/UI/player_ui.gd" id="1_oonwr"]
 [ext_resource type="StyleBox" uid="uid://dmnpqeyemqipp" path="res://scenes/player/UI/playerHealthFill.tres" id="2_65e3d"]
@@ -6,8 +6,8 @@
 [ext_resource type="StyleBox" uid="uid://c3idycnfcja4x" path="res://scenes/player/UI/PlayerHealthActualFill.tres" id="3_8rk0r"]
 [ext_resource type="Texture2D" uid="uid://8s7lejkpdj6h" path="res://Assets/sprites/tree/tree.png" id="3_gooqp"]
 [ext_resource type="Texture2D" uid="uid://crloerh1g55ly" path="res://Assets/traps/woodTrap/small_wood_spike_04.png" id="4_3klkd"]
-[ext_resource type="Texture2D" uid="uid://bj3sds4vuxkfl" path="res://Assets/sprites/cave/cave.png" id="5_iicrm"]
 [ext_resource type="Texture2D" uid="uid://b33q7yq6goam6" path="res://Assets/traps/woodTrap/small_wood_spike_01.png" id="6_71pdq"]
+[ext_resource type="Texture2D" uid="uid://d0mw6aea5t2gd" path="res://Assets/sprites/cave/caverna2 - Copy.png" id="7_qrcvm"]
 [ext_resource type="Texture2D" uid="uid://fx5anea55wjv" path="res://Assets/backgrounds/battleback1.png" id="9_xpaq7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vj2pi"]
@@ -25,15 +25,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1iqf2"]
-atlas = ExtResource("5_iicrm")
-region = Rect2(3750, 900, 150, 150)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_m5p1w"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1iqf2")
+"texture": ExtResource("7_qrcvm")
 }],
 "loop": true,
 "name": &"cave",
@@ -163,7 +159,7 @@ texture = ExtResource("4_3klkd")
 position = Vector2(1704, 1024)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_m5p1w")
-animation = &"tree"
+animation = &"cave"
 
 [node name="asprTrap" type="AnimatedSprite2D" parent="clPlayerUI"]
 position = Vector2(1872, 1008)

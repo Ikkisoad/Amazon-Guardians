@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvivabjxm3bps"]
+
+[ext_resource type="AudioStream" uid="uid://bb2pdajsr44e3" path="res://Assets/SFX/music/The Outer Forest.mp3" id="1_tenv2"]
+
+[node name="backgroundMusic" type="AudioStreamPlayer"]
+stream = ExtResource("1_tenv2")
+autoplay = true

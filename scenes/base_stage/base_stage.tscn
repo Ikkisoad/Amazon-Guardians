@@ -1,0 +1,22 @@
+[gd_scene load_steps=7 format=3 uid="uid://cgpwxgb53is7"]
+
+[ext_resource type="PackedScene" uid="uid://c4elcp35wq18e" path="res://scenes/tile_map/tile_map.tscn" id="1_pb2wr"]
+[ext_resource type="PackedScene" uid="uid://85ho1813kvpx" path="res://scenes/player/player_manager.tscn" id="2_1gn1j"]
+[ext_resource type="PackedScene" uid="uid://bvc0gn66b128q" path="res://scenes/res/resource_manager.tscn" id="3_xma44"]
+[ext_resource type="PackedScene" uid="uid://2hjqd71syyeq" path="res://scenes/HUDs_Menus/hud_canvas.tscn" id="4_ryrbn"]
+[ext_resource type="PackedScene" uid="uid://bfs1n3hut2nj0" path="res://scenes/stage_walls/stage_walls.tscn" id="5_rdaro"]
+[ext_resource type="PackedScene" uid="uid://cvivabjxm3bps" path="res://scenes/background_music/background_music.tscn" id="6_aekwv"]
+
+[node name="base_stage" type="Node2D"]
+
+[node name="TileMap" parent="." instance=ExtResource("1_pb2wr")]
+
+[node name="PlayerManager" parent="." instance=ExtResource("2_1gn1j")]
+
+[node name="ResourceManager" parent="." instance=ExtResource("3_xma44")]
+
+[node name="HUDCanvas" parent="." instance=ExtResource("4_ryrbn")]
+
+[node name="stageWalls" parent="." instance=ExtResource("5_rdaro")]
+
+[node name="backgroundMusic" parent="." instance=ExtResource("6_aekwv")]
