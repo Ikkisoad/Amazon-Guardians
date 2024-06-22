@@ -17,6 +17,12 @@ func _ready():
 	Global.onPlayerHit.connect(OnPlayerDamaged)
 	updateHUD()
 
+func setCameraLimits(limits):
+	cam_player.limit_left = limits[0]
+	cam_player.limit_right = limits[1]
+	cam_player.limit_top = limits[2]
+	cam_player.limit_bottom = limits[3]
+
 func updateHUD():
 	player_ui.updateHUD(cb_player.health, cb_player_2.health, leafAmount, stoneAmount)
 

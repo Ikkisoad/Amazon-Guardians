@@ -19,10 +19,12 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var animated_sprite_2d = $AnimatedSprite2D
 
 var selectedTrapType = Global.TrapType.WOOD
-var facing = 1
+@export var facing = 1
 var isDead = false
 var spawnLocked = false
 
+func _ready():
+	if facing != 1: flip(-1)
 
 func _process(delta: float) -> void:
 	#just to explain here i'm using only using _process to check UI stuffs and player stats

@@ -1,4 +1,5 @@
 extends Node2D
+@onready var progress_bar = $CanvasLayer/ProgressBar
 
 @export var maxNewXPos = 350
 @export var minNewXPos = 150
@@ -16,6 +17,18 @@ var caveRes = preload("res://scenes/res/cave_res/cave_resource.tscn")
 
 func _ready():
 	countResources()
+	setOverallHealthValues()
+
+func setOverallHealthValues():
+	var maxHealth = 0
+	var currentHealth = 0
+	for c in get_children():
+		if c.is_in_group("resource"): maxHealth += c.health
+	progress_bar.max_value = maxHealth
+	progress_bar.value = maxHealth
+
+func setCurrentHealth(value):
+	progress_bar.value += value
 
 func spawnTree(globalPos, facing = 1):
 	if treeCount > maxTrees: return

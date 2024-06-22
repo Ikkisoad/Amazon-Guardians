@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var health = 100
+@export var maxHealth = 100
 @onready var tmr_resource = $tmrResource
 @export var resourceType:Global.ResourceType = Global.ResourceType.TREE
 @onready var pb_resource = $pbResource
@@ -50,15 +51,21 @@ func setPlayerResource():
 
 
 func _on_tmr_health_regen_timeout():
-	health += randi_range(minHealthRegen, maxHealthRegen)
-	startHealthRegenTimer()
-	updateHUD()
+	if health < maxHealth:
+		var heal = randi_range(minHealthRegen, maxHealthRegen)
+		if health + heal > maxHealth:
+			heal = maxHealth - health
+		health += heal
+		get_parent().setCurrentHealth(heal)
+		startHealthRegenTimer()
+		updateHUD()
 
 func updateHUD():
 	pb_resource.value = health
 
 func getHit(damage):
 	health -= damage
+	get_parent().setCurrentHealth(-damage)
 	updateHUD()
 	if health <= 0:
 		get_parent().removeResource(resourceType)
