@@ -59,8 +59,11 @@ func handleInputs():
 	else:
 		walkStop()
 	if is_on_floor():
-		if Input.get_axis("down", "up") == -1:
+		var yDirection = Input.get_axis("down", "up")
+		if yDirection == -1:
 			global_position.y += 1
+		elif yDirection == 1:
+			get_parent().caveTeleport(self)
 
 func flip(dir):
 	scale.x = -1

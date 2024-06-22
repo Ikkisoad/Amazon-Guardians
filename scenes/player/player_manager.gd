@@ -11,6 +11,7 @@ extends Node2D
 var trapTypeSelected = Global.TrapType.WOOD
 var resourceTypeSelected = Global.ResourceType.TREE
 
+var caveTeleportTo = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	cb_player.setRemoteTransformPath(cam_player.get_path())
@@ -22,6 +23,18 @@ func setCameraLimits(limits):
 	cam_player.limit_right = limits[1]
 	cam_player.limit_top = limits[2]
 	cam_player.limit_bottom = limits[3]
+
+func caveTeleport(playerBody):
+	var caveArray = []
+	for i in resourceManager.get_children():
+		if i.is_in_group("cave"):
+			caveArray.push_back(i)
+	if caveTeleportTo >= caveArray.size():
+		caveTeleportTo = 0
+	if !caveArray.is_empty():
+		playerBody.global_position = caveArray[caveTeleportTo].global_position
+		playerBody.global_position.y += 500
+		caveTeleportTo += 1
 
 func updateHUD():
 	player_ui.updateHUD(cb_player.health, cb_player_2.health, leafAmount, stoneAmount)

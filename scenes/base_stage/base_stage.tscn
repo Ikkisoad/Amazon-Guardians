@@ -15,7 +15,8 @@ playerMangader = NodePath("PlayerManager")
 
 [node name="TileMap" parent="." instance=ExtResource("1_pb2wr")]
 
-[node name="PlayerManager" parent="." instance=ExtResource("2_1gn1j")]
+[node name="PlayerManager" parent="." node_paths=PackedStringArray("resourceManager") instance=ExtResource("2_1gn1j")]
+resourceManager = NodePath("../ResourceManager")
 
 [node name="ResourceManager" parent="." instance=ExtResource("3_xma44")]
 
