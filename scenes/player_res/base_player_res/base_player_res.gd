@@ -3,7 +3,8 @@ extends RigidBody2D
 
 @export var tmrDespawnMin = 60
 @export var tmrDespawnMax = 110
-@export var amount = 2
+@export var maxAmount = 2
+@export var minAmount = 10
 @export var playerResourceType = Global.PlayerResourceType.LEAVES
 
 var resourceScene
@@ -31,7 +32,7 @@ func startDespawnTimer():
 
 func _on_a_2d_base_player_resource_body_entered(body):
 	if body.has_method("collect"):
-		body.collect(playerResourceType, amount)
+		body.collect(playerResourceType, randi_range(minAmount, maxAmount))
 		queue_free()
 
 #func setResourceScene():

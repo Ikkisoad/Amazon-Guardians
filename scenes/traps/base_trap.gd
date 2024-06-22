@@ -7,6 +7,7 @@ class_name BaseTrap
 @export var trapType = Global.TrapType.WOOD
 @export var health = 100
 @onready var progress_bar = $ProgressBar
+@onready var as_hit = $asHit
 
 const DEFAULT_FRAME = 0
 
@@ -30,6 +31,7 @@ func hitBodyArea(area):
 	if trap_timer.is_stopped() && area.is_in_group("enemy"):
 		animated_sprite_2d.play()
 		if area.has_method("getHit"):
+			as_hit.play()
 			area.getHit(damage)
 			getHit(damage / 10)
 		trap_timer.start()
