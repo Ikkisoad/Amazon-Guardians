@@ -29,6 +29,12 @@ func setOverallHealthValues():
 
 func setCurrentHealth(value):
 	progress_bar.value += value
+	if progress_bar.value <= 0:
+		GameOverSequence()
+
+#we can set everything that happens here as soon as the player lose, like text, pauses and menus
+func GameOverSequence() -> void:
+	Global.OnGameOver.emit()
 
 func spawnTree(globalPos, facing = 1):
 	if treeCount > maxTrees: return

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dsdx64qq5lk44"]
+[gd_scene load_steps=12 format=3 uid="uid://dsdx64qq5lk44"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_eylpr"]
 [ext_resource type="PackedScene" uid="uid://i4ewk0kd4tbe" path="res://scenes/system/debugger.tscn" id="3_oa7ly"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://chlxpj454s7h5" path="res://scenes/res/cave_res/cave_resource.tscn" id="7_8hwdb"]
 [ext_resource type="PackedScene" uid="uid://be782rih0dbuy" path="res://scenes/enemy/spawner/enemy_spawner_base.tscn" id="7_huaeu"]
 [ext_resource type="PackedScene" uid="uid://b1wnvd43cktpa" path="res://scenes/res/tree_res/tree_res.tscn" id="8_60w7q"]
-[ext_resource type="PackedScene" uid="uid://ctis270b7aaso" path="res://scenes/one_way_platform/base_one_way_platform.tscn" id="9_5xqfn"]
 [ext_resource type="PackedScene" uid="uid://dkxeifth4khqa" path="res://scenes/system/tutorial.tscn" id="12_s1nbr"]
 [ext_resource type="PackedScene" uid="uid://0jgcwr8uxedu" path="res://scenes/HUDs_Menus/game_over_panel.tscn" id="13_2nyps"]
 
@@ -102,55 +101,6 @@ position = Vector2(958, 155)
 scale = Vector2(10.5134, 10.5134)
 tmrResourceMin = 5
 tmrResourceMax = 10
-
-[node name="baseOneWayPlatform" parent="." instance=ExtResource("9_5xqfn")]
-visible = false
-position = Vector2(318, 496)
-
-[node name="baseOneWayPlatform9" parent="baseOneWayPlatform" instance=ExtResource("9_5xqfn")]
-position = Vector2(0, -207)
-
-[node name="baseOneWayPlatform10" parent="baseOneWayPlatform" instance=ExtResource("9_5xqfn")]
-position = Vector2(0, -408)
-
-[node name="baseOneWayPlatform11" parent="baseOneWayPlatform" instance=ExtResource("9_5xqfn")]
-position = Vector2(0, -612)
-
-[node name="baseOneWayPlatform12" parent="baseOneWayPlatform" instance=ExtResource("9_5xqfn")]
-position = Vector2(0, -814)
-
-[node name="baseOneWayPlatform13" parent="baseOneWayPlatform" instance=ExtResource("9_5xqfn")]
-position = Vector2(0, -1004)
-
-[node name="baseOneWayPlatform14" parent="baseOneWayPlatform" instance=ExtResource("9_5xqfn")]
-position = Vector2(0, -1211)
-
-[node name="baseOneWayPlatform15" parent="baseOneWayPlatform" instance=ExtResource("9_5xqfn")]
-position = Vector2(0, -1412)
-
-[node name="baseOneWayPlatform16" parent="baseOneWayPlatform" instance=ExtResource("9_5xqfn")]
-position = Vector2(0, -1616)
-
-[node name="baseOneWayPlatform2" parent="baseOneWayPlatform" instance=ExtResource("9_5xqfn")]
-position = Vector2(0, 165)
-
-[node name="baseOneWayPlatform3" parent="baseOneWayPlatform" instance=ExtResource("9_5xqfn")]
-position = Vector2(0, 347)
-
-[node name="baseOneWayPlatform4" parent="baseOneWayPlatform" instance=ExtResource("9_5xqfn")]
-position = Vector2(0, 512)
-
-[node name="baseOneWayPlatform5" parent="baseOneWayPlatform" instance=ExtResource("9_5xqfn")]
-position = Vector2(0, 703)
-
-[node name="baseOneWayPlatform6" parent="baseOneWayPlatform" instance=ExtResource("9_5xqfn")]
-position = Vector2(0, 878)
-
-[node name="baseOneWayPlatform7" parent="baseOneWayPlatform" instance=ExtResource("9_5xqfn")]
-position = Vector2(0, 1041)
-
-[node name="baseOneWayPlatform8" parent="baseOneWayPlatform" instance=ExtResource("9_5xqfn")]
-position = Vector2(0, 1199)
 
 [node name="Tutorial" parent="." instance=ExtResource("12_s1nbr")]
 
