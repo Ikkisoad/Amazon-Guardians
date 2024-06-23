@@ -71,4 +71,7 @@ script = ExtResource("2_luf24")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="0"]
 position = Vector2(20, -202)
 sprite_frames = SubResource("SpriteFrames_htfjk")
-animation = &"falling"
+animation = &"settingTrap"
+
+[node name="tmrTrap" type="Timer" parent="." index="9"]
+one_shot = true

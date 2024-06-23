@@ -1,4 +1,5 @@
 extends PlayerClass
+@onready var tmr_trap = $tmrTrap
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -14,12 +15,16 @@ func _physics_process(delta):
 		handleAbilities()
 	else:
 		walkStop()
+	if !tmr_trap.is_stopped():
+		animated_sprite_2d.play("settingTrap")
 	move_and_slide()
 
 func handleAbilities():
 	if is_on_floor():
 		if !spawnLocked:
 			if Input.is_action_just_pressed("trap"):
+				animated_sprite_2d.play("settingTrap")
+				tmr_trap.start(0.3)
 				spawnTrap()
 			if Input.is_action_just_pressed("setResource"):
 				spawnResource()
