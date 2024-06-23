@@ -87,6 +87,8 @@ offset_top = 378.0
 offset_right = 1165.0
 offset_bottom = 394.0
 theme_override_constants/center_grabber = 0
+max_value = 1.0
+step = 0.001
 
 [node name="GMusicH" type="HSlider" parent="." groups=["audioSliders"]]
 layout_mode = 2
@@ -95,6 +97,8 @@ offset_top = 613.0
 offset_right = 1165.0
 offset_bottom = 629.0
 theme_override_constants/center_grabber = 0
+max_value = 1.0
+step = 0.001
 
 [node name="SFXMusicH" type="HSlider" parent="." groups=["audioSliders"]]
 layout_mode = 2
@@ -103,9 +107,12 @@ offset_top = 840.0
 offset_right = 1165.0
 offset_bottom = 856.0
 theme_override_constants/center_grabber = 0
+max_value = 1.0
+step = 0.001
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_supuh")
+volume_db = -0.945
 autoplay = true
 bus = &"music"
 

@@ -14,7 +14,6 @@ const DB_MIN = -24
 
 
 func _ready() -> void:
-	SetMaxAndMinSliders()
 	GetBaseVolume()
 	
 func GetBaseVolume() -> void:
@@ -22,10 +21,6 @@ func GetBaseVolume() -> void:
 	g_music_h.value = db_to_linear(AudioServer.get_bus_volume_db(musicBus))
 	sfx_music_h.value = db_to_linear(AudioServer.get_bus_volume_db(sfxBus))
 
-func SetMaxAndMinSliders() -> void:
-	for slider in get_tree().get_nodes_in_group("audioSliders"):
-		slider.max_value = DB_MAX
-		slider.min_value = DB_MIN
 
 func _on_master_h_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(masterBus, linear_to_db(value))
