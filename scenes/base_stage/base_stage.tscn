@@ -25,3 +25,4 @@ resourceManager = NodePath("../ResourceManager")
 [node name="stageWalls" parent="." instance=ExtResource("5_rdaro")]
 
 [node name="backgroundMusic" parent="." instance=ExtResource("6_aekwv")]
+bus = &"music"

@@ -60,6 +60,7 @@ layout_mode = 2
 text = "About"
 
 [node name="btnOptions" type="Button" parent="CenterContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "Options"
 
@@ -130,6 +131,7 @@ text = "X"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_xijk3")
 autoplay = true
+bus = &"music"
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 position = Vector2(960, 184)

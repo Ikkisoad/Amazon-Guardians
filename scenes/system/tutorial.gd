@@ -23,31 +23,31 @@ func _input(event):
 func updateHUD():
 	match step:
 		1:
-			label.text = "I know, I could setup some traps to prevent them from hitting our structures"
+			label.text = "Curupira: I know, I could setup some traps to prevent them from hitting our structures"
 			modulateProfile(spr_curupira, 1)
 			modulateProfile(spr_caipora, 0.8)
 		2:
-			label.text = "We should gather some resources, and using 'space' we can jump around"
+			label.text = "Curupira: We should gather some resources, and using 'space' we can jump around"
 		3:
-			label.text = "By pressing 'X' and having enough resources I can setup traps"
+			label.text = "Curupira: By pressing 'X' and having enough resources I can setup traps"
 		4:
-			label.text = "The amount of resources we collected is shown on the top right"
+			label.text = "Curupira: The amount of resources we collected is shown on the top right"
 		5:
-			label.text = "And with 'E' I can change which type of trap I can place"
+			label.text = "Curupira: And with 'E' I can change which type of trap I can place"
 		6:
-			label.text = "While you setup those traps, let me take care of them personally"
+			label.text = "Caipora: While you setup those traps, let me take care of them personally"
 			modulateProfile(spr_curupira, 0.8)
 			modulateProfile(spr_caipora, 1)
 		7:
-			label.text = "With 'X' I can let them know who they are dealing with"
+			label.text = "Caipora: With 'X' I can let them know who they are dealing with"
 		8:
-			label.text = "And 'V' allows me to dash and headbutt them graciously"
+			label.text = "Caipora: And 'V' allows me to dash and headbutt them graciously"
 		9:
-			label.text = "I can also place structures using 'V'"
+			label.text = "Curupira: I can also place structures using 'V'"
 			modulateProfile(spr_curupira, 1)
 			modulateProfile(spr_caipora, 0.8)
 		10:
-			label.text = "Just like with traps, pressing 'Q' I can choose what kind of structure I place on the field"
+			label.text = "Curupira: Just like with traps, pressing 'Q' I can choose what kind of structure I place on the field"
 		_:
 			get_tree().paused = false
 			queue_free()

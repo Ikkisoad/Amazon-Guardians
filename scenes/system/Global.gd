@@ -30,7 +30,7 @@ func nextStage():
 			get_tree().change_scene_to_file("res://scenes/stage_3/stage_3.tscn")
 		4:
 			#gameClear scene
-			get_tree().change_scene_to_file("res://scenes/main.tscn")
+			get_tree().change_scene_to_file("res://scenes/win_screen/win_screen.tscn")
 		5:
 			currentStage = 0
 			gameClears += 1

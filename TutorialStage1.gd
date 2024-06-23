@@ -23,7 +23,7 @@ func _input(event):
 func updateHUD():
 	match step:
 		1:
-			label.text = "We can press 'Up' to move around our caves on the map"
+			label.text = "Curupira: We can press 'Up' to move around our caves on the map"
 			modulateProfile(spr_curupira, 1)
 			modulateProfile(spr_caipora, 0.8)
 		#2:

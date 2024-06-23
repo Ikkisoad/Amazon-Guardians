@@ -44,4 +44,15 @@ offset_right = 1790.0
 offset_bottom = 1023.0
 text = "Main Menu"
 
+[node name="caipora" type="Label" parent="."]
+layout_mode = 0
+offset_left = 600.0
+offset_top = 72.0
+offset_right = 788.0
+offset_bottom = 141.0
+theme_override_font_sizes/font_size = 50
+text = "Caipora
+
+"
+
 [connection signal="pressed" from="btnPlay" to="." method="_on_btn_play_pressed"]

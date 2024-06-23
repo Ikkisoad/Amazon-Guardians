@@ -1,0 +1,75 @@
+[gd_scene load_steps=5 format=3 uid="uid://bcal74d0xl70v"]
+
+[ext_resource type="Script" path="res://scenes/About/about_scene.gd" id="1_fjele"]
+[ext_resource type="Texture2D" uid="uid://fx5anea55wjv" path="res://Assets/backgrounds/battleback1.png" id="2_libo4"]
+[ext_resource type="Texture2D" uid="uid://w2aqdj4p7r40" path="res://Assets/sprites/curupira/curupira_perfil.png" id="3_fulia"]
+[ext_resource type="Texture2D" uid="uid://ielxwdiar774" path="res://Assets/sprites/caipora/caipora_perfil.png" id="4_f8m1x"]
+
+[node name="winScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fjele")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -50
+position = Vector2(952, 568)
+scale = Vector2(1.98378, 1.98378)
+texture = ExtResource("2_libo4")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -136.0
+offset_top = 264.0
+offset_right = 556.0
+offset_bottom = 1178.0
+texture = ExtResource("3_fulia")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1192.0
+offset_top = 264.0
+offset_right = 1884.0
+offset_bottom = 1178.0
+texture = ExtResource("4_f8m1x")
+
+[node name="lblWin" type="Label" parent="."]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 72.0
+offset_right = 782.0
+offset_bottom = 141.0
+scale = Vector2(2.33082, 2.33082)
+theme_override_font_sizes/font_size = 50
+text = "THE FOREST IS SAVED!"
+
+[node name="lblWin2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 608.0
+offset_top = 232.0
+offset_right = 1150.0
+offset_bottom = 301.0
+scale = Vector2(0.927261, 0.927261)
+theme_override_font_sizes/font_size = 50
+text = "Thank You for playing!"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 840.0
+offset_top = 800.0
+offset_right = 955.0
+offset_bottom = 866.0
+
+[node name="btnKeepPlaying" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "New Game+"
+
+[node name="btnPlay" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Main Menu"
+
+[connection signal="pressed" from="VBoxContainer/btnKeepPlaying" to="." method="_on_btn_keep_playing_pressed"]
+[connection signal="pressed" from="VBoxContainer/btnPlay" to="." method="_on_btn_play_pressed"]

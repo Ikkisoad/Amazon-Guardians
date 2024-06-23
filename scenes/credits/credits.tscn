@@ -12,6 +12,34 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7dsgm")
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 32.0
+offset_right = 970.0
+offset_bottom = 549.0
+scale = Vector2(1.90177, 1.90177)
+text = "OpenGameArt
+Castlevania-esque Tilemap (Stone and Bricks) - Chad Wolfe
+tree leaves - Angry Amish
+Backgrounds - Nidhoggn
+Foot walking step sounds on stone, water, snow, wood and dirt - Jute
+Wood and Metal Sound Effects: Volume 2 - Ogrebane
+Tree Falling (Yo Frankie!) - Blender Foundation
+Hit sounds - pauliuw
+Forest Theme - Zydro
+Falling Rock - spookymodem
+Forest Whisper Theme - CleytonKauffman
+
+Code
+Ikkisoad
+GsX
+
+Sprites
+Makai"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -50
 position = Vector2(952, 568)
