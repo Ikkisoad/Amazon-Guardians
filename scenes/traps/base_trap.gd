@@ -14,6 +14,8 @@ const DEFAULT_FRAME = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	updateHUD()
+	if trapType == Global.TrapType.BEAR:
+		animated_sprite_2d.play("bearTrap")
 
 func _on_area_entered(area: Area2D) -> void:
 	hitBodyArea(area)

@@ -10,13 +10,15 @@ script = ExtResource("1_gs8ye")
 
 [node name="camPlayer" type="Camera2D" parent="."]
 offset = Vector2(0, -300)
+zoom = Vector2(0.5, 0.5)
 
 [node name="PlayerUI" parent="." instance=ExtResource("3_mvbqc")]
 
 [node name="caipora" parent="." instance=ExtResource("3_e4eoo")]
 position = Vector2(1288, 976)
-SPEED = 850.0
+SPEED = 1850.0
 locked = true
 
 [node name="curupira" parent="." instance=ExtResource("4_588f4")]
 position = Vector2(768, 1008)
+SPEED = 1300.0

@@ -12,8 +12,8 @@ extends Node2D
 var playerResourceScene
 var playerResource
 
-@export var tmrResourceMin = 25
-@export var tmrResourceMax = 100
+@export var tmrResourceMin = 5
+@export var tmrResourceMax = 25
 @export var tmrMinHealthRegen = 5
 @export var tmrMaxHealthRegen = 10
 @export var minHealthRegen = 1
@@ -26,7 +26,6 @@ func _ready():
 	setPlayerResource()
 
 func _on_body_entered(_body):
-	#Log.print(str("Body entered: ", body))
 	pass
 
 

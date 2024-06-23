@@ -18,7 +18,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var tmr_teleport = $tmrTeleport
 
 @export var woodTrapCost = 3
-@export var bearTrapCost = 25
+@export var bearTrapCost = 7
 
 @onready var animated_sprite_2d = $AnimatedSprite2D
 

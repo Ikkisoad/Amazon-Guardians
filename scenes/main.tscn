@@ -112,7 +112,6 @@ position = Vector2(1908, 695)
 [node name="TreeResource11" parent="ResourceManager" instance=ExtResource("8_60w7q")]
 position = Vector2(958, 155)
 scale = Vector2(10.5134, 10.5134)
-tmrResourceMin = 5
 tmrResourceMax = 10
 
 [node name="Tutorial" parent="." instance=ExtResource("12_s1nbr")]

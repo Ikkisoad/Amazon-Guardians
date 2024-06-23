@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cw5krivjuxw2t"]
+
+[node name="minimap" type="SubViewportContainer"]
+offset_left = 32.0
+offset_top = 832.0
+offset_right = 72.0
+offset_bottom = 872.0
+scale = Vector2(0.479095, 0.479095)
+
+[node name="SubViewport" type="SubViewport" parent="."]
+handle_input_locally = false
+snap_2d_transforms_to_pixel = true
+
+[node name="Camera2D" type="Camera2D" parent="SubViewport"]
+zoom = Vector2(0.1, 0.1)

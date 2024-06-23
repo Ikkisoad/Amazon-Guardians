@@ -58,7 +58,6 @@ func _physics_process(delta):
 
 func _on_a_2_enemy_detector_body_entered(body):
 	if body.is_in_group("resource"):
-		Log.print("Resource detected")
 		stop = true
 
 func _on_a_2_enemy_detector_area_entered(area):
@@ -116,7 +115,6 @@ func updateHUD():
 
 func getHit(dmg):
 	health -= dmg
-	#Log.print(health)
 	updateHUD()
 	if health <= 0:
 		Global.OnEnemyKilled.emit()

@@ -45,15 +45,14 @@ func _process(_delta):
 		var swap = cb_player.locked
 		cb_player_2.lock(swap, cam_player.get_path())
 		cb_player.lock(!swap, cam_player.get_path())
+	player_ui.updateMiniMapCamera(cam_player.global_position)
 
 func collectResource(resType = Global.PlayerResourceType.LEAVES, amount = 1):
 	match resType:
 		Global.PlayerResourceType.LEAVES:
 			leafAmount += amount
-			Log.print(str("Leaf collected ", amount))
 		Global.PlayerResourceType.STONES:
 			stoneAmount += amount
-			Log.print(str("Stone collected ", amount))
 	updateHUD()
 
 func spawnResource(globalPos, facing):

@@ -53,7 +53,7 @@ script = ExtResource("1_2y7l8")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_om3gw")
-animation = &"bearTrap"
+animation = &"woodTrap"
 
 [node name="TrapTimer" type="Timer" parent="."]
 wait_time = 5.0

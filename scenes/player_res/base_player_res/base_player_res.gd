@@ -1,8 +1,8 @@
 extends RigidBody2D
 @onready var tmr_base_player_resource = $tmrBasePlayerResource
 
-@export var tmrDespawnMin = 60
-@export var tmrDespawnMax = 110
+@export var tmrDespawnMin = 5
+@export var tmrDespawnMax = 15
 @export var maxAmount = 2
 @export var minAmount = 10
 @export var playerResourceType = Global.PlayerResourceType.LEAVES
@@ -20,7 +20,6 @@ func _ready():
 	#move_and_slide()
 
 func _on_tmr_base_player_resource_timeout():
-	Log.print("Despawned")
 	match playerResourceType:
 		Global.PlayerResourceType.LEAVES:
 			get_parent().spawnTree(global_position)

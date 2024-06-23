@@ -36,7 +36,7 @@ func dashAttack():
 	collision_shape_2d.set_deferred("disabled", false)
 	tmr_attacking.start(0.2)
 	damage = 500
-	velocity.x = 1500 * facing
+	velocity.x = 5000 * facing
 	tmr_dash_cooldown.start(2)
 
 func attack():

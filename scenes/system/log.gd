@@ -9,6 +9,7 @@ var debug: bool = OS.has_feature("debug")
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
+	queue_free()
 
 	if debug:
 		if OS.get_name() == "Android" or OS.get_name() == "iOS":
@@ -41,6 +42,6 @@ func _ready() -> void:
 func print(message) -> void:
 	if debug:
 		if rich_text_label:
-			rich_text_label.append_text(str(message) + "\n")			
+			rich_text_label.append_text(str(message) + "\n")
 
 	print(message)
