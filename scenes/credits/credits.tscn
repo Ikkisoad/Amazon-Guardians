@@ -14,11 +14,12 @@ script = ExtResource("1_7dsgm")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 440.0
+offset_left = 296.0
 offset_top = 32.0
-offset_right = 970.0
-offset_bottom = 549.0
-scale = Vector2(1.90177, 1.90177)
+offset_right = 1958.0
+offset_bottom = 1325.0
+scale = Vector2(0.723449, 0.723449)
+theme_override_font_sizes/font_size = 50
 text = "OpenGameArt
 Castlevania-esque Tilemap (Stone and Bricks) - Chad Wolfe
 tree leaves - Angry Amish
@@ -48,10 +49,11 @@ texture = ExtResource("2_dtrn5")
 
 [node name="btnPlay" type="Button" parent="."]
 layout_mode = 2
-offset_left = 1720.0
-offset_top = 992.0
-offset_right = 1790.0
-offset_bottom = 1023.0
+offset_left = 1592.0
+offset_top = 976.0
+offset_right = 1873.0
+offset_bottom = 1053.0
+theme_override_font_sizes/font_size = 50
 text = "Main Menu"
 
 [connection signal="pressed" from="btnPlay" to="." method="_on_btn_play_pressed"]

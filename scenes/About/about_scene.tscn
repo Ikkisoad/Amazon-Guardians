@@ -38,10 +38,11 @@ texture = ExtResource("3_ne2p6")
 
 [node name="btnPlay" type="Button" parent="."]
 layout_mode = 2
-offset_left = 1720.0
-offset_top = 992.0
-offset_right = 1790.0
-offset_bottom = 1023.0
+offset_left = 1568.0
+offset_top = 968.0
+offset_right = 1849.0
+offset_bottom = 1045.0
+theme_override_font_sizes/font_size = 50
 text = "Main Menu"
 
 [node name="caipora" type="Label" parent="."]
