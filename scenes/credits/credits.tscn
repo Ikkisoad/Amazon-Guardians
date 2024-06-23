@@ -14,10 +14,10 @@ script = ExtResource("1_7dsgm")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 296.0
-offset_top = 32.0
-offset_right = 1958.0
-offset_bottom = 1325.0
+offset_left = 304.0
+offset_top = -152.0
+offset_right = 1966.0
+offset_bottom = 1141.0
 scale = Vector2(0.723449, 0.723449)
 theme_override_font_sizes/font_size = 50
 text = "OpenGameArt
@@ -30,14 +30,47 @@ Tree Falling (Yo Frankie!) - Blender Foundation
 Hit sounds - pauliuw
 Forest Theme - Zydro
 Falling Rock - spookymodem
-Forest Whisper Theme - CleytonKauffman
+Forest Whisper Theme - CleytonKauffmanw"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-Code
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 264.0
+offset_right = 1710.0
+offset_bottom = 1557.0
+scale = Vector2(0.723449, 0.723449)
+theme_override_font_sizes/font_size = 50
+text = "Code
 Ikkisoad
-GsX
+GsX"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-Sprites
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 544.0
+offset_top = 240.0
+offset_right = 2206.0
+offset_bottom = 1533.0
+scale = Vector2(0.723449, 0.723449)
+theme_override_font_sizes/font_size = 50
+text = "Sprites
 Makai"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 424.0
+offset_right = 1982.0
+offset_bottom = 1717.0
+scale = Vector2(0.723449, 0.723449)
+theme_override_font_sizes/font_size = 50
+text = "About Text
+Tiago"
 horizontal_alignment = 1
 vertical_alignment = 1
 
