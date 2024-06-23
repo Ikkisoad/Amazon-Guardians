@@ -69,7 +69,7 @@ offset_right = 1982.0
 offset_bottom = 1717.0
 scale = Vector2(0.723449, 0.723449)
 theme_override_font_sizes/font_size = 50
-text = "About Text
+text = "About Scene
 Tiago"
 horizontal_alignment = 1
 vertical_alignment = 1

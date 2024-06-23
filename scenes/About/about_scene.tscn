@@ -82,10 +82,10 @@ vertical_alignment = 2
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 custom_minimum_size = Vector2(800, 650)
 layout_mode = 0
-offset_left = 472.0
-offset_top = 31.0
-offset_right = 1272.0
-offset_bottom = 820.0
+offset_left = 456.0
+offset_top = -24.0
+offset_right = 1256.0
+offset_bottom = 765.0
 scale = Vector2(1.40503, 1.40503)
 theme_override_fonts/normal_font = ExtResource("5_pv4aa")
 theme_override_font_sizes/normal_font_size = 23
