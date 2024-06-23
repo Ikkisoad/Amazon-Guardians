@@ -1,9 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://b2x7o3hrbqkul"]
+[gd_scene load_steps=7 format=3 uid="uid://b2x7o3hrbqkul"]
 
 [ext_resource type="Texture2D" uid="uid://fx5anea55wjv" path="res://Assets/backgrounds/battleback1.png" id="1_7e2d2"]
 [ext_resource type="Script" path="res://scenes/About/about_scene.gd" id="1_dqkg3"]
 [ext_resource type="Texture2D" uid="uid://bo48wgb00veil" path="res://Assets/sprites/caipora/caipora_parada.png" id="2_skvvc"]
 [ext_resource type="Texture2D" uid="uid://c647i7dr0vao3" path="res://Assets/sprites/player/curupira.png" id="3_ne2p6"]
+[ext_resource type="FontFile" uid="uid://digwyy062hm3c" path="res://Assets/Fonts/Cocogoose-Classic-Medium-trial.ttf" id="5_pv4aa"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6maoh"]
+bg_color = Color(0.054902, 0.054902, 0.054902, 0.647059)
+corner_detail = 20
 
 [node name="about" type="Control"]
 layout_mode = 3
@@ -74,21 +79,25 @@ He is a legend from brazilian folklore, Curupira is a mythical being
 know to be the guardian of the forest."
 vertical_alignment = 2
 
-[node name="TextEdit" type="TextEdit" parent="."]
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
 custom_minimum_size = Vector2(800, 650)
 layout_mode = 0
 offset_left = 472.0
-offset_top = 16.0
+offset_top = 31.0
 offset_right = 1272.0
-offset_bottom = 816.0
+offset_bottom = 820.0
 scale = Vector2(1.40503, 1.40503)
-text = "... Before the Europeans came to South America, before the existence of man, before the existence of the rainforest, before the existence of all things, there was one supreme god, who the Tupi-Guarani tribe say created life, death, and even the Earth itself. In the beginning, Tupã was alone in the midst of calm waters; there was nothing outside of himself. Feeling empty in his solitude, the need to create others outside of himself arose. Using his might, he created another deity, his counterpart: Araci. Together, they descended into the calm waters and began creating animals, rivers, forests, and other gods, such as the sun god Guaraci, who created humanity, and the moon goddess Jaci, who controlled both the moon phases and the stars...
+theme_override_fonts/normal_font = ExtResource("5_pv4aa")
+theme_override_font_sizes/normal_font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxFlat_6maoh")
+bbcode_enabled = true
+text = "
+
+[fill][center]... Before the Europeans came to South America, before the existence of man, before the existence of the rainforest, before the existence of all things, there was one supreme god, who the Tupi-Guarani tribe say created life, death, and even the Earth itself. In the beginning, Tupã was alone in the midst of calm waters; there was nothing outside of himself. Feeling empty in his solitude, the need to create others outside of himself arose. Using his might, he created another deity, his counterpart: Araci. Together, they descended into the calm waters and began creating animals, rivers, forests, and other gods, such as the sun god Guaraci, who created humanity, and the moon goddess Jaci, who controlled both the moon phases and the stars...
 
 ... The Amazon rainforest that these gods created is home to a multitude of animal species and various native tribes that live and survive in its midst. Life and death coexist; the rainforest gives and takes back as needed to replenish its forces. When humanity tries to overextend its welcome by taking too much from the rainforest, it may never recover from what has been taken. Tribes and supernatural entities have noticed this and fight back against those who seek to exploit the rainforest. Entities such as Curupira and Caipora take the fight to those who might harm the rainforest, both very similar in origin and motivated to protect it...
 
-... Curupira is a young boy with red hair like flames on his head and sharp teeth. The first thing people notice about him is his inverted feet, which confuse hunters as to whether they are following someone or being followed. He is also capable of setting traps and emitting a deafening sound to scare hunters. Caipora is a young girl with flame-like red hair and pointy ears, similar to Curupira. She is an animal protector, usually setting traps and emitting sounds to confuse miners and lumberjacks. She might be seen riding a bushpig while wielding a spear in one hand. Both are protectors of the forest and animals, and if you play this game, you will be one too..."
-editable = false
-virtual_keyboard_enabled = false
-wrap_mode = 1
+... Curupira is a young boy with red hair like flames on his head and sharp teeth. The first thing people notice about him is his inverted feet, which confuse hunters as to whether they are following someone or being followed. He is also capable of setting traps and emitting a deafening sound to scare hunters. Caipora is a young girl with flame-like red hair and pointy ears, similar to Curupira. She is an animal protector, usually setting traps and emitting sounds to confuse miners and lumberjacks. She might be seen riding a bushpig while wielding a spear in one hand. Both are protectors of the forest and animals, and if you play this game, you will be one too...
+"
 
 [connection signal="pressed" from="btnPlay" to="." method="_on_btn_play_pressed"]
