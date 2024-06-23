@@ -35,7 +35,7 @@ leafAmount = 25
 stoneAmount = 10
 
 [node name="caipora" parent="PlayerManager" index="2"]
-position = Vector2(-13939, 926)
+position = Vector2(648, 900)
 facing = -1
 
 [node name="curupira" parent="PlayerManager" index="3"]

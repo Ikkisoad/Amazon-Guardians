@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=3 uid="uid://bta4liiqi1m7o"]
+
+[ext_resource type="Script" path="res://TutorialStage1.gd" id="1_8xy1b"]
+[ext_resource type="Texture2D" uid="uid://ielxwdiar774" path="res://Assets/sprites/caipora/caipora_perfil.png" id="2_mav7v"]
+[ext_resource type="Texture2D" uid="uid://w2aqdj4p7r40" path="res://Assets/sprites/curupira/curupira_perfil.png" id="3_rtl7x"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_j2wjm"]
+font_size = 36
+
+[node name="TutorialStage1" type="Node"]
+process_mode = 3
+script = ExtResource("1_8xy1b")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MC" type="MarginContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 740
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/MC"]
+z_index = 2
+layout_mode = 2
+text = "They don't give up!"
+label_settings = SubResource("LabelSettings_j2wjm")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
+z_index = 1
+layout_mode = 0
+offset_left = 235.0
+offset_top = 793.0
+offset_right = 275.0
+offset_bottom = 833.0
+scale = Vector2(37.5077, 5.71855)
+color = Color(0, 0, 0, 1)
+
+[node name="sprCaipora" type="Sprite2D" parent="CanvasLayer/Control"]
+position = Vector2(1429, 427)
+texture = ExtResource("2_mav7v")
+
+[node name="sprCurupira" type="Sprite2D" parent="CanvasLayer/Control"]
+position = Vector2(431, 421)
+texture = ExtResource("3_rtl7x")
+
+[node name="tmrTest" type="Timer" parent="."]
+
+[connection signal="timeout" from="tmrTest" to="." method="_on_tmr_test_timeout"]

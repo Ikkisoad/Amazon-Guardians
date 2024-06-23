@@ -61,7 +61,12 @@ func _on_a_2_enemy_detector_body_entered(body):
 		stop = true
 
 func _on_a_2_enemy_detector_area_entered(area):
-	if area.get_parent().is_in_group("resource") || area.get_parent().is_in_group("player"):
+	if area.get_parent().is_in_group("resource"):
+		if area.get_parent().resourceType == Global.ResourceType.TREE && enemyType == Global.EnemyType.WOODWORKER || area.get_parent().resourceType == Global.ResourceType.CAVE && enemyType == Global.EnemyType.MINER:
+			stop = true
+			PlayAnimationBasedOnEnemyType(enemyType, animStates.STOP)
+			startAttacking()
+	if area.get_parent().is_in_group("player"):
 		stop = true
 		PlayAnimationBasedOnEnemyType(enemyType, animStates.STOP)
 		startAttacking()
