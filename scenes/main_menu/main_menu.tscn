@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://chyjcacpj1ope"]
+[gd_scene load_steps=10 format=3 uid="uid://chyjcacpj1ope"]
 
 [ext_resource type="Script" path="res://scenes/main_menu/main_menu.gd" id="1_yk4tx"]
 [ext_resource type="Texture2D" uid="uid://ielxwdiar774" path="res://Assets/sprites/caipora/caipora_perfil.png" id="2_3kckt"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dvqql1cp5rdlf" path="res://Assets/JAM Assets/70-Folklore.png" id="5_yjbi2"]
 [ext_resource type="Texture2D" uid="uid://wg5prw2n0gl" path="res://Assets/JAM Assets/70-All-Cards.png" id="6_bf0ll"]
 [ext_resource type="AudioStream" uid="uid://oe0dqchm5ku2" path="res://Assets/SFX/music/Forest Whisper Theme/Forest Whisper.ogg" id="7_xijk3"]
+[ext_resource type="Texture2D" uid="uid://chg6qbgnemvpj" path="res://Assets/logo/logo.png" id="8_80ckc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_e3qqc"]
 font_size = 96
@@ -67,6 +68,7 @@ layout_mode = 2
 text = "Credits"
 
 [node name="GameTitle" type="Label" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -128,6 +130,11 @@ text = "X"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_xijk3")
 autoplay = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(960, 184)
+scale = Vector2(1.6856, 1.6856)
+texture = ExtResource("8_80ckc")
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/btnPlay" to="." method="_on_btn_play_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/btnAbout" to="." method="_on_btn_about_pressed"]

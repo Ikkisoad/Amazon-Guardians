@@ -1,7 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://c50i37hw6jvgy"]
+[gd_scene load_steps=10 format=3 uid="uid://c50i37hw6jvgy"]
 
 [ext_resource type="Script" path="res://scenes/traps/base_trap.gd" id="1_2y7l8"]
 [ext_resource type="Texture2D" uid="uid://2jjxmgtxyrjb" path="res://Assets/traps/woodTrap/SmallWoodTrap.png" id="2_bnavc"]
+[ext_resource type="Texture2D" uid="uid://cwbk60vbinjn3" path="res://Assets/sprites/bear_trap/trap_1.png" id="2_hcrwt"]
+[ext_resource type="Texture2D" uid="uid://ddaw26ktf3p7x" path="res://Assets/sprites/bear_trap/trap_2.png" id="3_13gml"]
 [ext_resource type="AudioStream" uid="uid://cxs1s05soeys7" path="res://Assets/SFX/hits/Hits/Hit.wav" id="3_sh70r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ldx32"]
@@ -18,6 +20,17 @@ region = Rect2(216, 0, 72, 133)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_om3gw"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hcrwt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_13gml")
+}],
+"loop": true,
+"name": &"bearTrap",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ldx32")
@@ -40,7 +53,7 @@ script = ExtResource("1_2y7l8")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_om3gw")
-animation = &"woodTrap"
+animation = &"bearTrap"
 
 [node name="TrapTimer" type="Timer" parent="."]
 wait_time = 5.0
