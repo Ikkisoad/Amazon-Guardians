@@ -22,4 +22,3 @@ func _process(_delta):
 			get_tree().paused = true
 		nextFrame = true
 		get_tree().paused = false
-		Log.print("next frame")
