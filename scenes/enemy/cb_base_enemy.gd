@@ -14,7 +14,7 @@ const JUMP_VELOCITY = -400.0
 @onready var as_miner_hit = $asMinerHit
 @onready var as_step = $asStep
 
-
+@export var damage = 350
 @export var facing = 1
 var stop = false
 var attacking = false
@@ -101,7 +101,7 @@ func _on_a_2_enemy_attack_area_entered(area):
 	
 	if area.get_parent().is_in_group("player"):
 		if area.get_parent().has_method("DamagePlayer"):
-			area.get_parent().DamagePlayer(600)
+			area.get_parent().DamagePlayer(damage)
 			
 	
 func returnToBase():

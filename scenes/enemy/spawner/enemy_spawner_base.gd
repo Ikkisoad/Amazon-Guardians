@@ -7,6 +7,7 @@ extends Node2D
 @onready var tmr_spawn = $tmrSpawn
 @export var spawnLimit = 5
 @export var facing = 1
+@onready var sprite_2d = $Sprite2D
 
 var enemyScene
 var spawnedCount = 0
@@ -20,6 +21,9 @@ func _ready():
 	spawnLimit = spawnLimit * Global.gameClears
 	minSpawnRate = minSpawnRate / Global.gameClears
 	maxSpawnRate = maxSpawnRate / Global.gameClears
+	
+	if facing == -1:
+		sprite_2d.scale.x *= -1
 	
 	setEnemySpawnType()
 	startSpawnTimer()

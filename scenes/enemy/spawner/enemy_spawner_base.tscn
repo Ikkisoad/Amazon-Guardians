@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://be782rih0dbuy"]
 
 [ext_resource type="Script" path="res://scenes/enemy/spawner/enemy_spawner_base.gd" id="1_6w0rl"]
-[ext_resource type="Texture2D" uid="uid://5oajv10bibjp" path="res://icon.svg" id="1_x3b1j"]
+[ext_resource type="Texture2D" uid="uid://bs3yrn7rrvhms" path="res://Assets/sprites/spawner/spawner.png" id="2_7jdk6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jcjt0"]
 size = Vector2(112, 112)
@@ -10,8 +10,8 @@ size = Vector2(112, 112)
 script = ExtResource("1_6w0rl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 0.0431373, 1)
-texture = ExtResource("1_x3b1j")
+position = Vector2(-8, 72)
+texture = ExtResource("2_7jdk6")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0

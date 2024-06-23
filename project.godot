@@ -13,7 +13,7 @@ config_version=5
 config/name="Amazon Guardians"
 run/main_scene="res://scenes/main_menu/main_menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://Assets/traps/woodTrap/small_wood_spike_04.png"
+config/icon="res://Assets/sprites/caipora/caipora_perfil.png"
 
 [autoload]
 
