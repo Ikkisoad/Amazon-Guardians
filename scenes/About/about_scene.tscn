@@ -46,13 +46,29 @@ text = "Main Menu"
 
 [node name="caipora" type="Label" parent="."]
 layout_mode = 0
-offset_left = 600.0
+offset_left = 552.0
 offset_top = 72.0
-offset_right = 788.0
-offset_bottom = 213.0
+offset_right = 1890.0
+offset_bottom = 429.0
 theme_override_font_sizes/font_size = 50
 text = "Caipora
 
-"
+They are sometimes confused with Curupira, Caipora is
+known as a kind of king of the animals an is vengeful of
+hunters who do not play fair when hunting."
+
+[node name="curupira" type="Label" parent="."]
+layout_mode = 0
+offset_left = 552.0
+offset_top = 552.0
+offset_right = 740.0
+offset_bottom = 693.0
+scale = Vector2(0.780251, 0.780251)
+theme_override_font_sizes/font_size = 50
+text = "Curupira
+
+He is a legend from brazilian folklore, Curupira is a mythical being 
+know to be the guardian of the forest."
+vertical_alignment = 2
 
 [connection signal="pressed" from="btnPlay" to="." method="_on_btn_play_pressed"]

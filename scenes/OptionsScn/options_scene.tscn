@@ -82,33 +82,40 @@ layout_mode = 2
 
 [node name="masterH" type="HSlider" parent="." groups=["audioSliders"]]
 layout_mode = 2
-offset_left = 749.0
-offset_top = 378.0
-offset_right = 1165.0
-offset_bottom = 394.0
+offset_left = 752.0
+offset_top = 376.0
+offset_right = 1168.0
+offset_bottom = 392.0
 theme_override_constants/center_grabber = 0
 max_value = 1.0
 step = 0.001
 
 [node name="GMusicH" type="HSlider" parent="." groups=["audioSliders"]]
 layout_mode = 2
-offset_left = 749.0
-offset_top = 613.0
-offset_right = 1165.0
-offset_bottom = 629.0
+offset_left = 752.0
+offset_top = 568.0
+offset_right = 1168.0
+offset_bottom = 584.0
 theme_override_constants/center_grabber = 0
 max_value = 1.0
 step = 0.001
 
 [node name="SFXMusicH" type="HSlider" parent="." groups=["audioSliders"]]
 layout_mode = 2
-offset_left = 749.0
-offset_top = 840.0
-offset_right = 1165.0
-offset_bottom = 856.0
+offset_left = 752.0
+offset_top = 808.0
+offset_right = 1168.0
+offset_bottom = 824.0
 theme_override_constants/center_grabber = 0
 max_value = 1.0
 step = 0.001
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+offset_top = 977.0
+offset_right = 1920.0
+offset_bottom = 1008.0
+text = "Main Menu"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_supuh")
@@ -119,3 +126,4 @@ bus = &"music"
 [connection signal="value_changed" from="masterH" to="." method="_on_master_h_value_changed"]
 [connection signal="value_changed" from="GMusicH" to="." method="_on_g_music_h_value_changed"]
 [connection signal="value_changed" from="SFXMusicH" to="." method="_on_sfx_music_h_value_changed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

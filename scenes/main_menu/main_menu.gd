@@ -14,3 +14,7 @@ func _on_btn_about_pressed():
 
 func _on_btn_credits_pressed():
 	get_tree().change_scene_to_file("res://scenes/credits/credits.tscn")
+
+
+func _on_btn_options_pressed():
+	get_tree().change_scene_to_file("res://scenes/OptionsScn/options_scene.tscn")
