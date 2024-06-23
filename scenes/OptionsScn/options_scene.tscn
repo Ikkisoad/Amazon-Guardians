@@ -1,7 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://cl5iwk11cscgl"]
+[gd_scene load_steps=7 format=3 uid="uid://cl5iwk11cscgl"]
+
+[ext_resource type="Texture2D" uid="uid://fx5anea55wjv" path="res://Assets/backgrounds/battleback1.png" id="1_rlh32"]
+[ext_resource type="Script" path="res://scenes/OptionsScn/options_scene.gd" id="1_xnc07"]
+[ext_resource type="FontFile" uid="uid://bd2hxvnhen0u3" path="res://Assets/Fonts/Figerona-VF.ttf" id="2_w1elq"]
+[ext_resource type="AudioStream" uid="uid://bb2pdajsr44e3" path="res://Assets/SFX/music/The Outer Forest.mp3" id="4_supuh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4rtq7"]
+font = ExtResource("2_w1elq")
 font_size = 72
+
+[sub_resource type="LabelSettings" id="LabelSettings_k7xna"]
+font = ExtResource("2_w1elq")
+font_size = 48
 
 [node name="OptionsScene" type="Control"]
 layout_mode = 3
@@ -10,6 +20,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_xnc07")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_rlh32")
 
 [node name="MC" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -19,6 +39,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_top = 72
+theme_override_constants/margin_bottom = 72
 
 [node name="OptionsTitle" type="Label" parent="MC"]
 layout_mode = 2
@@ -26,3 +47,68 @@ size_flags_vertical = 0
 text = "OPTIONS"
 label_settings = SubResource("LabelSettings_4rtq7")
 horizontal_alignment = 1
+
+[node name="VBContainer" type="VBoxContainer" parent="MC"]
+layout_mode = 2
+theme_override_constants/separation = -210
+
+[node name="GameM" type="Label" parent="MC/VBContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Master"
+label_settings = SubResource("LabelSettings_k7xna")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameM2" type="Label" parent="MC/VBContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "GameMusic"
+label_settings = SubResource("LabelSettings_k7xna")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SFXSound" type="Label" parent="MC/VBContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "SoundEffect"
+label_settings = SubResource("LabelSettings_k7xna")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="MC/VBContainer"]
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 2
+
+[node name="masterH" type="HSlider" parent="." groups=["audioSliders"]]
+layout_mode = 2
+offset_left = 749.0
+offset_top = 378.0
+offset_right = 1165.0
+offset_bottom = 394.0
+theme_override_constants/center_grabber = 0
+
+[node name="GMusicH" type="HSlider" parent="." groups=["audioSliders"]]
+layout_mode = 2
+offset_left = 749.0
+offset_top = 613.0
+offset_right = 1165.0
+offset_bottom = 629.0
+theme_override_constants/center_grabber = 0
+
+[node name="SFXMusicH" type="HSlider" parent="." groups=["audioSliders"]]
+layout_mode = 2
+offset_left = 749.0
+offset_top = 840.0
+offset_right = 1165.0
+offset_bottom = 856.0
+theme_override_constants/center_grabber = 0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_supuh")
+autoplay = true
+bus = &"music"
+
+[connection signal="value_changed" from="masterH" to="." method="_on_master_h_value_changed"]
+[connection signal="value_changed" from="GMusicH" to="." method="_on_g_music_h_value_changed"]
+[connection signal="value_changed" from="SFXMusicH" to="." method="_on_sfx_music_h_value_changed"]

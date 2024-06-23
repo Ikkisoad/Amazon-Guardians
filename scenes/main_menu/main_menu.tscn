@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://chyjcacpj1ope"]
+[gd_scene load_steps=11 format=3 uid="uid://chyjcacpj1ope"]
 
 [ext_resource type="Script" path="res://scenes/main_menu/main_menu.gd" id="1_yk4tx"]
 [ext_resource type="Texture2D" uid="uid://ielxwdiar774" path="res://Assets/sprites/caipora/caipora_perfil.png" id="2_3kckt"]
 [ext_resource type="Texture2D" uid="uid://w2aqdj4p7r40" path="res://Assets/sprites/curupira/curupira_perfil.png" id="3_foa15"]
 [ext_resource type="Texture2D" uid="uid://fx5anea55wjv" path="res://Assets/backgrounds/battleback1.png" id="4_htioi"]
+[ext_resource type="FontFile" uid="uid://bd2hxvnhen0u3" path="res://Assets/Fonts/Figerona-VF.ttf" id="4_yjjv2"]
 [ext_resource type="Texture2D" uid="uid://dvqql1cp5rdlf" path="res://Assets/JAM Assets/70-Folklore.png" id="5_yjbi2"]
 [ext_resource type="Texture2D" uid="uid://wg5prw2n0gl" path="res://Assets/JAM Assets/70-All-Cards.png" id="6_bf0ll"]
 [ext_resource type="AudioStream" uid="uid://oe0dqchm5ku2" path="res://Assets/SFX/music/Forest Whisper Theme/Forest Whisper.ogg" id="7_xijk3"]
@@ -53,10 +54,14 @@ layout_mode = 2
 
 [node name="btnPlay" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_yjjv2")
+theme_override_font_sizes/font_size = 36
 text = "Play"
 
 [node name="btnAbout" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_yjjv2")
+theme_override_font_sizes/font_size = 36
 text = "About"
 
 [node name="btnOptions" type="Button" parent="CenterContainer/VBoxContainer"]
@@ -66,6 +71,8 @@ text = "Options"
 
 [node name="btnCredits" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_yjjv2")
+theme_override_font_sizes/font_size = 36
 text = "Credits"
 
 [node name="GameTitle" type="Label" parent="."]
